@@ -1,0 +1,12 @@
+grammar org.xtext.example.mydsl.GACL with org.eclipse.xtext.common.Terminals
+
+generate gACL "http://www.xtext.org/example/mydsl/GACL"
+
+PrimitiveType:
+	'PrimitiveType' name = ID
+;
+
+Operation:
+	'Operation' name = ID
+	prog = 
+;

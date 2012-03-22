@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+	<bundle bundleID="613" localization="OSGI-INF/l10n/bundle" name="org.xtext.example.gacl" project="org.xtext.example.gacl" provider="My Company"/>
+	<bundle bundleID="614" localization="OSGI-INF/l10n/bundle" name="org.xtext.example.gacl.tests" project="org.xtext.example.gacl.tests" provider="My Company"/>
+	<bundle bundleID="615" localization="OSGI-INF/l10n/bundle" name="org.xtext.example.gacl.ui" project="org.xtext.example.gacl.ui" provider="My Company"/>
+</map>

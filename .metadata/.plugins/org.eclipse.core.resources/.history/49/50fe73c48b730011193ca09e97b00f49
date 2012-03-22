@@ -1,0 +1,33 @@
+grammar org.xtext.example.mydsl.GACL with org.eclipse.xtext.common.Terminals
+
+generate gACL "http://www.xtext.org/example/mydsl/GACL"
+
+PrimitiveType:
+	'PrimitiveType' name = ID
+;
+
+Statement:
+	VarDecl |
+	Assignment
+;
+
+VarDecl:
+	name = ID
+;
+
+Assignment:
+	Identifier '=' Expression
+;
+
+Expression:
+	Identifier |
+	'(' Expression ')' |
+	'lambda' Identifier '.' Expression |
+	Expression Expression |
+	'if' Expression 'then' Expression 'else' Expression |
+	'While' Expression '{' Program '}'
+;
+
+Identifier:
+	name = ID
+;
