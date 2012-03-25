@@ -1,0 +1,153 @@
+Title : GENERIC ACTION CODE LANGUAGE
+
+Abstract : Generic Action Code Language project is around the eTrice project . The eTrice Project provides implementation of ROOM ( Real-time Object Oriented Modeling ) language . eTrice has both text and gui based environment to create models & program using ROOM . Currently the DetailCode is written in a string and is itself a partial java program . The aim of GACL (Generic Action Code Language) project is to design a language to write DetailCode & develop converters from GACL to java and c/c++ . after that it will be integrated with ROOM in order to enhance eTrice
+
+Name and Contact Info
+
+Name : Satyender Yadav
+
+Email: satyenderyadav4993@gmail.com / cs1100250@cse.iitd.ac.in
+
+Institute : Indian Institute of Technology Delhi
+
+IRC: hckkid on freenode
+
+Phone: +91 9013298441
+
+Benefits to Community
+
+For developers/programmers who use eTrice there are following important benefits :-
+
+1.) Currently while using eTrice project whenever we need to define the code for action of an operation in ROOM in Java Language . Writing this may appear easier in small Wizard for operation may seem fine but writting this in a string in DetailCode taking care of escape sequences is work not supposed to be done by humans . 
+
+2.) It is good to shorten extensively used functions like System.out.println() , System.out.print() to simply printl() and print() functions which will work for cout of c++ too . Similarly substitute of printf functions too which is available both in java and c .
+
+3.) The GACL would be designed in such a way that user would have to worry least about syntax and focus much more over semantics . This will be achieved by TIMTOWTDI (There Is More Than One Way Two Do It) approache followed by perl . But it would be strictly taken care while writing the grammar of GACL that it never becomes too cryptic like perl for even of 50 lines of code .
+
+4.) Since even after integration of GACL in eTrice we would be still generating Java and C code from written program/model . So it would be taken care GACL has all features that are common in almost every imperative language and Syntax that would be used would be a hybrid of Java and C 's syntax in order to make it easy to remember and code . The basic features list is below
+
+	4.1) Variable Declarations ( with optional initializers ) and Function Declaration
+	4.2) Comparison & arithmetic expressions
+	4.3) Basic types , and user defined types
+	4.4) If-else blocks and ladders
+	4.5) For , while , for each , enhanched for each
+	4.6) Support for iterators (that can be used by for each loops ).
+	4.7) Function Calls with arguments & diff types i.e. ref/value/address .
+	4.8) type checking and as much as possible implicit type casting .
+	4.9) Casts corresponding to static casts in C .
+
+5.) Having a simple domain specific language makes it easier and efficient to work with eTrice . With this enhancement the scope of use of eTrice will expand also it would become much handy for developers . Also it can be used by students in universities studying on Real-time Object Oriented Systems
+
+Broad use for eclipse community :-
+
+The eTrice project is largely for enterprise use and stands with softwares like Rational of IBM in modeling real-time systems . Although under development it is still one of most significant open source software in its field . Enhancing and making it a software able to compete other software of its kind is equal to unlocking a all new area for open source community .
+And the first one to take advantage of it would surely be eclipse . Such milestone surely gathers attention of a significant fraction of community towards it .
+
+Description (by timeline)
+
+April 23: Accepted student proposals announced
+
+April 24 - May 21 : Community Bonding period
+
+May 2 - May 10 : College major exams and practicals .
+
+May 21 : Official 'Coding starts' day
+
+July 15: Mid-term evaluation
+
+July 25: College classes start
+
+August 15 : Suggested Pencils down
+
+August 22 : Firm Pencils down
+
+August 26: Final Evaluation
+
+My college summer schedule starts early but ends early too. It starts 17 days before Google's Official 'coding starts' day. Summer ends 20 days before the suggested pencils down day I'll have a head start of about 20 days before the dates in the Google timeline. I plan to start coding after my college exams end on May 6. That will give me 10 weeks before mid-term evaluation. I intend to finish most of my project by mid-term evaluation. Testing, profiling and benchmarking will be carried out side by side coding.
+
+Here is a tentative week-by-week timeline.
+
+Week 1 (9th May - 15th May)
+
+Matrix data structure, Matrix constructors, addition, multiplication, transpose
+
+Week 2 (16th May - 22nd May)
+
+Matrix element handlers, slicing and submatrices (setitem and getitem)
+
+Iterators. #Needs to be discussed
+
+Week 3 (23rd May - 29th May)
+
+Co-factors, Minors, Co-factor matrix, Adjoint, Inverse.
+
+Week 4 (30th May - 5th June)
+
+Eigenvalues, Eigenvector, Diagonalization-based methods like exponentiation ( MatrixInteger and IntegerMatrix ) Week 5 (6th June - 12th June)
+
+Elementary Row/Column operations, Gaussian Elimination, Solving Ax=B using Gaussian Elimination, Method of Least Squares, Determinant using Gaussian Elimination.
+
+Week 6 (13th June - 19th June)
+
+Symbolic Cholesky Decomposition for sparse matrices. I've already coded in two versions of this pre-GSoC. But this variant is most efficient. Coding this would require a good set of iterators and some auxiliary functions.
+
+Week 7 (20th June - 26th June)
+
+Miscellaneous functions like the is_something functions, and other such trivial functions. Personal Code Review.
+
+By the end of 7th week, I will have a working and tested efficient Sparse Matrix implementation.
+
+Week 8 (27th June - 3rd July)
+
+Freeze function to solve mutability/immutability problem. GMPY integration for DenseMatrix and SparseMatrix.
+
+Week 9 (4th July - 10th July)
+
+Writing special types of sparse matrix classes like DiagonalMatrix, PermutationMatrix, etc.,
+
+Week 10 (11th July - 17th July)
+
+Final touches, reviewing. Buffer.
+
+Mid-Term Evaluation (15th July)
+
+Weeks 8th, 9th and 10th have been kept light so that any work left of the previous weeks can be completed now.
+
+Week 11 and 12 (18th July - 31tst July)
+
+Will add more functionalities that I come across later, through the mailing list or through my mentor.
+
+Will lay ground-work for matrix expressions and code generation.
+
+Week 13 (1st August - 7th august)
+
+Documentation.
+
+Work on matrix expressions and code generation will continue after GSoC, though I admit at a slower pace. More sparse representations can also be added after this GSoC or in the next GSoC.
+
+Do note that this is a tentative timeline. This schedule might change, subject to later discussions with my mentor and SymPy community.
+
+I will be in touch with my mentors and with the community in a daily basis, and before first week will have a final schedule as to what needs to be done. I might also have to collaborate with another GSoC student, according to Andy.
+
+More than 40hours/week of work is assured. I have nothing planned for the summer except for a 3-4 day trip after mid-term evaluation.
+
+Biographical Information
+
+I'm a first year undergraduate student pursuing Bachelors in Technology in the Indian Institute of Technology Delhi, in the department of Computer Science and Engineering.
+
+Relevant course I have taken are:
+
+ CSL201 : Data Structure and Algorithms
+
+ CSL302 : Programming Languages
+
+ CSP301 : Computer Science Practices (A practical course intended towards handling big projects)
+
+In a previous course, CSL102, I had implemented RSA encryption for 64-bit ints in python.
+
+As an assignment for CSL201, I had designed and implemented COO Sparse Matrix multiplication algorithm in java, with time complexity O( L1 * L2 )
+
+I work in Mac OSX architecture and have also experience in Linux/Ubuntu.
+
+References
+
