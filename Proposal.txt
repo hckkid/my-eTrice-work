@@ -16,6 +16,9 @@ Phone: +91 9013298441
 
 Benefits to Community
 
+The eTrice project is largely for enterprise use and stands with softwares like Rational of IBM in modeling real-time systems . Although under development it is still one of most significant open source software in its field . Enhancing and making it a software able to compete other software of its kind is equal to unlocking a all new area for open source community .
+And the first one to take advantage of it would surely be eclipse . Such milestone surely gathers attention of a significant fraction of community towards it .
+
 For developers/programmers who use eTrice there are following important benefits :-
 
 1.) Currently while using eTrice project whenever we need to define the code for action of an operation in ROOM in Java Language . Writing this may appear easier in small Wizard for operation may seem fine but writting this in a string in DetailCode taking care of escape sequences is work not supposed to be done by humans . 
@@ -38,11 +41,6 @@ For developers/programmers who use eTrice there are following important benefits
 
 5.) Having a simple domain specific language makes it easier and efficient to work with eTrice . With this enhancement the scope of use of eTrice will expand also it would become much handy for developers . Also it can be used by students in universities studying on Real-time Object Oriented Systems
 
-Broad use for eclipse community :-
-
-The eTrice project is largely for enterprise use and stands with softwares like Rational of IBM in modeling real-time systems . Although under development it is still one of most significant open source software in its field . Enhancing and making it a software able to compete other software of its kind is equal to unlocking a all new area for open source community .
-And the first one to take advantage of it would surely be eclipse . Such milestone surely gathers attention of a significant fraction of community towards it .
-
 Description (by timeline)
 
 April 23: Accepted student proposals announced
@@ -51,91 +49,75 @@ April 24 - May 21 : Community Bonding period
 
 May 2 - May 10 : College major exams and practicals .
 
-May 21 : Official 'Coding starts' day
+July 9-13: Mid-term evaluation
 
-July 15: Mid-term evaluation
+July 24: College classes start
 
-July 25: College classes start
+August 13 : Suggested Pencils down
 
-August 15 : Suggested Pencils down
+August 20 : Firm Pencils down
 
-August 22 : Firm Pencils down
+August 24: Final Evaluation
 
-August 26: Final Evaluation
-
-My college summer schedule starts early but ends early too. It starts 17 days before Google's Official 'coding starts' day. Summer ends 20 days before the suggested pencils down day I'll have a head start of about 20 days before the dates in the Google timeline. I plan to start coding after my college exams end on May 6. That will give me 10 weeks before mid-term evaluation. I intend to finish most of my project by mid-term evaluation. Testing, profiling and benchmarking will be carried out side by side coding.
+My college summer schedule starts early but ends early too. It starts 11 days before Google's Official 'coding starts' day. Summer ends 23 days before the suggested pencils down day I'll have a head start of about 20 days before the dates in the Google timeline. I plan to start coding after my college exams end on May 10. That will give me 8 weeks before mid-term evaluation. I intend to finish most of my project by mid-term evaluation. Testing, profiling and benchmarking will be carried out side by side coding.
 
 Here is a tentative week-by-week timeline.
 
-Week 1 (9th May - 15th May)
+Week 1 (10th May - 16th May)
 
-Matrix data structure, Matrix constructors, addition, multiplication, transpose
+Grammar using Xtext for primitive types and operations and their Xtend generator .
 
-Week 2 (16th May - 22nd May)
+Week 2 (17th May - 23nd May)
 
-Matrix element handlers, slicing and submatrices (setitem and getitem)
+Addition of Expressions and Variable Declarations .
 
-Iterators. #Needs to be discussed
+Week 3 (24rd May - 30th May)
 
-Week 3 (23rd May - 29th May)
+Addition of if-else , while and for loops .
 
-Co-factors, Minors, Co-factor matrix, Adjoint, Inverse.
+Week 4 (31st May - 6th June)
 
-Week 4 (30th May - 5th June)
+Addition of for-each loops and its variants .
 
-Eigenvalues, Eigenvector, Diagonalization-based methods like exponentiation ( MatrixInteger and IntegerMatrix ) Week 5 (6th June - 12th June)
+Week 5 (7th June - 13th June)
 
-Elementary Row/Column operations, Gaussian Elimination, Solving Ax=B using Gaussian Elimination, Method of Least Squares, Determinant using Gaussian Elimination.
+Function Declarations , Function Calls with arguments .
 
-Week 6 (13th June - 19th June)
+Week 6 (14th June - 20th June)
 
-Symbolic Cholesky Decomposition for sparse matrices. I've already coded in two versions of this pre-GSoC. But this variant is most efficient. Coding this would require a good set of iterators and some auxiliary functions.
+Type checking and type casting .
 
-Week 7 (20th June - 26th June)
+Week 7 (21th June - 27th June)
 
-Miscellaneous functions like the is_something functions, and other such trivial functions. Personal Code Review.
+Rest of type casting with some static analysis .
 
-By the end of 7th week, I will have a working and tested efficient Sparse Matrix implementation.
+Week 8 (28th June - 4th July)
 
-Week 8 (27th June - 3rd July)
+Removing any bugs if exist in Xtend generator code .
 
-Freeze function to solve mutability/immutability problem. GMPY integration for DenseMatrix and SparseMatrix.
+5th to 9th july
 
-Week 9 (4th July - 10th July)
+Preaparing stable version for mid-term evaluation
 
-Writing special types of sparse matrix classes like DiagonalMatrix, PermutationMatrix, etc.,
+Mid-Term Evaluation (9th - 13th July)
 
-Week 10 (11th July - 17th July)
-
-Final touches, reviewing. Buffer.
-
-Mid-Term Evaluation (15th July)
-
-Weeks 8th, 9th and 10th have been kept light so that any work left of the previous weeks can be completed now.
-
-Week 11 and 12 (18th July - 31tst July)
+Week 9 and 10 (14th July - 27th July)
 
 Will add more functionalities that I come across later, through the mailing list or through my mentor.
 
-Will lay ground-work for matrix expressions and code generation.
+and start documentation also will make code more efficient wherever possible .
 
-Week 13 (1st August - 7th august)
+Week 11 and 12 (28th July - 13th august)
 
-Documentation.
-
-Work on matrix expressions and code generation will continue after GSoC, though I admit at a slower pace. More sparse representations can also be added after this GSoC or in the next GSoC.
-
-Do note that this is a tentative timeline. This schedule might change, subject to later discussions with my mentor and SymPy community.
-
-I will be in touch with my mentors and with the community in a daily basis, and before first week will have a final schedule as to what needs to be done. I might also have to collaborate with another GSoC student, according to Andy.
-
-More than 40hours/week of work is assured. I have nothing planned for the summer except for a 3-4 day trip after mid-term evaluation.
+Documentation Work . More than 40hours/week of work is assured. I have nothing planned for the summer .
 
 Biographical Information
 
-I'm a first year undergraduate student pursuing Bachelors in Technology in the Indian Institute of Technology Delhi, in the department of Computer Science and Engineering.
+I'm a Second year ( currently 4th semester ) undergraduate student pursuing Bachelors in Technology in the Indian Institute of Technology Delhi, in the department of Computer Science and Engineering.
 
 Relevant course I have taken are:
+
+ CSL102 : Introduction to programming
 
  CSL201 : Data Structure and Algorithms
 
@@ -145,9 +127,10 @@ Relevant course I have taken are:
 
 In a previous course, CSL102, I had implemented RSA encryption for 64-bit ints in python.
 
-As an assignment for CSL201, I had designed and implemented COO Sparse Matrix multiplication algorithm in java, with time complexity O( L1 * L2 )
+As an assignment for CSL302, I had designed and implemented a tiny Prolog interpreter and compiler using ML-lex and ML-yacc .
 
-I work in Mac OSX architecture and have also experience in Linux/Ubuntu.
+I work in both Windows7 and Linux(Familiar with most distros) .
 
 References
 
+[0] Bran Selic, Garth Gullekson, Paul T. Ward: Real-Time Object Oriented Modeling, New York: John Wiley, 1994 (ISBN 0-471-59917-4) 
