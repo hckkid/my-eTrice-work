@@ -1,6 +1,6 @@
 Title : GENERIC ACTION CODE LANGUAGE
 
-Abstract : Generic Action Code Language project is around the eTrice project . The eTrice Project provides implementation of ROOM ( Real-time Object Oriented Modeling ) language . eTrice has both text and gui based environment to create models & program using ROOM . Currently the DetailCode is written in a string and is itself a partial java program . The aim of GACL (Generic Action Code Language) project is to design a language to write DetailCode & develop converters from GACL to java and c/c++ . after that it will be integrated with ROOM in order to enhance eTrice
+Abstract : Generic Action Code Language project is around the eTrice project . The eTrice Project provides implementation of ROOM ( Real-time Object Oriented Modeling ) language . eTrice has both text and gui based environment to create models & program using ROOM . State machines might execute entry, exit or action codes. This code is written in the target language of the code generator. Currently the DetailCode is written in a string . The aim of GACL (Generic Action Code Language) project is to design a language to write DetailCode & develop converters from GACL to java and c/c++ . After that it will be integrated with ROOM in order to enhance eTrice
 
 Name and Contact Info
 
@@ -21,7 +21,7 @@ And the first one to take advantage of it would surely be eclipse . Such milesto
 
 For developers/programmers who use eTrice there are following important benefits :-
 
-1.) Currently while using eTrice project whenever we need to define the code for action of an operation in ROOM in Java Language . Writing this may appear easier in small Wizard for operation may seem fine but writting this in a string in DetailCode taking care of escape sequences is work not supposed to be done by humans . 
+1.) Currently while using eTrice project whenever we need to define the code for action of an operation in ROOM in the target language . Writing this may appear easier in small Wizard for operation may seem fine but writing this in a string in DetailCode taking care of escape sequences is work not supposed to be done by humans . 
 
 2.) It is good to shorten extensively used functions like System.out.println() , System.out.print() to simply printl() and print() functions which will work for cout of c++ too . Similarly substitute of printf functions too which is available both in java and c .
 
@@ -38,8 +38,9 @@ For developers/programmers who use eTrice there are following important benefits
 	4.7) Function Calls with arguments & diff types i.e. ref/value/address .
 	4.8) type checking and as much as possible implicit type casting .
 	4.9) Casts corresponding to static casts in C .
+	4.10) Integration of the action language into the model would allow for extended model validation on the base of abstract execution.
 
-5.) Having a simple domain specific language makes it easier and efficient to work with eTrice . With this enhancement the scope of use of eTrice will expand also it would become much handy for developers . Also it can be used by students in universities studying on Real-time Object Oriented Systems
+5.) Having a simple domain specific language makes it easier and more efficient to work with eTrice . With this enhancement the scope of use of eTrice will expand also it would become much handy for developers . Also it can be used by students in universities studying on Real-time Object Oriented Systems
 
 Description (by timeline)
 
