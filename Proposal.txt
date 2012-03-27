@@ -1,33 +1,47 @@
 Title : GENERIC ACTION CODE LANGUAGE
 
-Abstract : Generic Action Code Language project is around the eTrice project . The eTrice Project provides implementation of ROOM ( Real-time Object Oriented Modeling ) language . eTrice has both text and gui based environment to create models & program using ROOM . State machines might execute entry, exit or action codes. This code is written in the target language of the code generator. Currently the DetailCode is written in a string . The aim of GACL (Generic Action Code Language) project is to design a language to write DetailCode & develop converters from GACL to java and c/c++ . After that it will be integrated with ROOM in order to enhance eTrice
+Abstract : Generic Action Code Language project is around the eTrice project . The eTrice Project provides 
+implementation of ROOM ( Real-time Object Oriented Modeling ) language . eTrice has both text and gui based environment 
+to create models & program using ROOM . State machines might execute entry, exit or action codes. This code is written 
+in the target language of the code generator. Currently the DetailCode is written in a string . The aim of GACL (Generic 
+Action Code Language) project is to design a language to write DetailCode & develop converters from GACL to java and 
+c/c++ . After that it will be integrated with ROOM in order to enhance eTrice .
 
 Name and Contact Info
 
 Name : Satyender Yadav
-
 Email: satyenderyadav4993@gmail.com / cs1100250@cse.iitd.ac.in
-
 Institute : Indian Institute of Technology Delhi
-
 IRC: hckkid on freenode
-
 Phone: +91 9013298441
 
 Benefits to Community
 
-The eTrice project is largely for enterprise use and stands with softwares like Rational of IBM in modeling real-time systems . Although under development it is still one of most significant open source software in its field . Enhancing and making it a software able to compete other software of its kind is equal to unlocking a all new area for open source community .
-And the first one to take advantage of it would surely be eclipse . Such milestone surely gathers attention of a significant fraction of community towards it .
+The eTrice project is largely for enterprise use and stands with softwares like Rational of IBM in modeling real-time 
+systems . Although under development it is still one of most significant open source software in its field . Enhancing 
+and making it a software able to compete other software of its kind is equal to unlocking a all new area for open source
+community . The first one to take advantage of it would surely be eclipse . Such milestone surely gathers attention of 
+a significant fraction of community towards it .
 
 For developers/programmers who use eTrice there are following important benefits :-
 
-1.) Currently while using eTrice project whenever we need to define the code for action of an operation in ROOM in the target language . Writing this may appear easier in small Wizard for operation may seem fine but writing this in a string in DetailCode taking care of escape sequences is work not supposed to be done by humans . 
+1.) Currently while using eTrice project whenever we need to define the code for action of an operation in ROOM in 
+    the target language . Writing this may appear easier in small Wizard for operation may seem fine but writing this 
+    in a string in DetailCode taking care of escape sequences is work not supposed to be done by humans . 
 
-2.) It is good to shorten extensively used functions like System.out.println() , System.out.print() to simply printl() and print() functions which will work for cout of c++ too . Similarly substitute of printf functions too which is available both in java and c .
+2.) It is good to shorten extensively used functions like System.out.println() , System.out.print() to simply printl() 
+    and print() functions which will work for cout of c++ too . Similarly substitute of printf functions too which is 
+    available both in java and c .
 
-3.) The GACL would be designed in such a way that user would have to worry least about syntax and focus much more over semantics . This will be achieved by TIMTOWTDI (There Is More Than One Way Two Do It) approache followed by perl . But it would be strictly taken care while writing the grammar of GACL that it never becomes too cryptic like perl for even of 50 lines of code .
+3.) The GACL would be designed in such a way that user would have to worry least about syntax and focus much more over 
+    semantics . This will be achieved by TIMTOWTDI (There Is More Than One Way Two Do It) approache followed by perl . 
+    But it would be strictly taken care while writing the grammar of GACL that it never becomes too cryptic like perl 
+    for even of 50 lines of code .
 
-4.) Since even after integration of GACL in eTrice we would be still generating Java and C code from written program/model . So it would be taken care GACL has all features that are common in almost every imperative language and Syntax that would be used would be a hybrid of Java and C 's syntax in order to make it easy to remember and code . The basic features list is below
+4.) Since even after integration of GACL in eTrice we would be still generating Java and C code from written program/
+    model . So it would be taken care GACL has all features that are common in almost every imperative language and 
+    Syntax that would be used would be a hybrid of Java and C 's syntax in order to make it easy to remember and code . 
+    The basic features list is below
 
 	4.1) Variable Declarations ( with optional initializers ) and Function Declaration
 	4.2) Comparison & arithmetic expressions
@@ -38,100 +52,89 @@ For developers/programmers who use eTrice there are following important benefits
 	4.7) Function Calls with arguments & diff types i.e. ref/value/address .
 	4.8) type checking and as much as possible implicit type casting .
 	4.9) Casts corresponding to static casts in C .
-	4.10) Integration of the action language into the model would allow for extended model validation on the base of abstract execution.
+	4.10) Integration of the action language into the model would allow for extended model validation on the base of
+              abstract execution.
 
-5.) Having a simple domain specific language makes it easier and more efficient to work with eTrice . With this enhancement the scope of use of eTrice will expand also it would become much handy for developers . Also it can be used by students in universities studying on Real-time Object Oriented Systems
+5.) Having a simple domain specific language makes it easier and more efficient to work with eTrice . With this 
+    enhancement the scope of use of eTrice will expand also it would become much handy for developers . Also it can be 
+    used by students in universities studying on Real-time Object Oriented Systems
 
 Description (by timeline)
 
 April 23: Accepted student proposals announced
-
 April 24 - May 21 : Community Bonding period
-
 May 2 - May 10 : College major exams and practicals .
-
 July 9-13: Mid-term evaluation
-
 July 24: College classes start
-
 August 13 : Suggested Pencils down
-
 August 20 : Firm Pencils down
-
 August 24: Final Evaluation
 
-My college summer schedule starts early but ends early too. It starts 11 days before Google's Official 'coding starts' day. Summer ends 23 days before the suggested pencils down day I'll have a head start of about 20 days before the dates in the Google timeline. I plan to start coding after my college exams end on May 10. That will give me 8 weeks before mid-term evaluation. I intend to finish most of my project by mid-term evaluation. Testing, profiling and benchmarking will be carried out side by side coding.
+My college summer schedule starts early but ends early too. It starts 11 days before Google's Official 'coding starts' 
+day. Summer ends 23 days before the suggested pencils down day I'll have a head start of about 20 days before the dates 
+in the Google timeline. I plan to start coding after my college exams end on May 10. That will give me 8 weeks before 
+mid-term evaluation. I intend to finish most of my project by mid-term evaluation. Testing, profiling and benchmarking 
+will be carried out side by side coding.
 
 Here is a tentative week-by-week timeline.
 
 Week 1 (10th May - 16th May)
-
 Grammar using Xtext for primitive types and operations and their Xtend generator .
 
 Week 2 (17th May - 23nd May)
-
 Addition of Expressions and Variable Declarations .
 
 Week 3 (24rd May - 30th May)
-
 Addition of if-else , while and for loops .
 
 Week 4 (31st May - 6th June)
-
 Addition of for-each loops and its variants .
 
 Week 5 (7th June - 13th June)
-
 Function Declarations , Function Calls with arguments .
 
 Week 6 (14th June - 20th June)
-
 Type checking and type casting .
 
 Week 7 (21th June - 27th June)
-
 Rest of type casting with some static analysis .
 
 Week 8 (28th June - 4th July)
-
 Removing any bugs if exist in Xtend generator code .
 
 5th to 9th july
-
 Preaparing stable version for mid-term evaluation
 
 Mid-Term Evaluation (9th - 13th July)
-
 Week 9 and 10 (14th July - 27th July)
-
 Will add more functionalities that I come across later, through the mailing list or through my mentor.
-
-and start documentation also will make code more efficient wherever possible .
+And start documentation also will make code more efficient wherever possible .
 
 Week 11 and 12 (28th July - 13th august)
+Documentation Work . 
 
-Documentation Work . More than 40hours/week of work is assured. I have nothing planned for the summer .
+More than 40hours/week of work is assured. I have nothing else(other than GSOC) planned for the summer .
 
-Biographical Information
+Biographical Information :-
 
-I'm a Second year ( currently 4th semester ) undergraduate student pursuing Bachelors in Technology in the Indian Institute of Technology Delhi, in the department of Computer Science and Engineering.
+I'm a Second year ( currently 4th semester ) undergraduate student pursuing Bachelors in Technology in the Indian 
+Institute of Technology Delhi, in the department of Computer Science and Engineering.
 
-Relevant course I have taken are:
+Relevant course I have taken/completed are:
 
  CSL102 : Introduction to programming
-
  CSL201 : Data Structure and Algorithms
-
  CSL302 : Programming Languages
-
  CSP301 : Computer Science Practices (A practical course intended towards handling big projects)
 
-In a previous course, CSL102, I had implemented RSA encryption for 64-bit ints in python.
+In CSL102, I had implemented RSA encryption in python.
 
-As an assignment for CSL302, I had designed and implemented a tiny Prolog interpreter and compiler using ML-lex and ML-yacc .
+As an assignment for CSL302, I had designed and implemented a tiny Prolog interpreter and compiler using ML-lex and 
+ML-yacc .
 
-I work in both Windows7 and Linux(Familiar with most distros) .
+I work in both Windows7 and Linux(Familiar with most distros including openSUSE,fedora,ubuntu,backtrack,blackbuntu) .
 
 References
 
-[0] Bran Selic, Garth Gullekson, Paul T. Ward: Real-Time Object Oriented Modeling, New York: John Wiley, 1994 (ISBN 0-471-59917-4) 
+[0] Bran Selic, Garth Gullekson, Paul T. Ward: Real-Time Object Oriented Modeling, New York: John Wiley, 1994 
+    (ISBN 0-471-59917-4) 
