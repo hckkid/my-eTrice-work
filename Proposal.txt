@@ -1,21 +1,15 @@
-Title : GENERIC ACTION CODE LANGUAGE
+Title :- GENERIC ACTION CODE LANGUAGE
 
-Abstract : Generic Action Code Language project is around the eTrice project . The eTrice Project provides 
-implementation of ROOM ( Real-time Object Oriented Modeling ) language . eTrice has both text and gui based environment 
-to create models & program using ROOM . State machines might execute entry, exit or action codes. This code is written 
-in the target language of the code generator. Currently the DetailCode is written in a string . The aim of GACL (Generic 
-Action Code Language) project is to design a language to write DetailCode & develop converters from GACL to java and 
-c/c++ . After that it will be integrated with ROOM in order to enhance eTrice .
+Abstract :-
 
-Name and Contact Info
+Generic Action Code Language project is around the eTrice project . The eTrice Project provides implementation of ROOM 
+( Real-time Object Oriented Modeling ) language . eTrice has both text and gui based environment to create models & 
+program using ROOM . State machines might execute entry, exit or action codes. This code is written in the target 
+language of the code generator. Currently the DetailCode is written in a string . The aim of GACL (Generic Action Code 
+Language) project is to design a language to write DetailCode & develop converters from GACL to java and c/c++ . After 
+that it will be integrated with ROOM in order to enhance eTrice .
 
-Name : Satyender Yadav
-Email: satyenderyadav4993@gmail.com / cs1100250@cse.iitd.ac.in
-Institute : Indian Institute of Technology Delhi
-IRC: hckkid on freenode
-Phone: +91 9013298441
-
-Benefits to Community
+Detailed Information and Benefits to Community :-
 
 The eTrice project is largely for enterprise use and stands with softwares like Rational of IBM in modeling real-time 
 systems . Although under development it is still one of most significant open source software in its field . Enhancing 
@@ -59,7 +53,45 @@ For developers/programmers who use eTrice there are following important benefits
     enhancement the scope of use of eTrice will expand also it would become much handy for developers . Also it can be 
     used by students in universities studying on Real-time Object Oriented Systems
 
-Description (by timeline)
+Required Resources :-
+
+As it clear from the abstract of project the resources needed are just those needed to design and implement a simple
+imperative programming language . In this case we would go through documentation of c/c++ and java for few aspects
+such as operators , type checking , variable declaration etc their syntax and semantics in these languages . Then we
+would be using Xtext and Xtend to implement this language a reading of their documentation is also need . After all this
+we would integrate it with ROOM in eTrice , so documentation of eTrice and syntax & semantics for ROOM used in eTrice 
+will suffice . Although i have done much of above specified work already , but just to list resources required .
+I am using github.com (github.com/hckkid is my address on github) and would be commiting to it unless eclipse allows 
+commiting to eTrice's git repository . Lastly eclipse platform is needed for plugin development , design & implmentation
+of GACL which i already have too completely configured . A wiki page for project is also created which would be updated 
+regularly .
+
+Background :-
+
+As specified in required resources there is much of documentation reading required to do the best . So i will be spending 
+time till the start of GSoC program in reading these documentations . I would also give reading to javadoc in order to
+use it to generate documentation from source code . Although i would make a separate documentation with illustrations 
+too . Along with this learning more of eclipse plug-in development would be great , which i will do by reading and 
+dicussing with community through mailing lists and IRC channels . Thats all for having a strong background to do this 
+project .
+
+Deliverables :-
+
+Although these are much clear from detailed information , but i will list it briefly hereby .
+1.) Designing syntax of GACL and using Xtext to implement it .
+2.) Using Xtend to generate converter from GACL to JAVA,C/C++ .
+3.) Integration with ROOM in eTrice .
+4.) Enhancing the source by adding features , making it more effecient if time allows .
+
+Schedule (by timeline) :-
+
+Considering the features written in (4.) of Detailed Information section as milestones and Deliverable as phase of their 
+development ( with first three deliverables as necessary) , i have planned for each week of program and took care that 
+all milestones are indeed achived also within time limit . Each week is associated with one milestone . I would be doing 
+my work according to following plan for first 10 week , every week first of all first three phases of corresponding 
+milestone would be achieved in given sequence then despite of going to 4th phase after their completion we would start
+with next weeks work . In such a manner after all 10 milestones are finished with their necessary phases done . We would
+start with 4th phases of all milestones parallely with rest of work according to schedule that follows .
 
 April 23: Accepted student proposals announced
 April 24 - May 21 : Community Bonding period
@@ -78,59 +110,56 @@ will be carried out side by side coding.
 
 Here is a tentative week-by-week timeline.
 
-Week 1 (10th May - 16th May)
-Grammar using Xtext for primitive types and operations and their Xtend generator .
-
-Week 2 (17th May - 23nd May)
-Addition of Expressions and Variable Declarations .
-
-Week 3 (24rd May - 30th May)
-Addition of if-else , while and for loops .
-
-Week 4 (31st May - 6th June)
-Addition of for-each loops and its variants .
-
-Week 5 (7th June - 13th June)
-Function Declarations , Function Calls with arguments .
-
-Week 6 (14th June - 20th June)
-Type checking and type casting .
-
-Week 7 (21th June - 27th June)
-Rest of type casting with some static analysis .
-
-Week 8 (28th June - 4th July)
-Removing any bugs if exist in Xtend generator code .
-
-5th to 9th july
-Preaparing stable version for mid-term evaluation
-
+Week 1 (10th May - 16th May) : Grammar using Xtext for primitive types and operations and their Xtend generator .
+Week 2 (17th May - 23nd May) : Addition of Expressions and Variable Declarations .
+Week 3 (24rd May - 30th May) : Addition of if-else , while and for loops .
+Week 4 (31st May - 6th June) : Addition of for-each loops and its variants .
+Week 5 (7th June - 13th June) : Function Declarations , Function Calls with arguments .
+Week 6 (14th June - 20th June) : Type checking and type casting .
+Week 7 (21th June - 27th June) : Rest of type casting with some static analysis .
+Week 8 (28th June - 4th July) : Removing any bugs if exist in Xtend generator code .
+5th to 9th july : Preaparing stable version for mid-term evaluation (With first three milestones achieved in parallel)
 Mid-Term Evaluation (9th - 13th July)
-Week 9 and 10 (14th July - 27th July)
-Will add more functionalities that I come across later, through the mailing list or through my mentor.
-And start documentation also will make code more efficient wherever possible .
-
-Week 11 and 12 (28th July - 13th august)
-Documentation Work . 
+Week 9 and 10 (14th July - 27th July) : Will add more functionalities that I come across later, through the mailing list 
+or through my mentor . And start documentation also will make code more efficient wherever possible .
+Week 11 and 12 (28th July - 13th august) : Documentation Work . 
 
 More than 40hours/week of work is assured. I have nothing else(other than GSOC) planned for the summer .
 
-Biographical Information :-
+Contact & Biographical Information :-
+
+Name : Satyender Yadav
+Email: satyenderyadav4993@gmail.com / cs1100250@cse.iitd.ac.in
+Institute : Indian Institute of Technology Delhi
+IRC: hckkid on freenode
+Phone: +91 9013298441
 
 I'm a Second year ( currently 4th semester ) undergraduate student pursuing Bachelors in Technology in the Indian 
 Institute of Technology Delhi, in the department of Computer Science and Engineering.
-
 Relevant course I have taken/completed are:
-
- CSL102 : Introduction to programming
+ CSL102 : Introduction to programming (Rather it was more of functional programming as i have done programming at school)
  CSL201 : Data Structure and Algorithms
  CSL302 : Programming Languages
  CSP301 : Computer Science Practices (A practical course intended towards handling big projects)
-
+ CSL316 : Digital Hardware Design 
 In CSL102, I had implemented RSA encryption in python.
-
 As an assignment for CSL302, I had designed and implemented a tiny Prolog interpreter and compiler using ML-lex and 
 ML-yacc .
+In CSL201 i have made binary search trees , general trees , trees used for data compression , heap , traversals on trees
+graphs , dfs(depth first search) and bfs(breadth first search) on graphs , dijkstra , prim-jarnik and kruskal's 
+algorithms on graphs , evrything above mentioned in JAVA with generic classes , functions and interfaces .
+
+I am very good at programming language design and implementation . I have done implementation of Gentzen System of Logic
+in Standard ML which included development of a parser , tokenizer and validity tester function (which work as executer) .
+Importantly i have studied static analysis and implemented type checking rule . It was a part of assignments in CSL302 
+which i am currently studying during this semester . I have studied the Hopcroft & Ullman's introduction to automata 
+theory and familiar with most of programming languages concepts . In Digital Hardware Design (studying currently) course 
+we make state machines and models for system most of time , which is also done by ROOM also . So i find it easy to 
+understand ROOM . I have made Big Number package with fast multiply and divide , Multiplayer carrom over lan and 
+Institute room booking system in C ( jointly with my partner in course CSP301 as assignments with work equally divided) .
+It made me handy with C(imperative programming) and SVN (version controlling and collaboration) skills . I am expert in 
+Java as it can be seen from my work in CSL201 course .
+I think the above mentioned work and knowledge makes me a perfect choice for this project .
 
 I work in both Windows7 and Linux(Familiar with most distros including openSUSE,fedora,ubuntu,backtrack,blackbuntu) .
 
