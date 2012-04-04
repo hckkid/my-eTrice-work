@@ -2,36 +2,29 @@ grammar org.xtext.example.mydsl.GACL with org.eclipse.xtext.common.Terminals
 
 generate gACL "http://www.xtext.org/example/mydsl/GACL"
 
-PrimitiveType:
-	'PrimitiveType' name = ID
-;
-
 Program:
 	stmts += (Statement)*
 ;
+
 Statement:
-	Expression |
-	VarDecl |
-	Assignment
+	TypeDecl
 ;
 
-VarDecl:
-	name = ID
+
+PType:
+	type=intType | type=strType
+;
+terminal intType:
+	'int'
+;
+terminal strType:
+	'string'
+;
+TypeDecl:
+	(('type' | 'Type' | 'TYPE') typename=ID) | 
+	((('type' | 'Type' | 'TYPE'))? typename=ID ('=')? tpcode=typeCode )
 ;
 
-Assignment:
-	iden=Identifier '=' exp=Expression
-;
-
-Expression:
-	iden=Identifier |
-	'(' exp=Expression ')' |
-	'lambda' iden=Identifier '.' exp=Expression |
-	exp1=Expression exp2=Expression |
-	'if' cond=Expression 'then' exp1=Expression 'else' exp2=Expression |
-	'While' cond=Expression '{' prg=Program '}'
-;
-
-Identifier:
-	name = ID
+typeCode:
+	prm=PType
 ;

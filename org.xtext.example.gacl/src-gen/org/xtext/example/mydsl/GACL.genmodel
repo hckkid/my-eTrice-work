@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.xtext.example.gacl/src-gen"
+    editDirectory="/org.xtext.example.gacl.edit/src" editorDirectory="/org.xtext.example.gacl.editor/src"
+    modelPluginID="org.xtext.example.gacl" forceOverwrite="true" modelName="GACL"
+    updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.xtext.example.gacl.edit"
+    editorPluginID="org.xtext.example.gacl.editor">
+  <genPackages prefix="GACL" basePackage="org.xtext.example.mydsl" disposableProviderFactory="true"
+      ecorePackage="GACL.ecore#/">
+    <genClasses ecoreClass="GACL.ecore#//Program">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//Program/stmts"/>
+    </genClasses>
+    <genClasses ecoreClass="GACL.ecore#//Statement"/>
+    <genClasses ecoreClass="GACL.ecore#//PType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GACL.ecore#//PType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="GACL.ecore#//TypeDecl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GACL.ecore#//TypeDecl/typename"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//TypeDecl/tpcode"/>
+    </genClasses>
+    <genClasses ecoreClass="GACL.ecore#//typeCode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//typeCode/prm"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
