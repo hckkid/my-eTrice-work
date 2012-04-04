@@ -4,19 +4,17 @@ import com.google.inject.Inject;
 import com.google.inject.Provider;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
-import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
 import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.sequencer.AbstractSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
-import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
 import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.example.mydsl.gACL.GACLPackage;
 import org.xtext.example.mydsl.gACL.PType;
 import org.xtext.example.mydsl.gACL.Program;
 import org.xtext.example.mydsl.gACL.TypeDecl;
+import org.xtext.example.mydsl.gACL.element;
 import org.xtext.example.mydsl.gACL.typeCode;
 import org.xtext.example.mydsl.services.GACLGrammarAccess;
 
@@ -67,6 +65,12 @@ public class AbstractGACLSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
+			case GACLPackage.ELEMENT:
+				if(context == grammarAccess.getElementRule()) {
+					sequence_element(context, (element) semanticObject); 
+					return; 
+				}
+				else break;
 			case GACLPackage.TYPE_CODE:
 				if(context == grammarAccess.getTypeCodeRule()) {
 					sequence_typeCode(context, (typeCode) semanticObject); 
@@ -106,16 +110,18 @@ public class AbstractGACLSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     prm=PType
+	 *     ((elemname=ID typename=ID) | (elemname=ID prmtype=PType) | (elemname=ID typename=ID? (args+=ID args+=ID?)?))
+	 */
+	protected void sequence_element(EObject context, element semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (prm=PType | (elements+=element elements+=element?))
 	 */
 	protected void sequence_typeCode(EObject context, typeCode semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, GACLPackage.Literals.TYPE_CODE__PRM) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GACLPackage.Literals.TYPE_CODE__PRM));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getTypeCodeAccess().getPrmPTypeParserRuleCall_0(), semanticObject.getPrm());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 }

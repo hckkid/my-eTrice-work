@@ -18,5 +18,15 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="typeCode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="prm" eType="#//PType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//element" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elemname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typename" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="prmtype" eType="#//PType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="args" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

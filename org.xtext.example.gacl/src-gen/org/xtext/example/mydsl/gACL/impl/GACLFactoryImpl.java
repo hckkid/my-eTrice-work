@@ -73,6 +73,7 @@ public class GACLFactoryImpl extends EFactoryImpl implements GACLFactory
       case GACLPackage.PTYPE: return createPType();
       case GACLPackage.TYPE_DECL: return createTypeDecl();
       case GACLPackage.TYPE_CODE: return createtypeCode();
+      case GACLPackage.ELEMENT: return createelement();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -131,6 +132,17 @@ public class GACLFactoryImpl extends EFactoryImpl implements GACLFactory
   {
     typeCodeImpl typeCode = new typeCodeImpl();
     return typeCode;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public element createelement()
+  {
+    elementImpl element = new elementImpl();
+    return element;
   }
 
   /**

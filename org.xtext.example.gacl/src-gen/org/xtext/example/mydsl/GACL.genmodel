@@ -22,6 +22,13 @@
     </genClasses>
     <genClasses ecoreClass="GACL.ecore#//typeCode">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//typeCode/prm"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//typeCode/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="GACL.ecore#//element">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GACL.ecore#//element/elemname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GACL.ecore#//element/typename"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//element/prmtype"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GACL.ecore#//element/args"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

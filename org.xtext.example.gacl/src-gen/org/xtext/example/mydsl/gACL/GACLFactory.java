@@ -72,6 +72,15 @@ public interface GACLFactory extends EFactory
   typeCode createtypeCode();
 
   /**
+   * Returns a new object of class '<em>element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>element</em>'.
+   * @generated
+   */
+  element createelement();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

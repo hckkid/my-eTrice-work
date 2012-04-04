@@ -6,6 +6,8 @@
  */
 package org.xtext.example.mydsl.gACL;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -17,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.gACL.typeCode#getPrm <em>Prm</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.gACL.typeCode#getElements <em>Elements</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,5 +54,21 @@ public interface typeCode extends EObject
    * @generated
    */
   void setPrm(PType value);
+
+  /**
+   * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.mydsl.gACL.element}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Elements</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Elements</em>' containment reference list.
+   * @see org.xtext.example.mydsl.gACL.GACLPackage#gettypeCode_Elements()
+   * @model containment="true"
+   * @generated
+   */
+  EList<element> getElements();
 
 } // typeCode

@@ -10,21 +10,30 @@ Statement:
 	TypeDecl
 ;
 
-
 PType:
 	type=intType | type=strType
 ;
+
 terminal intType:
 	'int'
 ;
+
 terminal strType:
 	'string'
 ;
+
 TypeDecl:
-	(('type' | 'Type' | 'TYPE') typename=ID) | 
-	((('type' | 'Type' | 'TYPE'))? typename=ID ('=')? tpcode=typeCode )
-;
+	(('type' | 'Type' | 'TYPE') typename=ID) (';')? | 
+	((('type' | 'Type' | 'TYPE'))? typename=ID ('=')? tpcode=typeCode ) (';')?
+; 
 
 typeCode:
-	prm=PType
+	prm=PType |
+	'{' (elements+=element (',' elements+=element)?) '}'
+;
+
+element:
+	elemname=ID ':' typename=ID |
+	elemname=ID ':' prmtype=PType |
+	elemname=ID (':' typename=ID)? '(' ((args+=ID) (',' args+=ID)?)? ')'
 ;

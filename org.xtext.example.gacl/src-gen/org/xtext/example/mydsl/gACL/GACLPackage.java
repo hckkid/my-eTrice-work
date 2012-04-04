@@ -192,13 +192,77 @@ public interface GACLPackage extends EPackage
   int TYPE_CODE__PRM = 0;
 
   /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_CODE__ELEMENTS = 1;
+
+  /**
    * The number of structural features of the '<em>type Code</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_CODE_FEATURE_COUNT = 1;
+  int TYPE_CODE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.gACL.impl.elementImpl <em>element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.gACL.impl.elementImpl
+   * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getelement()
+   * @generated
+   */
+  int ELEMENT = 5;
+
+  /**
+   * The feature id for the '<em><b>Elemname</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT__ELEMNAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Typename</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT__TYPENAME = 1;
+
+  /**
+   * The feature id for the '<em><b>Prmtype</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT__PRMTYPE = 2;
+
+  /**
+   * The feature id for the '<em><b>Args</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT__ARGS = 3;
+
+  /**
+   * The number of structural features of the '<em>element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_FEATURE_COUNT = 4;
 
 
   /**
@@ -305,6 +369,71 @@ public interface GACLPackage extends EPackage
    * @generated
    */
   EReference gettypeCode_Prm();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.gACL.typeCode#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see org.xtext.example.mydsl.gACL.typeCode#getElements()
+   * @see #gettypeCode()
+   * @generated
+   */
+  EReference gettypeCode_Elements();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.gACL.element <em>element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>element</em>'.
+   * @see org.xtext.example.mydsl.gACL.element
+   * @generated
+   */
+  EClass getelement();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.gACL.element#getElemname <em>Elemname</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Elemname</em>'.
+   * @see org.xtext.example.mydsl.gACL.element#getElemname()
+   * @see #getelement()
+   * @generated
+   */
+  EAttribute getelement_Elemname();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.gACL.element#getTypename <em>Typename</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Typename</em>'.
+   * @see org.xtext.example.mydsl.gACL.element#getTypename()
+   * @see #getelement()
+   * @generated
+   */
+  EAttribute getelement_Typename();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.gACL.element#getPrmtype <em>Prmtype</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Prmtype</em>'.
+   * @see org.xtext.example.mydsl.gACL.element#getPrmtype()
+   * @see #getelement()
+   * @generated
+   */
+  EReference getelement_Prmtype();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.xtext.example.mydsl.gACL.element#getArgs <em>Args</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Args</em>'.
+   * @see org.xtext.example.mydsl.gACL.element#getArgs()
+   * @see #getelement()
+   * @generated
+   */
+  EAttribute getelement_Args();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -418,6 +547,56 @@ public interface GACLPackage extends EPackage
      * @generated
      */
     EReference TYPE_CODE__PRM = eINSTANCE.gettypeCode_Prm();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_CODE__ELEMENTS = eINSTANCE.gettypeCode_Elements();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.gACL.impl.elementImpl <em>element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.gACL.impl.elementImpl
+     * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getelement()
+     * @generated
+     */
+    EClass ELEMENT = eINSTANCE.getelement();
+
+    /**
+     * The meta object literal for the '<em><b>Elemname</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ELEMENT__ELEMNAME = eINSTANCE.getelement_Elemname();
+
+    /**
+     * The meta object literal for the '<em><b>Typename</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ELEMENT__TYPENAME = eINSTANCE.getelement_Typename();
+
+    /**
+     * The meta object literal for the '<em><b>Prmtype</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ELEMENT__PRMTYPE = eINSTANCE.getelement_Prmtype();
+
+    /**
+     * The meta object literal for the '<em><b>Args</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ELEMENT__ARGS = eINSTANCE.getelement_Args();
 
   }
 

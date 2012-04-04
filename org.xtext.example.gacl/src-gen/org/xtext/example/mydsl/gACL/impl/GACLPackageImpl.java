@@ -19,6 +19,7 @@ import org.xtext.example.mydsl.gACL.PType;
 import org.xtext.example.mydsl.gACL.Program;
 import org.xtext.example.mydsl.gACL.Statement;
 import org.xtext.example.mydsl.gACL.TypeDecl;
+import org.xtext.example.mydsl.gACL.element;
 import org.xtext.example.mydsl.gACL.typeCode;
 
 /**
@@ -63,6 +64,13 @@ public class GACLPackageImpl extends EPackageImpl implements GACLPackage
    * @generated
    */
   private EClass typeCodeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass elementEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -232,6 +240,66 @@ public class GACLPackageImpl extends EPackageImpl implements GACLPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference gettypeCode_Elements()
+  {
+    return (EReference)typeCodeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getelement()
+  {
+    return elementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getelement_Elemname()
+  {
+    return (EAttribute)elementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getelement_Typename()
+  {
+    return (EAttribute)elementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getelement_Prmtype()
+  {
+    return (EReference)elementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getelement_Args()
+  {
+    return (EAttribute)elementEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public GACLFactory getGACLFactory()
   {
     return (GACLFactory)getEFactoryInstance();
@@ -271,6 +339,13 @@ public class GACLPackageImpl extends EPackageImpl implements GACLPackage
 
     typeCodeEClass = createEClass(TYPE_CODE);
     createEReference(typeCodeEClass, TYPE_CODE__PRM);
+    createEReference(typeCodeEClass, TYPE_CODE__ELEMENTS);
+
+    elementEClass = createEClass(ELEMENT);
+    createEAttribute(elementEClass, ELEMENT__ELEMNAME);
+    createEAttribute(elementEClass, ELEMENT__TYPENAME);
+    createEReference(elementEClass, ELEMENT__PRMTYPE);
+    createEAttribute(elementEClass, ELEMENT__ARGS);
   }
 
   /**
@@ -319,6 +394,13 @@ public class GACLPackageImpl extends EPackageImpl implements GACLPackage
 
     initEClass(typeCodeEClass, typeCode.class, "typeCode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(gettypeCode_Prm(), this.getPType(), null, "prm", null, 0, 1, typeCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(gettypeCode_Elements(), this.getelement(), null, "elements", null, 0, -1, typeCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(elementEClass, element.class, "element", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getelement_Elemname(), ecorePackage.getEString(), "elemname", null, 0, 1, element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getelement_Typename(), ecorePackage.getEString(), "typename", null, 0, 1, element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getelement_Prmtype(), this.getPType(), null, "prmtype", null, 0, 1, element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getelement_Args(), ecorePackage.getEString(), "args", null, 0, -1, element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);
