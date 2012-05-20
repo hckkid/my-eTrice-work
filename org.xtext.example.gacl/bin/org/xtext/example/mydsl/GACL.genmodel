@@ -9,26 +9,62 @@
     editorPluginID="org.xtext.example.gacl.editor">
   <genPackages prefix="GACL" basePackage="org.xtext.example.mydsl" disposableProviderFactory="true"
       ecorePackage="GACL.ecore#/">
-    <genClasses ecoreClass="GACL.ecore#//Program">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//Program/stmts"/>
+    <genClasses ecoreClass="GACL.ecore#//DetailCode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//DetailCode/stmts"/>
     </genClasses>
-    <genClasses ecoreClass="GACL.ecore#//Statement"/>
+    <genClasses ecoreClass="GACL.ecore#//Statement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//Statement/td"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//Statement/vd"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//Statement/vin"/>
+    </genClasses>
+    <genClasses ecoreClass="GACL.ecore#//VarDecl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GACL.ecore#//VarDecl/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//VarDecl/pt"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GACL.ecore#//VarDecl/td"/>
+    </genClasses>
     <genClasses ecoreClass="GACL.ecore#//PType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GACL.ecore#//PType/type"/>
     </genClasses>
     <genClasses ecoreClass="GACL.ecore#//TypeDecl">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GACL.ecore#//TypeDecl/typename"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//TypeDecl/tpcode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GACL.ecore#//TypeDecl/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//TypeDecl/tp"/>
     </genClasses>
-    <genClasses ecoreClass="GACL.ecore#//typeCode">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//typeCode/prm"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//typeCode/elements"/>
+    <genClasses ecoreClass="GACL.ecore#//VarInst">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GACL.ecore#//VarInst/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//VarInst/strexp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//VarInst/inexp"/>
     </genClasses>
-    <genClasses ecoreClass="GACL.ecore#//element">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GACL.ecore#//element/elemname"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GACL.ecore#//element/typename"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//element/prmtype"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GACL.ecore#//element/args"/>
+    <genClasses ecoreClass="GACL.ecore#//StringExpression"/>
+    <genClasses ecoreClass="GACL.ecore#//StringLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GACL.ecore#//StringLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="GACL.ecore#//IntExpression"/>
+    <genClasses ecoreClass="GACL.ecore#//IntLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GACL.ecore#//IntLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="GACL.ecore#//Concat">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//Concat/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//Concat/right"/>
+    </genClasses>
+    <genClasses ecoreClass="GACL.ecore#//Subtraction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//Subtraction/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//Subtraction/right"/>
+    </genClasses>
+    <genClasses ecoreClass="GACL.ecore#//Addition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//Addition/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//Addition/right"/>
+    </genClasses>
+    <genClasses ecoreClass="GACL.ecore#//Multiplication">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//Multiplication/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//Multiplication/right"/>
+    </genClasses>
+    <genClasses ecoreClass="GACL.ecore#//Division">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//Division/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//Division/right"/>
+    </genClasses>
+    <genClasses ecoreClass="GACL.ecore#//PowerOf">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//PowerOf/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GACL.ecore#//PowerOf/right"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

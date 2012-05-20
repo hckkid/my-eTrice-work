@@ -68,12 +68,22 @@ public class GACLFactoryImpl extends EFactoryImpl implements GACLFactory
   {
     switch (eClass.getClassifierID())
     {
-      case GACLPackage.PROGRAM: return createProgram();
+      case GACLPackage.DETAIL_CODE: return createDetailCode();
       case GACLPackage.STATEMENT: return createStatement();
+      case GACLPackage.VAR_DECL: return createVarDecl();
       case GACLPackage.PTYPE: return createPType();
       case GACLPackage.TYPE_DECL: return createTypeDecl();
-      case GACLPackage.TYPE_CODE: return createtypeCode();
-      case GACLPackage.ELEMENT: return createelement();
+      case GACLPackage.VAR_INST: return createVarInst();
+      case GACLPackage.STRING_EXPRESSION: return createStringExpression();
+      case GACLPackage.STRING_LITERAL: return createStringLiteral();
+      case GACLPackage.INT_EXPRESSION: return createIntExpression();
+      case GACLPackage.INT_LITERAL: return createIntLiteral();
+      case GACLPackage.CONCAT: return createConcat();
+      case GACLPackage.SUBTRACTION: return createSubtraction();
+      case GACLPackage.ADDITION: return createAddition();
+      case GACLPackage.MULTIPLICATION: return createMultiplication();
+      case GACLPackage.DIVISION: return createDivision();
+      case GACLPackage.POWER_OF: return createPowerOf();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -84,10 +94,10 @@ public class GACLFactoryImpl extends EFactoryImpl implements GACLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Program createProgram()
+  public DetailCode createDetailCode()
   {
-    ProgramImpl program = new ProgramImpl();
-    return program;
+    DetailCodeImpl detailCode = new DetailCodeImpl();
+    return detailCode;
   }
 
   /**
@@ -99,6 +109,17 @@ public class GACLFactoryImpl extends EFactoryImpl implements GACLFactory
   {
     StatementImpl statement = new StatementImpl();
     return statement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VarDecl createVarDecl()
+  {
+    VarDeclImpl varDecl = new VarDeclImpl();
+    return varDecl;
   }
 
   /**
@@ -128,10 +149,10 @@ public class GACLFactoryImpl extends EFactoryImpl implements GACLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public typeCode createtypeCode()
+  public VarInst createVarInst()
   {
-    typeCodeImpl typeCode = new typeCodeImpl();
-    return typeCode;
+    VarInstImpl varInst = new VarInstImpl();
+    return varInst;
   }
 
   /**
@@ -139,10 +160,109 @@ public class GACLFactoryImpl extends EFactoryImpl implements GACLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public element createelement()
+  public StringExpression createStringExpression()
   {
-    elementImpl element = new elementImpl();
-    return element;
+    StringExpressionImpl stringExpression = new StringExpressionImpl();
+    return stringExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringLiteral createStringLiteral()
+  {
+    StringLiteralImpl stringLiteral = new StringLiteralImpl();
+    return stringLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IntExpression createIntExpression()
+  {
+    IntExpressionImpl intExpression = new IntExpressionImpl();
+    return intExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IntLiteral createIntLiteral()
+  {
+    IntLiteralImpl intLiteral = new IntLiteralImpl();
+    return intLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Concat createConcat()
+  {
+    ConcatImpl concat = new ConcatImpl();
+    return concat;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Subtraction createSubtraction()
+  {
+    SubtractionImpl subtraction = new SubtractionImpl();
+    return subtraction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Addition createAddition()
+  {
+    AdditionImpl addition = new AdditionImpl();
+    return addition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Multiplication createMultiplication()
+  {
+    MultiplicationImpl multiplication = new MultiplicationImpl();
+    return multiplication;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Division createDivision()
+  {
+    DivisionImpl division = new DivisionImpl();
+    return division;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PowerOf createPowerOf()
+  {
+    PowerOfImpl powerOf = new PowerOfImpl();
+    return powerOf;
   }
 
   /**

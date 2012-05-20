@@ -61,14 +61,14 @@ public interface GACLPackage extends EPackage
   GACLPackage eINSTANCE = org.xtext.example.mydsl.gACL.impl.GACLPackageImpl.init();
 
   /**
-   * The meta object id for the '{@link org.xtext.example.mydsl.gACL.impl.ProgramImpl <em>Program</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.mydsl.gACL.impl.DetailCodeImpl <em>Detail Code</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl.gACL.impl.ProgramImpl
-   * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getProgram()
+   * @see org.xtext.example.mydsl.gACL.impl.DetailCodeImpl
+   * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getDetailCode()
    * @generated
    */
-  int PROGRAM = 0;
+  int DETAIL_CODE = 0;
 
   /**
    * The feature id for the '<em><b>Stmts</b></em>' containment reference list.
@@ -77,16 +77,16 @@ public interface GACLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROGRAM__STMTS = 0;
+  int DETAIL_CODE__STMTS = 0;
 
   /**
-   * The number of structural features of the '<em>Program</em>' class.
+   * The number of structural features of the '<em>Detail Code</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROGRAM_FEATURE_COUNT = 1;
+  int DETAIL_CODE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.gACL.impl.StatementImpl <em>Statement</em>}' class.
@@ -99,13 +99,86 @@ public interface GACLPackage extends EPackage
   int STATEMENT = 1;
 
   /**
+   * The feature id for the '<em><b>Td</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__TD = 0;
+
+  /**
+   * The feature id for the '<em><b>Vd</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__VD = 1;
+
+  /**
+   * The feature id for the '<em><b>Vin</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__VIN = 2;
+
+  /**
    * The number of structural features of the '<em>Statement</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATEMENT_FEATURE_COUNT = 0;
+  int STATEMENT_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.gACL.impl.VarDeclImpl <em>Var Decl</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.gACL.impl.VarDeclImpl
+   * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getVarDecl()
+   * @generated
+   */
+  int VAR_DECL = 2;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VAR_DECL__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Pt</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VAR_DECL__PT = 1;
+
+  /**
+   * The feature id for the '<em><b>Td</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VAR_DECL__TD = 2;
+
+  /**
+   * The number of structural features of the '<em>Var Decl</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VAR_DECL_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.gACL.impl.PTypeImpl <em>PType</em>}' class.
@@ -115,7 +188,7 @@ public interface GACLPackage extends EPackage
    * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getPType()
    * @generated
    */
-  int PTYPE = 2;
+  int PTYPE = 3;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -143,25 +216,25 @@ public interface GACLPackage extends EPackage
    * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getTypeDecl()
    * @generated
    */
-  int TYPE_DECL = 3;
+  int TYPE_DECL = 4;
 
   /**
-   * The feature id for the '<em><b>Typename</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_DECL__TYPENAME = STATEMENT_FEATURE_COUNT + 0;
+  int TYPE_DECL__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Tpcode</b></em>' containment reference.
+   * The feature id for the '<em><b>Tp</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_DECL__TPCODE = STATEMENT_FEATURE_COUNT + 1;
+  int TYPE_DECL__TP = 1;
 
   /**
    * The number of structural features of the '<em>Type Decl</em>' class.
@@ -170,121 +243,391 @@ public interface GACLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE_DECL_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
+  int TYPE_DECL_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.mydsl.gACL.impl.typeCodeImpl <em>type Code</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.mydsl.gACL.impl.VarInstImpl <em>Var Inst</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl.gACL.impl.typeCodeImpl
-   * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#gettypeCode()
+   * @see org.xtext.example.mydsl.gACL.impl.VarInstImpl
+   * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getVarInst()
    * @generated
    */
-  int TYPE_CODE = 4;
+  int VAR_INST = 5;
 
   /**
-   * The feature id for the '<em><b>Prm</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_CODE__PRM = 0;
-
-  /**
-   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * The feature id for the '<em><b>Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_CODE__ELEMENTS = 1;
+  int VAR_INST__NAME = 0;
 
   /**
-   * The number of structural features of the '<em>type Code</em>' class.
+   * The feature id for the '<em><b>Strexp</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_CODE_FEATURE_COUNT = 2;
+  int VAR_INST__STREXP = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.mydsl.gACL.impl.elementImpl <em>element</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl.gACL.impl.elementImpl
-   * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getelement()
-   * @generated
-   */
-  int ELEMENT = 5;
-
-  /**
-   * The feature id for the '<em><b>Elemname</b></em>' attribute.
+   * The feature id for the '<em><b>Inexp</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELEMENT__ELEMNAME = 0;
+  int VAR_INST__INEXP = 2;
 
   /**
-   * The feature id for the '<em><b>Typename</b></em>' attribute.
+   * The number of structural features of the '<em>Var Inst</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELEMENT__TYPENAME = 1;
+  int VAR_INST_FEATURE_COUNT = 3;
 
   /**
-   * The feature id for the '<em><b>Prmtype</b></em>' containment reference.
+   * The meta object id for the '{@link org.xtext.example.mydsl.gACL.impl.StringExpressionImpl <em>String Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.gACL.impl.StringExpressionImpl
+   * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getStringExpression()
+   * @generated
+   */
+  int STRING_EXPRESSION = 6;
+
+  /**
+   * The number of structural features of the '<em>String Expression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELEMENT__PRMTYPE = 2;
+  int STRING_EXPRESSION_FEATURE_COUNT = 0;
 
   /**
-   * The feature id for the '<em><b>Args</b></em>' attribute list.
+   * The meta object id for the '{@link org.xtext.example.mydsl.gACL.impl.StringLiteralImpl <em>String Literal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.gACL.impl.StringLiteralImpl
+   * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getStringLiteral()
+   * @generated
+   */
+  int STRING_LITERAL = 7;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELEMENT__ARGS = 3;
+  int STRING_LITERAL__VALUE = STRING_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>element</em>' class.
+   * The number of structural features of the '<em>String Literal</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELEMENT_FEATURE_COUNT = 4;
-
+  int STRING_LITERAL_FEATURE_COUNT = STRING_EXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl.gACL.Program <em>Program</em>}'.
+   * The meta object id for the '{@link org.xtext.example.mydsl.gACL.impl.IntExpressionImpl <em>Int Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Program</em>'.
-   * @see org.xtext.example.mydsl.gACL.Program
+   * @see org.xtext.example.mydsl.gACL.impl.IntExpressionImpl
+   * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getIntExpression()
    * @generated
    */
-  EClass getProgram();
+  int INT_EXPRESSION = 8;
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.gACL.Program#getStmts <em>Stmts</em>}'.
+   * The number of structural features of the '<em>Int Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INT_EXPRESSION_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.gACL.impl.IntLiteralImpl <em>Int Literal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.gACL.impl.IntLiteralImpl
+   * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getIntLiteral()
+   * @generated
+   */
+  int INT_LITERAL = 9;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INT_LITERAL__VALUE = INT_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Int Literal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INT_LITERAL_FEATURE_COUNT = INT_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.gACL.impl.ConcatImpl <em>Concat</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.gACL.impl.ConcatImpl
+   * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getConcat()
+   * @generated
+   */
+  int CONCAT = 10;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONCAT__LEFT = STRING_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONCAT__RIGHT = STRING_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Concat</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONCAT_FEATURE_COUNT = STRING_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.gACL.impl.SubtractionImpl <em>Subtraction</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.gACL.impl.SubtractionImpl
+   * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getSubtraction()
+   * @generated
+   */
+  int SUBTRACTION = 11;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBTRACTION__LEFT = INT_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBTRACTION__RIGHT = INT_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Subtraction</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBTRACTION_FEATURE_COUNT = INT_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.gACL.impl.AdditionImpl <em>Addition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.gACL.impl.AdditionImpl
+   * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getAddition()
+   * @generated
+   */
+  int ADDITION = 12;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITION__LEFT = INT_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITION__RIGHT = INT_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Addition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDITION_FEATURE_COUNT = INT_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.gACL.impl.MultiplicationImpl <em>Multiplication</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.gACL.impl.MultiplicationImpl
+   * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getMultiplication()
+   * @generated
+   */
+  int MULTIPLICATION = 13;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATION__LEFT = INT_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATION__RIGHT = INT_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Multiplication</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICATION_FEATURE_COUNT = INT_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.gACL.impl.DivisionImpl <em>Division</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.gACL.impl.DivisionImpl
+   * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getDivision()
+   * @generated
+   */
+  int DIVISION = 14;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION__LEFT = INT_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION__RIGHT = INT_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Division</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIVISION_FEATURE_COUNT = INT_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.gACL.impl.PowerOfImpl <em>Power Of</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.gACL.impl.PowerOfImpl
+   * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getPowerOf()
+   * @generated
+   */
+  int POWER_OF = 15;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POWER_OF__LEFT = INT_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POWER_OF__RIGHT = INT_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Power Of</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POWER_OF_FEATURE_COUNT = INT_EXPRESSION_FEATURE_COUNT + 2;
+
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.gACL.DetailCode <em>Detail Code</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Detail Code</em>'.
+   * @see org.xtext.example.mydsl.gACL.DetailCode
+   * @generated
+   */
+  EClass getDetailCode();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.gACL.DetailCode#getStmts <em>Stmts</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Stmts</em>'.
-   * @see org.xtext.example.mydsl.gACL.Program#getStmts()
-   * @see #getProgram()
+   * @see org.xtext.example.mydsl.gACL.DetailCode#getStmts()
+   * @see #getDetailCode()
    * @generated
    */
-  EReference getProgram_Stmts();
+  EReference getDetailCode_Stmts();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.gACL.Statement <em>Statement</em>}'.
@@ -295,6 +638,82 @@ public interface GACLPackage extends EPackage
    * @generated
    */
   EClass getStatement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.gACL.Statement#getTd <em>Td</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Td</em>'.
+   * @see org.xtext.example.mydsl.gACL.Statement#getTd()
+   * @see #getStatement()
+   * @generated
+   */
+  EReference getStatement_Td();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.gACL.Statement#getVd <em>Vd</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Vd</em>'.
+   * @see org.xtext.example.mydsl.gACL.Statement#getVd()
+   * @see #getStatement()
+   * @generated
+   */
+  EReference getStatement_Vd();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.gACL.Statement#getVin <em>Vin</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Vin</em>'.
+   * @see org.xtext.example.mydsl.gACL.Statement#getVin()
+   * @see #getStatement()
+   * @generated
+   */
+  EReference getStatement_Vin();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.gACL.VarDecl <em>Var Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Var Decl</em>'.
+   * @see org.xtext.example.mydsl.gACL.VarDecl
+   * @generated
+   */
+  EClass getVarDecl();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.gACL.VarDecl#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.mydsl.gACL.VarDecl#getName()
+   * @see #getVarDecl()
+   * @generated
+   */
+  EAttribute getVarDecl_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.gACL.VarDecl#getPt <em>Pt</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Pt</em>'.
+   * @see org.xtext.example.mydsl.gACL.VarDecl#getPt()
+   * @see #getVarDecl()
+   * @generated
+   */
+  EReference getVarDecl_Pt();
+
+  /**
+   * Returns the meta object for the reference '{@link org.xtext.example.mydsl.gACL.VarDecl#getTd <em>Td</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Td</em>'.
+   * @see org.xtext.example.mydsl.gACL.VarDecl#getTd()
+   * @see #getVarDecl()
+   * @generated
+   */
+  EReference getVarDecl_Td();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.gACL.PType <em>PType</em>}'.
@@ -328,112 +747,323 @@ public interface GACLPackage extends EPackage
   EClass getTypeDecl();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.gACL.TypeDecl#getTypename <em>Typename</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.gACL.TypeDecl#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Typename</em>'.
-   * @see org.xtext.example.mydsl.gACL.TypeDecl#getTypename()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.mydsl.gACL.TypeDecl#getName()
    * @see #getTypeDecl()
    * @generated
    */
-  EAttribute getTypeDecl_Typename();
+  EAttribute getTypeDecl_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.gACL.TypeDecl#getTpcode <em>Tpcode</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.gACL.TypeDecl#getTp <em>Tp</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Tpcode</em>'.
-   * @see org.xtext.example.mydsl.gACL.TypeDecl#getTpcode()
+   * @return the meta object for the containment reference '<em>Tp</em>'.
+   * @see org.xtext.example.mydsl.gACL.TypeDecl#getTp()
    * @see #getTypeDecl()
    * @generated
    */
-  EReference getTypeDecl_Tpcode();
+  EReference getTypeDecl_Tp();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl.gACL.typeCode <em>type Code</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.gACL.VarInst <em>Var Inst</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>type Code</em>'.
-   * @see org.xtext.example.mydsl.gACL.typeCode
+   * @return the meta object for class '<em>Var Inst</em>'.
+   * @see org.xtext.example.mydsl.gACL.VarInst
    * @generated
    */
-  EClass gettypeCode();
+  EClass getVarInst();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.gACL.typeCode#getPrm <em>Prm</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.example.mydsl.gACL.VarInst#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Prm</em>'.
-   * @see org.xtext.example.mydsl.gACL.typeCode#getPrm()
-   * @see #gettypeCode()
+   * @return the meta object for the reference '<em>Name</em>'.
+   * @see org.xtext.example.mydsl.gACL.VarInst#getName()
+   * @see #getVarInst()
    * @generated
    */
-  EReference gettypeCode_Prm();
+  EReference getVarInst_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.gACL.typeCode#getElements <em>Elements</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.gACL.VarInst#getStrexp <em>Strexp</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Elements</em>'.
-   * @see org.xtext.example.mydsl.gACL.typeCode#getElements()
-   * @see #gettypeCode()
+   * @return the meta object for the containment reference '<em>Strexp</em>'.
+   * @see org.xtext.example.mydsl.gACL.VarInst#getStrexp()
+   * @see #getVarInst()
    * @generated
    */
-  EReference gettypeCode_Elements();
+  EReference getVarInst_Strexp();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl.gACL.element <em>element</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.gACL.VarInst#getInexp <em>Inexp</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>element</em>'.
-   * @see org.xtext.example.mydsl.gACL.element
+   * @return the meta object for the containment reference '<em>Inexp</em>'.
+   * @see org.xtext.example.mydsl.gACL.VarInst#getInexp()
+   * @see #getVarInst()
    * @generated
    */
-  EClass getelement();
+  EReference getVarInst_Inexp();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.gACL.element#getElemname <em>Elemname</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.gACL.StringExpression <em>String Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Elemname</em>'.
-   * @see org.xtext.example.mydsl.gACL.element#getElemname()
-   * @see #getelement()
+   * @return the meta object for class '<em>String Expression</em>'.
+   * @see org.xtext.example.mydsl.gACL.StringExpression
    * @generated
    */
-  EAttribute getelement_Elemname();
+  EClass getStringExpression();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.gACL.element#getTypename <em>Typename</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.gACL.StringLiteral <em>String Literal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Typename</em>'.
-   * @see org.xtext.example.mydsl.gACL.element#getTypename()
-   * @see #getelement()
+   * @return the meta object for class '<em>String Literal</em>'.
+   * @see org.xtext.example.mydsl.gACL.StringLiteral
    * @generated
    */
-  EAttribute getelement_Typename();
+  EClass getStringLiteral();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.gACL.element#getPrmtype <em>Prmtype</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.gACL.StringLiteral#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Prmtype</em>'.
-   * @see org.xtext.example.mydsl.gACL.element#getPrmtype()
-   * @see #getelement()
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.xtext.example.mydsl.gACL.StringLiteral#getValue()
+   * @see #getStringLiteral()
    * @generated
    */
-  EReference getelement_Prmtype();
+  EAttribute getStringLiteral_Value();
 
   /**
-   * Returns the meta object for the attribute list '{@link org.xtext.example.mydsl.gACL.element#getArgs <em>Args</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.gACL.IntExpression <em>Int Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Args</em>'.
-   * @see org.xtext.example.mydsl.gACL.element#getArgs()
-   * @see #getelement()
+   * @return the meta object for class '<em>Int Expression</em>'.
+   * @see org.xtext.example.mydsl.gACL.IntExpression
    * @generated
    */
-  EAttribute getelement_Args();
+  EClass getIntExpression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.gACL.IntLiteral <em>Int Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Int Literal</em>'.
+   * @see org.xtext.example.mydsl.gACL.IntLiteral
+   * @generated
+   */
+  EClass getIntLiteral();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.gACL.IntLiteral#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.xtext.example.mydsl.gACL.IntLiteral#getValue()
+   * @see #getIntLiteral()
+   * @generated
+   */
+  EAttribute getIntLiteral_Value();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.gACL.Concat <em>Concat</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Concat</em>'.
+   * @see org.xtext.example.mydsl.gACL.Concat
+   * @generated
+   */
+  EClass getConcat();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.gACL.Concat#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.xtext.example.mydsl.gACL.Concat#getLeft()
+   * @see #getConcat()
+   * @generated
+   */
+  EReference getConcat_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.gACL.Concat#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.xtext.example.mydsl.gACL.Concat#getRight()
+   * @see #getConcat()
+   * @generated
+   */
+  EReference getConcat_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.gACL.Subtraction <em>Subtraction</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Subtraction</em>'.
+   * @see org.xtext.example.mydsl.gACL.Subtraction
+   * @generated
+   */
+  EClass getSubtraction();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.gACL.Subtraction#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.xtext.example.mydsl.gACL.Subtraction#getLeft()
+   * @see #getSubtraction()
+   * @generated
+   */
+  EReference getSubtraction_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.gACL.Subtraction#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.xtext.example.mydsl.gACL.Subtraction#getRight()
+   * @see #getSubtraction()
+   * @generated
+   */
+  EReference getSubtraction_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.gACL.Addition <em>Addition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Addition</em>'.
+   * @see org.xtext.example.mydsl.gACL.Addition
+   * @generated
+   */
+  EClass getAddition();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.gACL.Addition#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.xtext.example.mydsl.gACL.Addition#getLeft()
+   * @see #getAddition()
+   * @generated
+   */
+  EReference getAddition_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.gACL.Addition#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.xtext.example.mydsl.gACL.Addition#getRight()
+   * @see #getAddition()
+   * @generated
+   */
+  EReference getAddition_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.gACL.Multiplication <em>Multiplication</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Multiplication</em>'.
+   * @see org.xtext.example.mydsl.gACL.Multiplication
+   * @generated
+   */
+  EClass getMultiplication();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.gACL.Multiplication#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.xtext.example.mydsl.gACL.Multiplication#getLeft()
+   * @see #getMultiplication()
+   * @generated
+   */
+  EReference getMultiplication_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.gACL.Multiplication#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.xtext.example.mydsl.gACL.Multiplication#getRight()
+   * @see #getMultiplication()
+   * @generated
+   */
+  EReference getMultiplication_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.gACL.Division <em>Division</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Division</em>'.
+   * @see org.xtext.example.mydsl.gACL.Division
+   * @generated
+   */
+  EClass getDivision();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.gACL.Division#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.xtext.example.mydsl.gACL.Division#getLeft()
+   * @see #getDivision()
+   * @generated
+   */
+  EReference getDivision_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.gACL.Division#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.xtext.example.mydsl.gACL.Division#getRight()
+   * @see #getDivision()
+   * @generated
+   */
+  EReference getDivision_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.gACL.PowerOf <em>Power Of</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Power Of</em>'.
+   * @see org.xtext.example.mydsl.gACL.PowerOf
+   * @generated
+   */
+  EClass getPowerOf();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.gACL.PowerOf#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see org.xtext.example.mydsl.gACL.PowerOf#getLeft()
+   * @see #getPowerOf()
+   * @generated
+   */
+  EReference getPowerOf_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.gACL.PowerOf#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.xtext.example.mydsl.gACL.PowerOf#getRight()
+   * @see #getPowerOf()
+   * @generated
+   */
+  EReference getPowerOf_Right();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -459,14 +1089,14 @@ public interface GACLPackage extends EPackage
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl.gACL.impl.ProgramImpl <em>Program</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.mydsl.gACL.impl.DetailCodeImpl <em>Detail Code</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl.gACL.impl.ProgramImpl
-     * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getProgram()
+     * @see org.xtext.example.mydsl.gACL.impl.DetailCodeImpl
+     * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getDetailCode()
      * @generated
      */
-    EClass PROGRAM = eINSTANCE.getProgram();
+    EClass DETAIL_CODE = eINSTANCE.getDetailCode();
 
     /**
      * The meta object literal for the '<em><b>Stmts</b></em>' containment reference list feature.
@@ -474,7 +1104,7 @@ public interface GACLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PROGRAM__STMTS = eINSTANCE.getProgram_Stmts();
+    EReference DETAIL_CODE__STMTS = eINSTANCE.getDetailCode_Stmts();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.gACL.impl.StatementImpl <em>Statement</em>}' class.
@@ -485,6 +1115,64 @@ public interface GACLPackage extends EPackage
      * @generated
      */
     EClass STATEMENT = eINSTANCE.getStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Td</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__TD = eINSTANCE.getStatement_Td();
+
+    /**
+     * The meta object literal for the '<em><b>Vd</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__VD = eINSTANCE.getStatement_Vd();
+
+    /**
+     * The meta object literal for the '<em><b>Vin</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATEMENT__VIN = eINSTANCE.getStatement_Vin();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.gACL.impl.VarDeclImpl <em>Var Decl</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.gACL.impl.VarDeclImpl
+     * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getVarDecl()
+     * @generated
+     */
+    EClass VAR_DECL = eINSTANCE.getVarDecl();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VAR_DECL__NAME = eINSTANCE.getVarDecl_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Pt</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VAR_DECL__PT = eINSTANCE.getVarDecl_Pt();
+
+    /**
+     * The meta object literal for the '<em><b>Td</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VAR_DECL__TD = eINSTANCE.getVarDecl_Td();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.gACL.impl.PTypeImpl <em>PType</em>}' class.
@@ -515,88 +1203,266 @@ public interface GACLPackage extends EPackage
     EClass TYPE_DECL = eINSTANCE.getTypeDecl();
 
     /**
-     * The meta object literal for the '<em><b>Typename</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TYPE_DECL__TYPENAME = eINSTANCE.getTypeDecl_Typename();
+    EAttribute TYPE_DECL__NAME = eINSTANCE.getTypeDecl_Name();
 
     /**
-     * The meta object literal for the '<em><b>Tpcode</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Tp</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TYPE_DECL__TPCODE = eINSTANCE.getTypeDecl_Tpcode();
+    EReference TYPE_DECL__TP = eINSTANCE.getTypeDecl_Tp();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl.gACL.impl.typeCodeImpl <em>type Code</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.mydsl.gACL.impl.VarInstImpl <em>Var Inst</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl.gACL.impl.typeCodeImpl
-     * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#gettypeCode()
+     * @see org.xtext.example.mydsl.gACL.impl.VarInstImpl
+     * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getVarInst()
      * @generated
      */
-    EClass TYPE_CODE = eINSTANCE.gettypeCode();
+    EClass VAR_INST = eINSTANCE.getVarInst();
 
     /**
-     * The meta object literal for the '<em><b>Prm</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Name</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TYPE_CODE__PRM = eINSTANCE.gettypeCode_Prm();
+    EReference VAR_INST__NAME = eINSTANCE.getVarInst_Name();
 
     /**
-     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Strexp</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TYPE_CODE__ELEMENTS = eINSTANCE.gettypeCode_Elements();
+    EReference VAR_INST__STREXP = eINSTANCE.getVarInst_Strexp();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl.gACL.impl.elementImpl <em>element</em>}' class.
+     * The meta object literal for the '<em><b>Inexp</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl.gACL.impl.elementImpl
-     * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getelement()
      * @generated
      */
-    EClass ELEMENT = eINSTANCE.getelement();
+    EReference VAR_INST__INEXP = eINSTANCE.getVarInst_Inexp();
 
     /**
-     * The meta object literal for the '<em><b>Elemname</b></em>' attribute feature.
+     * The meta object literal for the '{@link org.xtext.example.mydsl.gACL.impl.StringExpressionImpl <em>String Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.gACL.impl.StringExpressionImpl
+     * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getStringExpression()
      * @generated
      */
-    EAttribute ELEMENT__ELEMNAME = eINSTANCE.getelement_Elemname();
+    EClass STRING_EXPRESSION = eINSTANCE.getStringExpression();
 
     /**
-     * The meta object literal for the '<em><b>Typename</b></em>' attribute feature.
+     * The meta object literal for the '{@link org.xtext.example.mydsl.gACL.impl.StringLiteralImpl <em>String Literal</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.gACL.impl.StringLiteralImpl
+     * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getStringLiteral()
      * @generated
      */
-    EAttribute ELEMENT__TYPENAME = eINSTANCE.getelement_Typename();
+    EClass STRING_LITERAL = eINSTANCE.getStringLiteral();
 
     /**
-     * The meta object literal for the '<em><b>Prmtype</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ELEMENT__PRMTYPE = eINSTANCE.getelement_Prmtype();
+    EAttribute STRING_LITERAL__VALUE = eINSTANCE.getStringLiteral_Value();
 
     /**
-     * The meta object literal for the '<em><b>Args</b></em>' attribute list feature.
+     * The meta object literal for the '{@link org.xtext.example.mydsl.gACL.impl.IntExpressionImpl <em>Int Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.gACL.impl.IntExpressionImpl
+     * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getIntExpression()
+     * @generated
+     */
+    EClass INT_EXPRESSION = eINSTANCE.getIntExpression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.gACL.impl.IntLiteralImpl <em>Int Literal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.gACL.impl.IntLiteralImpl
+     * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getIntLiteral()
+     * @generated
+     */
+    EClass INT_LITERAL = eINSTANCE.getIntLiteral();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ELEMENT__ARGS = eINSTANCE.getelement_Args();
+    EAttribute INT_LITERAL__VALUE = eINSTANCE.getIntLiteral_Value();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.gACL.impl.ConcatImpl <em>Concat</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.gACL.impl.ConcatImpl
+     * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getConcat()
+     * @generated
+     */
+    EClass CONCAT = eINSTANCE.getConcat();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONCAT__LEFT = eINSTANCE.getConcat_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONCAT__RIGHT = eINSTANCE.getConcat_Right();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.gACL.impl.SubtractionImpl <em>Subtraction</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.gACL.impl.SubtractionImpl
+     * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getSubtraction()
+     * @generated
+     */
+    EClass SUBTRACTION = eINSTANCE.getSubtraction();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SUBTRACTION__LEFT = eINSTANCE.getSubtraction_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SUBTRACTION__RIGHT = eINSTANCE.getSubtraction_Right();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.gACL.impl.AdditionImpl <em>Addition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.gACL.impl.AdditionImpl
+     * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getAddition()
+     * @generated
+     */
+    EClass ADDITION = eINSTANCE.getAddition();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ADDITION__LEFT = eINSTANCE.getAddition_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ADDITION__RIGHT = eINSTANCE.getAddition_Right();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.gACL.impl.MultiplicationImpl <em>Multiplication</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.gACL.impl.MultiplicationImpl
+     * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getMultiplication()
+     * @generated
+     */
+    EClass MULTIPLICATION = eINSTANCE.getMultiplication();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MULTIPLICATION__LEFT = eINSTANCE.getMultiplication_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MULTIPLICATION__RIGHT = eINSTANCE.getMultiplication_Right();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.gACL.impl.DivisionImpl <em>Division</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.gACL.impl.DivisionImpl
+     * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getDivision()
+     * @generated
+     */
+    EClass DIVISION = eINSTANCE.getDivision();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIVISION__LEFT = eINSTANCE.getDivision_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIVISION__RIGHT = eINSTANCE.getDivision_Right();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.gACL.impl.PowerOfImpl <em>Power Of</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.gACL.impl.PowerOfImpl
+     * @see org.xtext.example.mydsl.gACL.impl.GACLPackageImpl#getPowerOf()
+     * @generated
+     */
+    EClass POWER_OF = eINSTANCE.getPowerOf();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference POWER_OF__LEFT = eINSTANCE.getPowerOf_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference POWER_OF__RIGHT = eINSTANCE.getPowerOf_Right();
 
   }
 

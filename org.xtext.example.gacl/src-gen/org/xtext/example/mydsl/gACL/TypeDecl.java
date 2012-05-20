@@ -6,6 +6,7 @@
  */
 package org.xtext.example.mydsl.gACL;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,8 +16,8 @@ package org.xtext.example.mydsl.gACL;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.gACL.TypeDecl#getTypename <em>Typename</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.gACL.TypeDecl#getTpcode <em>Tpcode</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.gACL.TypeDecl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.gACL.TypeDecl#getTp <em>Tp</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,58 +25,58 @@ package org.xtext.example.mydsl.gACL;
  * @model
  * @generated
  */
-public interface TypeDecl extends Statement
+public interface TypeDecl extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Typename</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Typename</em>' attribute isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Typename</em>' attribute.
-   * @see #setTypename(String)
-   * @see org.xtext.example.mydsl.gACL.GACLPackage#getTypeDecl_Typename()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.xtext.example.mydsl.gACL.GACLPackage#getTypeDecl_Name()
    * @model
    * @generated
    */
-  String getTypename();
+  String getName();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.gACL.TypeDecl#getTypename <em>Typename</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.mydsl.gACL.TypeDecl#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Typename</em>' attribute.
-   * @see #getTypename()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setTypename(String value);
+  void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Tpcode</b></em>' containment reference.
+   * Returns the value of the '<em><b>Tp</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Tpcode</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Tp</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Tpcode</em>' containment reference.
-   * @see #setTpcode(typeCode)
-   * @see org.xtext.example.mydsl.gACL.GACLPackage#getTypeDecl_Tpcode()
+   * @return the value of the '<em>Tp</em>' containment reference.
+   * @see #setTp(PType)
+   * @see org.xtext.example.mydsl.gACL.GACLPackage#getTypeDecl_Tp()
    * @model containment="true"
    * @generated
    */
-  typeCode getTpcode();
+  PType getTp();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.gACL.TypeDecl#getTpcode <em>Tpcode</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.mydsl.gACL.TypeDecl#getTp <em>Tp</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Tpcode</em>' containment reference.
-   * @see #getTpcode()
+   * @param value the new value of the '<em>Tp</em>' containment reference.
+   * @see #getTp()
    * @generated
    */
-  void setTpcode(typeCode value);
+  void setTp(PType value);
 
 } // TypeDecl

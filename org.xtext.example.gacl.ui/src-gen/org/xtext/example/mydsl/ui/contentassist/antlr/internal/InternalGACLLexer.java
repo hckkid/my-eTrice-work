@@ -12,26 +12,28 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalGACLLexer extends Lexer {
-    public static final int RULE_ID=6;
+    public static final int RULE_ID=4;
+    public static final int T__25=25;
+    public static final int T__24=24;
     public static final int T__23=23;
     public static final int T__22=22;
     public static final int RULE_ANY_OTHER=12;
     public static final int T__21=21;
     public static final int T__20=20;
-    public static final int RULE_INTTYPE=4;
-    public static final int RULE_STRTYPE=5;
+    public static final int RULE_INTTYPE=5;
+    public static final int RULE_STRTYPE=6;
     public static final int EOF=-1;
     public static final int RULE_SL_COMMENT=10;
     public static final int RULE_ML_COMMENT=9;
     public static final int T__19=19;
-    public static final int RULE_STRING=8;
+    public static final int RULE_STRING=7;
     public static final int T__16=16;
     public static final int T__15=15;
     public static final int T__18=18;
     public static final int T__17=17;
     public static final int T__14=14;
     public static final int T__13=13;
-    public static final int RULE_INT=7;
+    public static final int RULE_INT=8;
     public static final int RULE_WS=11;
 
     // delegates
@@ -52,10 +54,10 @@ public class InternalGACLLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:11:7: ( 'type' )
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:11:9: 'type'
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:11:7: ( 'var' )
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:11:9: 'var'
             {
-            match("type"); 
+            match("var"); 
 
 
             }
@@ -73,11 +75,10 @@ public class InternalGACLLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:12:7: ( 'Type' )
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:12:9: 'Type'
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:12:7: ( ':' )
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:12:9: ':'
             {
-            match("Type"); 
-
+            match(':'); 
 
             }
 
@@ -94,11 +95,10 @@ public class InternalGACLLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:13:7: ( 'TYPE' )
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:13:9: 'TYPE'
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:13:7: ( ';' )
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:13:9: ';'
             {
-            match("TYPE"); 
-
+            match(';'); 
 
             }
 
@@ -115,10 +115,11 @@ public class InternalGACLLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:14:7: ( ';' )
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:14:9: ';'
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:14:7: ( 'type' )
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:14:9: 'type'
             {
-            match(';'); 
+            match("type"); 
+
 
             }
 
@@ -155,10 +156,10 @@ public class InternalGACLLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:16:7: ( '{' )
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:16:9: '{'
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:16:7: ( '^' )
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:16:9: '^'
             {
-            match('{'); 
+            match('^'); 
 
             }
 
@@ -175,10 +176,10 @@ public class InternalGACLLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:17:7: ( '}' )
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:17:9: '}'
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:17:7: ( '-' )
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:17:9: '-'
             {
-            match('}'); 
+            match('-'); 
 
             }
 
@@ -195,10 +196,10 @@ public class InternalGACLLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:18:7: ( ',' )
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:18:9: ','
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:18:7: ( '+' )
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:18:9: '+'
             {
-            match(','); 
+            match('+'); 
 
             }
 
@@ -215,10 +216,10 @@ public class InternalGACLLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:19:7: ( ':' )
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:19:9: ':'
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:19:7: ( '*' )
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:19:9: '*'
             {
-            match(':'); 
+            match('*'); 
 
             }
 
@@ -235,10 +236,10 @@ public class InternalGACLLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:20:7: ( '(' )
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:20:9: '('
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:20:7: ( '/' )
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:20:9: '/'
             {
-            match('('); 
+            match('/'); 
 
             }
 
@@ -255,10 +256,11 @@ public class InternalGACLLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:21:7: ( ')' )
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:21:9: ')'
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:21:7: ( '**' )
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:21:9: '**'
             {
-            match(')'); 
+            match("**"); 
+
 
             }
 
@@ -270,13 +272,53 @@ public class InternalGACLLexer extends Lexer {
     }
     // $ANTLR end "T__23"
 
+    // $ANTLR start "T__24"
+    public final void mT__24() throws RecognitionException {
+        try {
+            int _type = T__24;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:22:7: ( '(' )
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:22:9: '('
+            {
+            match('('); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__24"
+
+    // $ANTLR start "T__25"
+    public final void mT__25() throws RecognitionException {
+        try {
+            int _type = T__25;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:23:7: ( ')' )
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:23:9: ')'
+            {
+            match(')'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__25"
+
     // $ANTLR start "RULE_INTTYPE"
     public final void mRULE_INTTYPE() throws RecognitionException {
         try {
             int _type = RULE_INTTYPE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1651:14: ( 'int' )
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1651:16: 'int'
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2390:14: ( 'int' )
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2390:16: 'int'
             {
             match("int"); 
 
@@ -296,8 +338,8 @@ public class InternalGACLLexer extends Lexer {
         try {
             int _type = RULE_STRTYPE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1653:14: ( 'string' )
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1653:16: 'string'
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2392:14: ( 'string' )
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2392:16: 'string'
             {
             match("string"); 
 
@@ -317,10 +359,10 @@ public class InternalGACLLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1655:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1655:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2394:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2394:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1655:11: ( '^' )?
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2394:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -329,7 +371,7 @@ public class InternalGACLLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1655:11: '^'
+                    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2394:11: '^'
                     {
                     match('^'); 
 
@@ -347,7 +389,7 @@ public class InternalGACLLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1655:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2394:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -396,10 +438,10 @@ public class InternalGACLLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1657:10: ( ( '0' .. '9' )+ )
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1657:12: ( '0' .. '9' )+
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2396:10: ( ( '0' .. '9' )+ )
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2396:12: ( '0' .. '9' )+
             {
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1657:12: ( '0' .. '9' )+
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2396:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -413,7 +455,7 @@ public class InternalGACLLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1657:13: '0' .. '9'
+            	    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2396:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -445,10 +487,10 @@ public class InternalGACLLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1659:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1659:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2398:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2398:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1659:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2398:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -466,10 +508,10 @@ public class InternalGACLLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1659:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2398:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1659:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2398:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -485,7 +527,7 @@ public class InternalGACLLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1659:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2398:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -501,7 +543,7 @@ public class InternalGACLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1659:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2398:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -526,10 +568,10 @@ public class InternalGACLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1659:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2398:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1659:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2398:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -545,7 +587,7 @@ public class InternalGACLLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1659:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2398:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -561,7 +603,7 @@ public class InternalGACLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1659:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2398:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -604,12 +646,12 @@ public class InternalGACLLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1661:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1661:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2400:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2400:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1661:24: ( options {greedy=false; } : . )*
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2400:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -634,7 +676,7 @@ public class InternalGACLLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1661:52: .
+            	    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2400:52: .
             	    {
             	    matchAny(); 
 
@@ -664,12 +706,12 @@ public class InternalGACLLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1663:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1663:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2402:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2402:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1663:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2402:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -682,7 +724,7 @@ public class InternalGACLLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1663:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2402:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -702,7 +744,7 @@ public class InternalGACLLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1663:40: ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2402:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -711,9 +753,9 @@ public class InternalGACLLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1663:41: ( '\\r' )? '\\n'
+                    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2402:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1663:41: ( '\\r' )?
+                    // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2402:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -722,7 +764,7 @@ public class InternalGACLLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1663:41: '\\r'
+                            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2402:41: '\\r'
                             {
                             match('\r'); 
 
@@ -754,10 +796,10 @@ public class InternalGACLLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1665:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1665:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2404:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2404:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1665:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2404:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -811,8 +853,8 @@ public class InternalGACLLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1667:16: ( . )
-            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1667:18: .
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2406:16: ( . )
+            // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:2406:18: .
             {
             matchAny(); 
 
@@ -827,8 +869,8 @@ public class InternalGACLLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | RULE_INTTYPE | RULE_STRTYPE | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=20;
+        // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | RULE_INTTYPE | RULE_STRTYPE | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=22;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -909,63 +951,77 @@ public class InternalGACLLexer extends Lexer {
                 }
                 break;
             case 12 :
-                // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1:76: RULE_INTTYPE
+                // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1:76: T__24
+                {
+                mT__24(); 
+
+                }
+                break;
+            case 13 :
+                // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1:82: T__25
+                {
+                mT__25(); 
+
+                }
+                break;
+            case 14 :
+                // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1:88: RULE_INTTYPE
                 {
                 mRULE_INTTYPE(); 
 
                 }
                 break;
-            case 13 :
-                // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1:89: RULE_STRTYPE
+            case 15 :
+                // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1:101: RULE_STRTYPE
                 {
                 mRULE_STRTYPE(); 
 
                 }
                 break;
-            case 14 :
-                // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1:102: RULE_ID
+            case 16 :
+                // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1:114: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 15 :
-                // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1:110: RULE_INT
+            case 17 :
+                // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1:122: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 16 :
-                // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1:119: RULE_STRING
+            case 18 :
+                // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1:131: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 17 :
-                // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1:131: RULE_ML_COMMENT
+            case 19 :
+                // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1:143: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 18 :
-                // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1:147: RULE_SL_COMMENT
+            case 20 :
+                // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1:159: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 19 :
-                // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1:163: RULE_WS
+            case 21 :
+                // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1:175: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 20 :
-                // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1:171: RULE_ANY_OTHER
+            case 22 :
+                // ../org.xtext.example.gacl.ui/src-gen/org/xtext/example/mydsl/ui/contentassist/antlr/internal/InternalGACL.g:1:183: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -979,85 +1035,85 @@ public class InternalGACLLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\2\26\10\uffff\2\26\1\24\2\uffff\3\24\2\uffff\1\26\1\uffff"+
-        "\2\26\10\uffff\2\26\5\uffff\3\26\1\60\1\26\1\62\1\63\1\64\1\uffff"+
-        "\1\26\3\uffff\1\26\1\67\1\uffff";
-    static final String DFA12_eofS =
-        "\70\uffff";
-    static final String DFA12_minS =
-        "\1\0\1\171\1\131\10\uffff\1\156\1\164\1\101\2\uffff\2\0\1\52\2"+
-        "\uffff\1\160\1\uffff\1\160\1\120\10\uffff\1\164\1\162\5\uffff\2"+
-        "\145\1\105\1\60\1\151\3\60\1\uffff\1\156\3\uffff\1\147\1\60\1\uffff";
-    static final String DFA12_maxS =
-        "\1\uffff\2\171\10\uffff\1\156\1\164\1\172\2\uffff\2\uffff\1\57"+
-        "\2\uffff\1\160\1\uffff\1\160\1\120\10\uffff\1\164\1\162\5\uffff"+
-        "\2\145\1\105\1\172\1\151\3\172\1\uffff\1\156\3\uffff\1\147\1\172"+
+        "\1\uffff\1\26\2\uffff\1\26\1\uffff\1\33\2\uffff\1\37\1\42\2\uffff"+
+        "\2\26\2\uffff\2\24\2\uffff\1\26\3\uffff\1\26\13\uffff\2\26\3\uffff"+
+        "\1\56\1\26\1\60\1\26\1\uffff\1\62\1\uffff\1\26\1\uffff\1\26\1\65"+
         "\1\uffff";
+    static final String DFA12_eofS =
+        "\66\uffff";
+    static final String DFA12_minS =
+        "\1\0\1\141\2\uffff\1\171\1\uffff\1\101\2\uffff\2\52\2\uffff\1\156"+
+        "\1\164\2\uffff\2\0\2\uffff\1\162\3\uffff\1\160\13\uffff\1\164\1"+
+        "\162\3\uffff\1\60\1\145\1\60\1\151\1\uffff\1\60\1\uffff\1\156\1"+
+        "\uffff\1\147\1\60\1\uffff";
+    static final String DFA12_maxS =
+        "\1\uffff\1\141\2\uffff\1\171\1\uffff\1\172\2\uffff\1\52\1\57\2"+
+        "\uffff\1\156\1\164\2\uffff\2\uffff\2\uffff\1\162\3\uffff\1\160\13"+
+        "\uffff\1\164\1\162\3\uffff\1\172\1\145\1\172\1\151\1\uffff\1\172"+
+        "\1\uffff\1\156\1\uffff\1\147\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\3\uffff\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\3\uffff\1\16\1\17"+
-        "\3\uffff\1\23\1\24\1\uffff\1\16\2\uffff\1\4\1\5\1\6\1\7\1\10\1\11"+
-        "\1\12\1\13\2\uffff\1\17\1\20\1\21\1\22\1\23\10\uffff\1\14\1\uffff"+
-        "\1\1\1\2\1\3\2\uffff\1\15";
+        "\2\uffff\1\2\1\3\1\uffff\1\5\1\uffff\1\7\1\10\2\uffff\1\14\1\15"+
+        "\2\uffff\1\20\1\21\2\uffff\1\25\1\26\1\uffff\1\20\1\2\1\3\1\uffff"+
+        "\1\5\1\6\1\7\1\10\1\13\1\11\1\23\1\24\1\12\1\14\1\15\2\uffff\1\21"+
+        "\1\22\1\25\4\uffff\1\1\1\uffff\1\16\1\uffff\1\4\2\uffff\1\17";
     static final String DFA12_specialS =
-        "\1\2\17\uffff\1\1\1\0\46\uffff}>";
+        "\1\1\20\uffff\1\2\1\0\43\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\24\2\23\2\24\1\23\22\24\1\23\1\24\1\20\4\24\1\21\1\11\1"+
-            "\12\2\24\1\7\2\24\1\22\12\17\1\10\1\3\1\24\1\4\3\24\23\16\1"+
-            "\2\6\16\3\24\1\15\1\16\1\24\10\16\1\13\11\16\1\14\1\1\6\16\1"+
-            "\5\1\24\1\6\uff82\24",
+            "\11\24\2\23\2\24\1\23\22\24\1\23\1\24\1\21\4\24\1\22\1\13\1"+
+            "\14\1\11\1\10\1\24\1\7\1\24\1\12\12\20\1\2\1\3\1\24\1\5\3\24"+
+            "\32\17\3\24\1\6\1\17\1\24\10\17\1\15\11\17\1\16\1\4\1\17\1\1"+
+            "\4\17\uff85\24",
             "\1\25",
-            "\1\30\37\uffff\1\27",
             "",
             "",
+            "\1\31",
             "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\41",
-            "\1\42",
             "\32\26\4\uffff\1\26\1\uffff\32\26",
             "",
             "",
-            "\0\44",
-            "\0\44",
-            "\1\45\4\uffff\1\46",
+            "\1\36",
+            "\1\40\4\uffff\1\41",
             "",
             "",
-            "\1\50",
+            "\1\45",
+            "\1\46",
             "",
-            "\1\51",
+            "",
+            "\0\50",
+            "\0\50",
+            "",
+            "",
             "\1\52",
             "",
             "",
             "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\53",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\54",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\55",
-            "\1\56",
+            "",
+            "",
+            "",
+            "\12\26\7\uffff\32\26\4\uffff\1\26\1\uffff\32\26",
             "\1\57",
             "\12\26\7\uffff\32\26\4\uffff\1\26\1\uffff\32\26",
             "\1\61",
+            "",
             "\12\26\7\uffff\32\26\4\uffff\1\26\1\uffff\32\26",
-            "\12\26\7\uffff\32\26\4\uffff\1\26\1\uffff\32\26",
-            "\12\26\7\uffff\32\26\4\uffff\1\26\1\uffff\32\26",
             "",
-            "\1\65",
+            "\1\63",
             "",
-            "",
-            "",
-            "\1\66",
+            "\1\64",
             "\12\26\7\uffff\32\26\4\uffff\1\26\1\uffff\32\26",
             ""
     };
@@ -1092,75 +1148,75 @@ public class InternalGACLLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | RULE_INTTYPE | RULE_STRTYPE | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | RULE_INTTYPE | RULE_STRTYPE | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_17 = input.LA(1);
+                        int LA12_18 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_17>='\u0000' && LA12_17<='\uFFFF')) ) {s = 36;}
+                        if ( ((LA12_18>='\u0000' && LA12_18<='\uFFFF')) ) {s = 40;}
 
                         else s = 20;
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA12_16 = input.LA(1);
+                        int LA12_0 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_16>='\u0000' && LA12_16<='\uFFFF')) ) {s = 36;}
+                        if ( (LA12_0=='v') ) {s = 1;}
 
-                        else s = 20;
+                        else if ( (LA12_0==':') ) {s = 2;}
+
+                        else if ( (LA12_0==';') ) {s = 3;}
+
+                        else if ( (LA12_0=='t') ) {s = 4;}
+
+                        else if ( (LA12_0=='=') ) {s = 5;}
+
+                        else if ( (LA12_0=='^') ) {s = 6;}
+
+                        else if ( (LA12_0=='-') ) {s = 7;}
+
+                        else if ( (LA12_0=='+') ) {s = 8;}
+
+                        else if ( (LA12_0=='*') ) {s = 9;}
+
+                        else if ( (LA12_0=='/') ) {s = 10;}
+
+                        else if ( (LA12_0=='(') ) {s = 11;}
+
+                        else if ( (LA12_0==')') ) {s = 12;}
+
+                        else if ( (LA12_0=='i') ) {s = 13;}
+
+                        else if ( (LA12_0=='s') ) {s = 14;}
+
+                        else if ( ((LA12_0>='A' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='h')||(LA12_0>='j' && LA12_0<='r')||LA12_0=='u'||(LA12_0>='w' && LA12_0<='z')) ) {s = 15;}
+
+                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 16;}
+
+                        else if ( (LA12_0=='\"') ) {s = 17;}
+
+                        else if ( (LA12_0=='\'') ) {s = 18;}
+
+                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 19;}
+
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||LA12_0==','||LA12_0=='.'||LA12_0=='<'||(LA12_0>='>' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||(LA12_0>='{' && LA12_0<='\uFFFF')) ) {s = 20;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA12_0 = input.LA(1);
+                        int LA12_17 = input.LA(1);
 
                         s = -1;
-                        if ( (LA12_0=='t') ) {s = 1;}
+                        if ( ((LA12_17>='\u0000' && LA12_17<='\uFFFF')) ) {s = 40;}
 
-                        else if ( (LA12_0=='T') ) {s = 2;}
-
-                        else if ( (LA12_0==';') ) {s = 3;}
-
-                        else if ( (LA12_0=='=') ) {s = 4;}
-
-                        else if ( (LA12_0=='{') ) {s = 5;}
-
-                        else if ( (LA12_0=='}') ) {s = 6;}
-
-                        else if ( (LA12_0==',') ) {s = 7;}
-
-                        else if ( (LA12_0==':') ) {s = 8;}
-
-                        else if ( (LA12_0=='(') ) {s = 9;}
-
-                        else if ( (LA12_0==')') ) {s = 10;}
-
-                        else if ( (LA12_0=='i') ) {s = 11;}
-
-                        else if ( (LA12_0=='s') ) {s = 12;}
-
-                        else if ( (LA12_0=='^') ) {s = 13;}
-
-                        else if ( ((LA12_0>='A' && LA12_0<='S')||(LA12_0>='U' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='h')||(LA12_0>='j' && LA12_0<='r')||(LA12_0>='u' && LA12_0<='z')) ) {s = 14;}
-
-                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 15;}
-
-                        else if ( (LA12_0=='\"') ) {s = 16;}
-
-                        else if ( (LA12_0=='\'') ) {s = 17;}
-
-                        else if ( (LA12_0=='/') ) {s = 18;}
-
-                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 19;}
-
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='*' && LA12_0<='+')||(LA12_0>='-' && LA12_0<='.')||LA12_0=='<'||(LA12_0>='>' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 20;}
+                        else s = 20;
 
                         if ( s>=0 ) return s;
                         break;

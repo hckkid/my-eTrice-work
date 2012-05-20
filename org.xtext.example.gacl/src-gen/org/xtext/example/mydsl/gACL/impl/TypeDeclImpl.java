@@ -13,10 +13,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.mydsl.gACL.GACLPackage;
+import org.xtext.example.mydsl.gACL.PType;
 import org.xtext.example.mydsl.gACL.TypeDecl;
-import org.xtext.example.mydsl.gACL.typeCode;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,44 +26,44 @@ import org.xtext.example.mydsl.gACL.typeCode;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.gACL.impl.TypeDeclImpl#getTypename <em>Typename</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.gACL.impl.TypeDeclImpl#getTpcode <em>Tpcode</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.gACL.impl.TypeDeclImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.gACL.impl.TypeDeclImpl#getTp <em>Tp</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class TypeDeclImpl extends StatementImpl implements TypeDecl
+public class TypeDeclImpl extends MinimalEObjectImpl.Container implements TypeDecl
 {
   /**
-   * The default value of the '{@link #getTypename() <em>Typename</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTypename()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String TYPENAME_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getTypename() <em>Typename</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTypename()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String typename = TYPENAME_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getTpcode() <em>Tpcode</em>}' containment reference.
+   * The cached value of the '{@link #getTp() <em>Tp</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTpcode()
+   * @see #getTp()
    * @generated
    * @ordered
    */
-  protected typeCode tpcode;
+  protected PType tp;
 
   /**
    * <!-- begin-user-doc -->
@@ -90,9 +91,9 @@ public class TypeDeclImpl extends StatementImpl implements TypeDecl
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getTypename()
+  public String getName()
   {
-    return typename;
+    return name;
   }
 
   /**
@@ -100,12 +101,12 @@ public class TypeDeclImpl extends StatementImpl implements TypeDecl
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTypename(String newTypename)
+  public void setName(String newName)
   {
-    String oldTypename = typename;
-    typename = newTypename;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GACLPackage.TYPE_DECL__TYPENAME, oldTypename, typename));
+      eNotify(new ENotificationImpl(this, Notification.SET, GACLPackage.TYPE_DECL__NAME, oldName, name));
   }
 
   /**
@@ -113,9 +114,9 @@ public class TypeDeclImpl extends StatementImpl implements TypeDecl
    * <!-- end-user-doc -->
    * @generated
    */
-  public typeCode getTpcode()
+  public PType getTp()
   {
-    return tpcode;
+    return tp;
   }
 
   /**
@@ -123,13 +124,13 @@ public class TypeDeclImpl extends StatementImpl implements TypeDecl
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetTpcode(typeCode newTpcode, NotificationChain msgs)
+  public NotificationChain basicSetTp(PType newTp, NotificationChain msgs)
   {
-    typeCode oldTpcode = tpcode;
-    tpcode = newTpcode;
+    PType oldTp = tp;
+    tp = newTp;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GACLPackage.TYPE_DECL__TPCODE, oldTpcode, newTpcode);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GACLPackage.TYPE_DECL__TP, oldTp, newTp);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -140,20 +141,20 @@ public class TypeDeclImpl extends StatementImpl implements TypeDecl
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTpcode(typeCode newTpcode)
+  public void setTp(PType newTp)
   {
-    if (newTpcode != tpcode)
+    if (newTp != tp)
     {
       NotificationChain msgs = null;
-      if (tpcode != null)
-        msgs = ((InternalEObject)tpcode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GACLPackage.TYPE_DECL__TPCODE, null, msgs);
-      if (newTpcode != null)
-        msgs = ((InternalEObject)newTpcode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GACLPackage.TYPE_DECL__TPCODE, null, msgs);
-      msgs = basicSetTpcode(newTpcode, msgs);
+      if (tp != null)
+        msgs = ((InternalEObject)tp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GACLPackage.TYPE_DECL__TP, null, msgs);
+      if (newTp != null)
+        msgs = ((InternalEObject)newTp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GACLPackage.TYPE_DECL__TP, null, msgs);
+      msgs = basicSetTp(newTp, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GACLPackage.TYPE_DECL__TPCODE, newTpcode, newTpcode));
+      eNotify(new ENotificationImpl(this, Notification.SET, GACLPackage.TYPE_DECL__TP, newTp, newTp));
   }
 
   /**
@@ -166,8 +167,8 @@ public class TypeDeclImpl extends StatementImpl implements TypeDecl
   {
     switch (featureID)
     {
-      case GACLPackage.TYPE_DECL__TPCODE:
-        return basicSetTpcode(null, msgs);
+      case GACLPackage.TYPE_DECL__TP:
+        return basicSetTp(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -182,10 +183,10 @@ public class TypeDeclImpl extends StatementImpl implements TypeDecl
   {
     switch (featureID)
     {
-      case GACLPackage.TYPE_DECL__TYPENAME:
-        return getTypename();
-      case GACLPackage.TYPE_DECL__TPCODE:
-        return getTpcode();
+      case GACLPackage.TYPE_DECL__NAME:
+        return getName();
+      case GACLPackage.TYPE_DECL__TP:
+        return getTp();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -200,11 +201,11 @@ public class TypeDeclImpl extends StatementImpl implements TypeDecl
   {
     switch (featureID)
     {
-      case GACLPackage.TYPE_DECL__TYPENAME:
-        setTypename((String)newValue);
+      case GACLPackage.TYPE_DECL__NAME:
+        setName((String)newValue);
         return;
-      case GACLPackage.TYPE_DECL__TPCODE:
-        setTpcode((typeCode)newValue);
+      case GACLPackage.TYPE_DECL__TP:
+        setTp((PType)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -220,11 +221,11 @@ public class TypeDeclImpl extends StatementImpl implements TypeDecl
   {
     switch (featureID)
     {
-      case GACLPackage.TYPE_DECL__TYPENAME:
-        setTypename(TYPENAME_EDEFAULT);
+      case GACLPackage.TYPE_DECL__NAME:
+        setName(NAME_EDEFAULT);
         return;
-      case GACLPackage.TYPE_DECL__TPCODE:
-        setTpcode((typeCode)null);
+      case GACLPackage.TYPE_DECL__TP:
+        setTp((PType)null);
         return;
     }
     super.eUnset(featureID);
@@ -240,10 +241,10 @@ public class TypeDeclImpl extends StatementImpl implements TypeDecl
   {
     switch (featureID)
     {
-      case GACLPackage.TYPE_DECL__TYPENAME:
-        return TYPENAME_EDEFAULT == null ? typename != null : !TYPENAME_EDEFAULT.equals(typename);
-      case GACLPackage.TYPE_DECL__TPCODE:
-        return tpcode != null;
+      case GACLPackage.TYPE_DECL__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case GACLPackage.TYPE_DECL__TP:
+        return tp != null;
     }
     return super.eIsSet(featureID);
   }
@@ -259,8 +260,8 @@ public class TypeDeclImpl extends StatementImpl implements TypeDecl
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (typename: ");
-    result.append(typename);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

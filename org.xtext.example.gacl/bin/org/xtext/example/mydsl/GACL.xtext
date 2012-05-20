@@ -2,12 +2,16 @@ grammar org.xtext.example.mydsl.GACL with org.eclipse.xtext.common.Terminals
 
 generate gACL "http://www.xtext.org/example/mydsl/GACL"
 
-Program:
+DetailCode:
 	stmts += (Statement)*
 ;
 
 Statement:
-	TypeDecl
+	(td=TypeDecl | vd=VarDecl | vin = VarInst )
+;
+
+VarDecl:
+	'var' name=ID ':' (pt=PType | td=[TypeDecl]) ';'
 ;
 
 PType:
@@ -23,17 +27,46 @@ terminal strType:
 ;
 
 TypeDecl:
-	(('type' | 'Type' | 'TYPE') typename=ID) (';')? | 
-	((('type' | 'Type' | 'TYPE'))? typename=ID ('=')? tpcode=typeCode ) (';')?
+	'type' name=ID '=' tp=PType ';'
+;
+
+VarInst:
+	name=[VarDecl] '=' (strexp=Concat | inexp=Subtraction)
+;
+
+Concat returns StringExpression:
+	StringLiteral ({Concat.left=current} '^' right=StringLiteral)*
+;
+
+StringLiteral:
+	value=STRING
+;
+
+Subtraction returns IntExpression:
+	Addition ({Subtraction.left=current} '-' right=Addition)*
+;
+
+Addition returns IntExpression:
+	Multiplication ({Addition.left=current} '+' right=Multiplication)*
+;
+
+Multiplication returns IntExpression:
+	Division ({Multiplication.left=current} '*' right=Division)*
+;
+
+Division returns IntExpression:
+	PowerOf ({Division.left=current} '/' right=PowerOf)*
+;
+
+PowerOf returns IntExpression:
+	BasicIntExp ({PowerOf.left=current} '**' right=BasicIntExp)*
+;
+
+BasicIntExp returns IntExpression:
+	IntLiteral |
+	'(' Subtraction ')'
+;
+
+IntLiteral:
+	value=INT
 ; 
-
-typeCode:
-	prm=PType |
-	'{' (elements+=element (',' elements+=element)?) '}'
-;
-
-element:
-	elemname=ID ':' typename=ID |
-	elemname=ID ':' prmtype=PType |
-	elemname=ID (':' typename=ID)? '(' ((args+=ID) (',' args+=ID)?)? ')'
-;

@@ -79,14 +79,19 @@ public class GACLAdapterFactory extends AdapterFactoryImpl
     new GACLSwitch<Adapter>()
     {
       @Override
-      public Adapter caseProgram(Program object)
+      public Adapter caseDetailCode(DetailCode object)
       {
-        return createProgramAdapter();
+        return createDetailCodeAdapter();
       }
       @Override
       public Adapter caseStatement(Statement object)
       {
         return createStatementAdapter();
+      }
+      @Override
+      public Adapter caseVarDecl(VarDecl object)
+      {
+        return createVarDeclAdapter();
       }
       @Override
       public Adapter casePType(PType object)
@@ -99,14 +104,59 @@ public class GACLAdapterFactory extends AdapterFactoryImpl
         return createTypeDeclAdapter();
       }
       @Override
-      public Adapter casetypeCode(typeCode object)
+      public Adapter caseVarInst(VarInst object)
       {
-        return createtypeCodeAdapter();
+        return createVarInstAdapter();
       }
       @Override
-      public Adapter caseelement(element object)
+      public Adapter caseStringExpression(StringExpression object)
       {
-        return createelementAdapter();
+        return createStringExpressionAdapter();
+      }
+      @Override
+      public Adapter caseStringLiteral(StringLiteral object)
+      {
+        return createStringLiteralAdapter();
+      }
+      @Override
+      public Adapter caseIntExpression(IntExpression object)
+      {
+        return createIntExpressionAdapter();
+      }
+      @Override
+      public Adapter caseIntLiteral(IntLiteral object)
+      {
+        return createIntLiteralAdapter();
+      }
+      @Override
+      public Adapter caseConcat(Concat object)
+      {
+        return createConcatAdapter();
+      }
+      @Override
+      public Adapter caseSubtraction(Subtraction object)
+      {
+        return createSubtractionAdapter();
+      }
+      @Override
+      public Adapter caseAddition(Addition object)
+      {
+        return createAdditionAdapter();
+      }
+      @Override
+      public Adapter caseMultiplication(Multiplication object)
+      {
+        return createMultiplicationAdapter();
+      }
+      @Override
+      public Adapter caseDivision(Division object)
+      {
+        return createDivisionAdapter();
+      }
+      @Override
+      public Adapter casePowerOf(PowerOf object)
+      {
+        return createPowerOfAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -131,16 +181,16 @@ public class GACLAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.Program <em>Program</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.DetailCode <em>Detail Code</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.mydsl.gACL.Program
+   * @see org.xtext.example.mydsl.gACL.DetailCode
    * @generated
    */
-  public Adapter createProgramAdapter()
+  public Adapter createDetailCodeAdapter()
   {
     return null;
   }
@@ -156,6 +206,21 @@ public class GACLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.VarDecl <em>Var Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.gACL.VarDecl
+   * @generated
+   */
+  public Adapter createVarDeclAdapter()
   {
     return null;
   }
@@ -191,31 +256,166 @@ public class GACLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.typeCode <em>type Code</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.VarInst <em>Var Inst</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.mydsl.gACL.typeCode
+   * @see org.xtext.example.mydsl.gACL.VarInst
    * @generated
    */
-  public Adapter createtypeCodeAdapter()
+  public Adapter createVarInstAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.element <em>element</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.StringExpression <em>String Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.mydsl.gACL.element
+   * @see org.xtext.example.mydsl.gACL.StringExpression
    * @generated
    */
-  public Adapter createelementAdapter()
+  public Adapter createStringExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.StringLiteral <em>String Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.gACL.StringLiteral
+   * @generated
+   */
+  public Adapter createStringLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.IntExpression <em>Int Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.gACL.IntExpression
+   * @generated
+   */
+  public Adapter createIntExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.IntLiteral <em>Int Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.gACL.IntLiteral
+   * @generated
+   */
+  public Adapter createIntLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.Concat <em>Concat</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.gACL.Concat
+   * @generated
+   */
+  public Adapter createConcatAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.Subtraction <em>Subtraction</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.gACL.Subtraction
+   * @generated
+   */
+  public Adapter createSubtractionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.Addition <em>Addition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.gACL.Addition
+   * @generated
+   */
+  public Adapter createAdditionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.Multiplication <em>Multiplication</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.gACL.Multiplication
+   * @generated
+   */
+  public Adapter createMultiplicationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.Division <em>Division</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.gACL.Division
+   * @generated
+   */
+  public Adapter createDivisionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.PowerOf <em>Power Of</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.gACL.PowerOf
+   * @generated
+   */
+  public Adapter createPowerOfAdapter()
   {
     return null;
   }

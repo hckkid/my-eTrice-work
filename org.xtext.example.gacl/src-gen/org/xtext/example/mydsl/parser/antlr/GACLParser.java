@@ -25,7 +25,7 @@ public class GACLParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrPars
 	
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Program";
+		return "DetailCode";
 	}
 	
 	public GACLGrammarAccess getGrammarAccess() {
