@@ -14,9 +14,10 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.xtext.example.mydsl.gACL.Addition;
+import org.xtext.example.mydsl.gACL.Code;
 import org.xtext.example.mydsl.gACL.Concat;
-import org.xtext.example.mydsl.gACL.DetailCode;
 import org.xtext.example.mydsl.gACL.Division;
+import org.xtext.example.mydsl.gACL.Expression;
 import org.xtext.example.mydsl.gACL.GACLFactory;
 import org.xtext.example.mydsl.gACL.GACLPackage;
 import org.xtext.example.mydsl.gACL.IntExpression;
@@ -24,13 +25,16 @@ import org.xtext.example.mydsl.gACL.IntLiteral;
 import org.xtext.example.mydsl.gACL.Multiplication;
 import org.xtext.example.mydsl.gACL.PType;
 import org.xtext.example.mydsl.gACL.PowerOf;
+import org.xtext.example.mydsl.gACL.SingleStatement;
 import org.xtext.example.mydsl.gACL.Statement;
 import org.xtext.example.mydsl.gACL.StringExpression;
 import org.xtext.example.mydsl.gACL.StringLiteral;
 import org.xtext.example.mydsl.gACL.Subtraction;
 import org.xtext.example.mydsl.gACL.TypeDecl;
 import org.xtext.example.mydsl.gACL.VarDecl;
+import org.xtext.example.mydsl.gACL.VarExps;
 import org.xtext.example.mydsl.gACL.VarInst;
+import org.xtext.example.mydsl.gACL.ifte;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,7 +49,14 @@ public class GACLPackageImpl extends EPackageImpl implements GACLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass detailCodeEClass = null;
+  private EClass codeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass singleStatementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -109,6 +120,27 @@ public class GACLPackageImpl extends EPackageImpl implements GACLPackage
    * @generated
    */
   private EClass intLiteralEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass expressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass varExpsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ifteEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -220,9 +252,9 @@ public class GACLPackageImpl extends EPackageImpl implements GACLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getDetailCode()
+  public EClass getCode()
   {
-    return detailCodeEClass;
+    return codeEClass;
   }
 
   /**
@@ -230,9 +262,69 @@ public class GACLPackageImpl extends EPackageImpl implements GACLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDetailCode_Stmts()
+  public EReference getCode_Decls()
   {
-    return (EReference)detailCodeEClass.getEStructuralFeatures().get(0);
+    return (EReference)codeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCode_Stmts()
+  {
+    return (EReference)codeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSingleStatement()
+  {
+    return singleStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSingleStatement_Td()
+  {
+    return (EReference)singleStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSingleStatement_Vd()
+  {
+    return (EReference)singleStatementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSingleStatement_Vin()
+  {
+    return (EReference)singleStatementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSingleStatement_Ifst()
+  {
+    return (EReference)singleStatementEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -250,7 +342,7 @@ public class GACLPackageImpl extends EPackageImpl implements GACLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStatement_Td()
+  public EReference getStatement_Vin()
   {
     return (EReference)statementEClass.getEStructuralFeatures().get(0);
   }
@@ -260,19 +352,9 @@ public class GACLPackageImpl extends EPackageImpl implements GACLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStatement_Vd()
+  public EReference getStatement_Ifst()
   {
     return (EReference)statementEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getStatement_Vin()
-  {
-    return (EReference)statementEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -313,6 +395,16 @@ public class GACLPackageImpl extends EPackageImpl implements GACLPackage
   public EReference getVarDecl_Td()
   {
     return (EReference)varDeclEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVarDecl_Type()
+  {
+    return (EReference)varDeclEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -390,19 +482,9 @@ public class GACLPackageImpl extends EPackageImpl implements GACLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getVarInst_Strexp()
+  public EReference getVarInst_Exp()
   {
     return (EReference)varInstEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getVarInst_Inexp()
-  {
-    return (EReference)varInstEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -463,6 +545,106 @@ public class GACLPackageImpl extends EPackageImpl implements GACLPackage
   public EAttribute getIntLiteral_Value()
   {
     return (EAttribute)intLiteralEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getExpression()
+  {
+    return expressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getExpression_Strexp()
+  {
+    return (EReference)expressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getExpression_Inexp()
+  {
+    return (EReference)expressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getExpression_Vex()
+  {
+    return (EReference)expressionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getVarExps()
+  {
+    return varExpsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVarExps_Varex()
+  {
+    return (EReference)varExpsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getifte()
+  {
+    return ifteEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getifte_Cond()
+  {
+    return (EReference)ifteEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getifte_Stmts()
+  {
+    return (EReference)ifteEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getifte_Estmts()
+  {
+    return (EReference)ifteEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -675,18 +857,25 @@ public class GACLPackageImpl extends EPackageImpl implements GACLPackage
     isCreated = true;
 
     // Create classes and their features
-    detailCodeEClass = createEClass(DETAIL_CODE);
-    createEReference(detailCodeEClass, DETAIL_CODE__STMTS);
+    codeEClass = createEClass(CODE);
+    createEReference(codeEClass, CODE__DECLS);
+    createEReference(codeEClass, CODE__STMTS);
+
+    singleStatementEClass = createEClass(SINGLE_STATEMENT);
+    createEReference(singleStatementEClass, SINGLE_STATEMENT__TD);
+    createEReference(singleStatementEClass, SINGLE_STATEMENT__VD);
+    createEReference(singleStatementEClass, SINGLE_STATEMENT__VIN);
+    createEReference(singleStatementEClass, SINGLE_STATEMENT__IFST);
 
     statementEClass = createEClass(STATEMENT);
-    createEReference(statementEClass, STATEMENT__TD);
-    createEReference(statementEClass, STATEMENT__VD);
     createEReference(statementEClass, STATEMENT__VIN);
+    createEReference(statementEClass, STATEMENT__IFST);
 
     varDeclEClass = createEClass(VAR_DECL);
     createEAttribute(varDeclEClass, VAR_DECL__NAME);
     createEReference(varDeclEClass, VAR_DECL__PT);
     createEReference(varDeclEClass, VAR_DECL__TD);
+    createEReference(varDeclEClass, VAR_DECL__TYPE);
 
     pTypeEClass = createEClass(PTYPE);
     createEAttribute(pTypeEClass, PTYPE__TYPE);
@@ -697,8 +886,7 @@ public class GACLPackageImpl extends EPackageImpl implements GACLPackage
 
     varInstEClass = createEClass(VAR_INST);
     createEReference(varInstEClass, VAR_INST__NAME);
-    createEReference(varInstEClass, VAR_INST__STREXP);
-    createEReference(varInstEClass, VAR_INST__INEXP);
+    createEReference(varInstEClass, VAR_INST__EXP);
 
     stringExpressionEClass = createEClass(STRING_EXPRESSION);
 
@@ -709,6 +897,19 @@ public class GACLPackageImpl extends EPackageImpl implements GACLPackage
 
     intLiteralEClass = createEClass(INT_LITERAL);
     createEAttribute(intLiteralEClass, INT_LITERAL__VALUE);
+
+    expressionEClass = createEClass(EXPRESSION);
+    createEReference(expressionEClass, EXPRESSION__STREXP);
+    createEReference(expressionEClass, EXPRESSION__INEXP);
+    createEReference(expressionEClass, EXPRESSION__VEX);
+
+    varExpsEClass = createEClass(VAR_EXPS);
+    createEReference(varExpsEClass, VAR_EXPS__VAREX);
+
+    ifteEClass = createEClass(IFTE);
+    createEReference(ifteEClass, IFTE__COND);
+    createEReference(ifteEClass, IFTE__STMTS);
+    createEReference(ifteEClass, IFTE__ESTMTS);
 
     concatEClass = createEClass(CONCAT);
     createEReference(concatEClass, CONCAT__LEFT);
@@ -774,18 +975,25 @@ public class GACLPackageImpl extends EPackageImpl implements GACLPackage
     powerOfEClass.getESuperTypes().add(this.getIntExpression());
 
     // Initialize classes and features; add operations and parameters
-    initEClass(detailCodeEClass, DetailCode.class, "DetailCode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDetailCode_Stmts(), this.getStatement(), null, "stmts", null, 0, -1, DetailCode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(codeEClass, Code.class, "Code", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCode_Decls(), ecorePackage.getEObject(), null, "decls", null, 0, -1, Code.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCode_Stmts(), this.getStatement(), null, "stmts", null, 0, -1, Code.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(singleStatementEClass, SingleStatement.class, "SingleStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSingleStatement_Td(), this.getTypeDecl(), null, "td", null, 0, 1, SingleStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSingleStatement_Vd(), this.getVarDecl(), null, "vd", null, 0, 1, SingleStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSingleStatement_Vin(), this.getVarInst(), null, "vin", null, 0, 1, SingleStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSingleStatement_Ifst(), this.getifte(), null, "ifst", null, 0, 1, SingleStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(statementEClass, Statement.class, "Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStatement_Td(), this.getTypeDecl(), null, "td", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getStatement_Vd(), this.getVarDecl(), null, "vd", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStatement_Vin(), this.getVarInst(), null, "vin", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStatement_Ifst(), this.getifte(), null, "ifst", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(varDeclEClass, VarDecl.class, "VarDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVarDecl_Name(), ecorePackage.getEString(), "name", null, 0, 1, VarDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVarDecl_Pt(), this.getPType(), null, "pt", null, 0, 1, VarDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVarDecl_Td(), this.getTypeDecl(), null, "td", null, 0, 1, VarDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVarDecl_Type(), this.getVarDecl(), null, "type", null, 0, 1, VarDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(pTypeEClass, PType.class, "PType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPType_Type(), ecorePackage.getEString(), "type", null, 0, 1, PType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -796,8 +1004,7 @@ public class GACLPackageImpl extends EPackageImpl implements GACLPackage
 
     initEClass(varInstEClass, VarInst.class, "VarInst", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getVarInst_Name(), this.getVarDecl(), null, "name", null, 0, 1, VarInst.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getVarInst_Strexp(), this.getStringExpression(), null, "strexp", null, 0, 1, VarInst.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getVarInst_Inexp(), this.getIntExpression(), null, "inexp", null, 0, 1, VarInst.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVarInst_Exp(), this.getExpression(), null, "exp", null, 0, 1, VarInst.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stringExpressionEClass, StringExpression.class, "StringExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -809,8 +1016,21 @@ public class GACLPackageImpl extends EPackageImpl implements GACLPackage
     initEClass(intLiteralEClass, IntLiteral.class, "IntLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getIntLiteral_Value(), ecorePackage.getEInt(), "value", null, 0, 1, IntLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getExpression_Strexp(), this.getStringExpression(), null, "strexp", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpression_Inexp(), this.getIntExpression(), null, "inexp", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpression_Vex(), this.getVarExps(), null, "vex", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(varExpsEClass, VarExps.class, "VarExps", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getVarExps_Varex(), this.getVarDecl(), null, "varex", null, 0, 1, VarExps.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ifteEClass, ifte.class, "ifte", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getifte_Cond(), this.getIntExpression(), null, "cond", null, 0, 1, ifte.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getifte_Stmts(), ecorePackage.getEObject(), null, "stmts", null, 0, -1, ifte.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getifte_Estmts(), ecorePackage.getEObject(), null, "estmts", null, 0, -1, ifte.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(concatEClass, Concat.class, "Concat", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getConcat_Left(), this.getStringLiteral(), null, "left", null, 0, 1, Concat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConcat_Left(), this.getStringExpression(), null, "left", null, 0, 1, Concat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConcat_Right(), this.getStringLiteral(), null, "right", null, 0, 1, Concat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(subtractionEClass, Subtraction.class, "Subtraction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

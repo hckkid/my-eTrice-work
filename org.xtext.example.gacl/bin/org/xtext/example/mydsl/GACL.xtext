@@ -2,16 +2,21 @@ grammar org.xtext.example.mydsl.GACL with org.eclipse.xtext.common.Terminals
 
 generate gACL "http://www.xtext.org/example/mydsl/GACL"
 
-DetailCode:
+Code:
+	decls += ( TypeDecl | VarDecl )*
 	stmts += (Statement)*
 ;
 
+SingleStatement:
+	(td=TypeDecl | vd=VarDecl | vin = VarInst | ifst = ifte )
+;
+
 Statement:
-	(td=TypeDecl | vd=VarDecl | vin = VarInst )
+	( vin = VarInst | ifst = ifte )
 ;
 
 VarDecl:
-	'var' name=ID ':' (pt=PType | td=[TypeDecl]) ';'
+	'var' name=ID ':' (pt=PType | td=[TypeDecl]) {VarDecl.type=current}';'
 ;
 
 PType:
@@ -31,11 +36,15 @@ TypeDecl:
 ;
 
 VarInst:
-	name=[VarDecl] '=' (strexp=Concat | inexp=Subtraction)
+	name=[VarDecl] '=' ( exp = Expression ) ';'
 ;
 
 Concat returns StringExpression:
-	StringLiteral ({Concat.left=current} '^' right=StringLiteral)*
+	BasicStringExp ({Concat.left=current} '^' right=StringLiteral)*
+;
+
+BasicStringExp returns StringExpression:
+	StringLiteral
 ;
 
 StringLiteral:
@@ -45,6 +54,8 @@ StringLiteral:
 Subtraction returns IntExpression:
 	Addition ({Subtraction.left=current} '-' right=Addition)*
 ;
+
+
 
 Addition returns IntExpression:
 	Multiplication ({Addition.left=current} '+' right=Multiplication)*
@@ -70,3 +81,18 @@ BasicIntExp returns IntExpression:
 IntLiteral:
 	value=INT
 ; 
+
+Expression:
+	( strexp=Concat | inexp=Subtraction | vex=VarExps)
+;
+
+VarExps:
+	varex=[VarDecl]
+;
+
+
+
+
+ifte:
+	('if' cond=Subtraction ( stmts += SingleStatement | ('{' stmts += Code '}')) (=>'else' ( estmts += SingleStatement | ('{' estmts += Code '}')))? )
+;

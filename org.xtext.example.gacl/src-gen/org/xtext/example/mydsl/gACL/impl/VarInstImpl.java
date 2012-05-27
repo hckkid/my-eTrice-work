@@ -15,9 +15,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtext.example.mydsl.gACL.Expression;
 import org.xtext.example.mydsl.gACL.GACLPackage;
-import org.xtext.example.mydsl.gACL.IntExpression;
-import org.xtext.example.mydsl.gACL.StringExpression;
 import org.xtext.example.mydsl.gACL.VarDecl;
 import org.xtext.example.mydsl.gACL.VarInst;
 
@@ -29,8 +28,7 @@ import org.xtext.example.mydsl.gACL.VarInst;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.gACL.impl.VarInstImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.gACL.impl.VarInstImpl#getStrexp <em>Strexp</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.gACL.impl.VarInstImpl#getInexp <em>Inexp</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.gACL.impl.VarInstImpl#getExp <em>Exp</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,24 +47,14 @@ public class VarInstImpl extends MinimalEObjectImpl.Container implements VarInst
   protected VarDecl name;
 
   /**
-   * The cached value of the '{@link #getStrexp() <em>Strexp</em>}' containment reference.
+   * The cached value of the '{@link #getExp() <em>Exp</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStrexp()
+   * @see #getExp()
    * @generated
    * @ordered
    */
-  protected StringExpression strexp;
-
-  /**
-   * The cached value of the '{@link #getInexp() <em>Inexp</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getInexp()
-   * @generated
-   * @ordered
-   */
-  protected IntExpression inexp;
+  protected Expression exp;
 
   /**
    * <!-- begin-user-doc -->
@@ -137,9 +125,9 @@ public class VarInstImpl extends MinimalEObjectImpl.Container implements VarInst
    * <!-- end-user-doc -->
    * @generated
    */
-  public StringExpression getStrexp()
+  public Expression getExp()
   {
-    return strexp;
+    return exp;
   }
 
   /**
@@ -147,13 +135,13 @@ public class VarInstImpl extends MinimalEObjectImpl.Container implements VarInst
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetStrexp(StringExpression newStrexp, NotificationChain msgs)
+  public NotificationChain basicSetExp(Expression newExp, NotificationChain msgs)
   {
-    StringExpression oldStrexp = strexp;
-    strexp = newStrexp;
+    Expression oldExp = exp;
+    exp = newExp;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GACLPackage.VAR_INST__STREXP, oldStrexp, newStrexp);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GACLPackage.VAR_INST__EXP, oldExp, newExp);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -164,68 +152,20 @@ public class VarInstImpl extends MinimalEObjectImpl.Container implements VarInst
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setStrexp(StringExpression newStrexp)
+  public void setExp(Expression newExp)
   {
-    if (newStrexp != strexp)
+    if (newExp != exp)
     {
       NotificationChain msgs = null;
-      if (strexp != null)
-        msgs = ((InternalEObject)strexp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GACLPackage.VAR_INST__STREXP, null, msgs);
-      if (newStrexp != null)
-        msgs = ((InternalEObject)newStrexp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GACLPackage.VAR_INST__STREXP, null, msgs);
-      msgs = basicSetStrexp(newStrexp, msgs);
+      if (exp != null)
+        msgs = ((InternalEObject)exp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GACLPackage.VAR_INST__EXP, null, msgs);
+      if (newExp != null)
+        msgs = ((InternalEObject)newExp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GACLPackage.VAR_INST__EXP, null, msgs);
+      msgs = basicSetExp(newExp, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GACLPackage.VAR_INST__STREXP, newStrexp, newStrexp));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public IntExpression getInexp()
-  {
-    return inexp;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetInexp(IntExpression newInexp, NotificationChain msgs)
-  {
-    IntExpression oldInexp = inexp;
-    inexp = newInexp;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GACLPackage.VAR_INST__INEXP, oldInexp, newInexp);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setInexp(IntExpression newInexp)
-  {
-    if (newInexp != inexp)
-    {
-      NotificationChain msgs = null;
-      if (inexp != null)
-        msgs = ((InternalEObject)inexp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GACLPackage.VAR_INST__INEXP, null, msgs);
-      if (newInexp != null)
-        msgs = ((InternalEObject)newInexp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GACLPackage.VAR_INST__INEXP, null, msgs);
-      msgs = basicSetInexp(newInexp, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GACLPackage.VAR_INST__INEXP, newInexp, newInexp));
+      eNotify(new ENotificationImpl(this, Notification.SET, GACLPackage.VAR_INST__EXP, newExp, newExp));
   }
 
   /**
@@ -238,10 +178,8 @@ public class VarInstImpl extends MinimalEObjectImpl.Container implements VarInst
   {
     switch (featureID)
     {
-      case GACLPackage.VAR_INST__STREXP:
-        return basicSetStrexp(null, msgs);
-      case GACLPackage.VAR_INST__INEXP:
-        return basicSetInexp(null, msgs);
+      case GACLPackage.VAR_INST__EXP:
+        return basicSetExp(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -259,10 +197,8 @@ public class VarInstImpl extends MinimalEObjectImpl.Container implements VarInst
       case GACLPackage.VAR_INST__NAME:
         if (resolve) return getName();
         return basicGetName();
-      case GACLPackage.VAR_INST__STREXP:
-        return getStrexp();
-      case GACLPackage.VAR_INST__INEXP:
-        return getInexp();
+      case GACLPackage.VAR_INST__EXP:
+        return getExp();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -280,11 +216,8 @@ public class VarInstImpl extends MinimalEObjectImpl.Container implements VarInst
       case GACLPackage.VAR_INST__NAME:
         setName((VarDecl)newValue);
         return;
-      case GACLPackage.VAR_INST__STREXP:
-        setStrexp((StringExpression)newValue);
-        return;
-      case GACLPackage.VAR_INST__INEXP:
-        setInexp((IntExpression)newValue);
+      case GACLPackage.VAR_INST__EXP:
+        setExp((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -303,11 +236,8 @@ public class VarInstImpl extends MinimalEObjectImpl.Container implements VarInst
       case GACLPackage.VAR_INST__NAME:
         setName((VarDecl)null);
         return;
-      case GACLPackage.VAR_INST__STREXP:
-        setStrexp((StringExpression)null);
-        return;
-      case GACLPackage.VAR_INST__INEXP:
-        setInexp((IntExpression)null);
+      case GACLPackage.VAR_INST__EXP:
+        setExp((Expression)null);
         return;
     }
     super.eUnset(featureID);
@@ -325,10 +255,8 @@ public class VarInstImpl extends MinimalEObjectImpl.Container implements VarInst
     {
       case GACLPackage.VAR_INST__NAME:
         return name != null;
-      case GACLPackage.VAR_INST__STREXP:
-        return strexp != null;
-      case GACLPackage.VAR_INST__INEXP:
-        return inexp != null;
+      case GACLPackage.VAR_INST__EXP:
+        return exp != null;
     }
     return super.eIsSet(featureID);
   }

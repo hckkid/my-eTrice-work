@@ -27,13 +27,22 @@ public interface GACLFactory extends EFactory
   GACLFactory eINSTANCE = org.xtext.example.mydsl.gACL.impl.GACLFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Detail Code</em>'.
+   * Returns a new object of class '<em>Code</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Detail Code</em>'.
+   * @return a new object of class '<em>Code</em>'.
    * @generated
    */
-  DetailCode createDetailCode();
+  Code createCode();
+
+  /**
+   * Returns a new object of class '<em>Single Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Single Statement</em>'.
+   * @generated
+   */
+  SingleStatement createSingleStatement();
 
   /**
    * Returns a new object of class '<em>Statement</em>'.
@@ -115,6 +124,33 @@ public interface GACLFactory extends EFactory
    * @generated
    */
   IntLiteral createIntLiteral();
+
+  /**
+   * Returns a new object of class '<em>Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression</em>'.
+   * @generated
+   */
+  Expression createExpression();
+
+  /**
+   * Returns a new object of class '<em>Var Exps</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Var Exps</em>'.
+   * @generated
+   */
+  VarExps createVarExps();
+
+  /**
+   * Returns a new object of class '<em>ifte</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>ifte</em>'.
+   * @generated
+   */
+  ifte createifte();
 
   /**
    * Returns a new object of class '<em>Concat</em>'.

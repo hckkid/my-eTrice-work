@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.example.mydsl.gACL.Concat;
 import org.xtext.example.mydsl.gACL.GACLPackage;
+import org.xtext.example.mydsl.gACL.StringExpression;
 import org.xtext.example.mydsl.gACL.StringLiteral;
 
 /**
@@ -42,7 +43,7 @@ public class ConcatImpl extends StringExpressionImpl implements Concat
    * @generated
    * @ordered
    */
-  protected StringLiteral left;
+  protected StringExpression left;
 
   /**
    * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
@@ -80,7 +81,7 @@ public class ConcatImpl extends StringExpressionImpl implements Concat
    * <!-- end-user-doc -->
    * @generated
    */
-  public StringLiteral getLeft()
+  public StringExpression getLeft()
   {
     return left;
   }
@@ -90,9 +91,9 @@ public class ConcatImpl extends StringExpressionImpl implements Concat
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetLeft(StringLiteral newLeft, NotificationChain msgs)
+  public NotificationChain basicSetLeft(StringExpression newLeft, NotificationChain msgs)
   {
-    StringLiteral oldLeft = left;
+    StringExpression oldLeft = left;
     left = newLeft;
     if (eNotificationRequired())
     {
@@ -107,7 +108,7 @@ public class ConcatImpl extends StringExpressionImpl implements Concat
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLeft(StringLiteral newLeft)
+  public void setLeft(StringExpression newLeft)
   {
     if (newLeft != left)
     {
@@ -218,7 +219,7 @@ public class ConcatImpl extends StringExpressionImpl implements Concat
     switch (featureID)
     {
       case GACLPackage.CONCAT__LEFT:
-        setLeft((StringLiteral)newValue);
+        setLeft((StringExpression)newValue);
         return;
       case GACLPackage.CONCAT__RIGHT:
         setRight((StringLiteral)newValue);
@@ -238,7 +239,7 @@ public class ConcatImpl extends StringExpressionImpl implements Concat
     switch (featureID)
     {
       case GACLPackage.CONCAT__LEFT:
-        setLeft((StringLiteral)null);
+        setLeft((StringExpression)null);
         return;
       case GACLPackage.CONCAT__RIGHT:
         setRight((StringLiteral)null);

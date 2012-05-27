@@ -79,9 +79,14 @@ public class GACLAdapterFactory extends AdapterFactoryImpl
     new GACLSwitch<Adapter>()
     {
       @Override
-      public Adapter caseDetailCode(DetailCode object)
+      public Adapter caseCode(Code object)
       {
-        return createDetailCodeAdapter();
+        return createCodeAdapter();
+      }
+      @Override
+      public Adapter caseSingleStatement(SingleStatement object)
+      {
+        return createSingleStatementAdapter();
       }
       @Override
       public Adapter caseStatement(Statement object)
@@ -127,6 +132,21 @@ public class GACLAdapterFactory extends AdapterFactoryImpl
       public Adapter caseIntLiteral(IntLiteral object)
       {
         return createIntLiteralAdapter();
+      }
+      @Override
+      public Adapter caseExpression(Expression object)
+      {
+        return createExpressionAdapter();
+      }
+      @Override
+      public Adapter caseVarExps(VarExps object)
+      {
+        return createVarExpsAdapter();
+      }
+      @Override
+      public Adapter caseifte(ifte object)
+      {
+        return createifteAdapter();
       }
       @Override
       public Adapter caseConcat(Concat object)
@@ -181,16 +201,31 @@ public class GACLAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.DetailCode <em>Detail Code</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.Code <em>Code</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.mydsl.gACL.DetailCode
+   * @see org.xtext.example.mydsl.gACL.Code
    * @generated
    */
-  public Adapter createDetailCodeAdapter()
+  public Adapter createCodeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.SingleStatement <em>Single Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.gACL.SingleStatement
+   * @generated
+   */
+  public Adapter createSingleStatementAdapter()
   {
     return null;
   }
@@ -326,6 +361,51 @@ public class GACLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createIntLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.Expression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.gACL.Expression
+   * @generated
+   */
+  public Adapter createExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.VarExps <em>Var Exps</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.gACL.VarExps
+   * @generated
+   */
+  public Adapter createVarExpsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.ifte <em>ifte</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.gACL.ifte
+   * @generated
+   */
+  public Adapter createifteAdapter()
   {
     return null;
   }

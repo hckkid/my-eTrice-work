@@ -16,9 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.gACL.Statement#getTd <em>Td</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.gACL.Statement#getVd <em>Vd</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.gACL.Statement#getVin <em>Vin</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.gACL.Statement#getIfst <em>Ifst</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,58 +27,6 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Statement extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Td</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Td</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Td</em>' containment reference.
-   * @see #setTd(TypeDecl)
-   * @see org.xtext.example.mydsl.gACL.GACLPackage#getStatement_Td()
-   * @model containment="true"
-   * @generated
-   */
-  TypeDecl getTd();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.gACL.Statement#getTd <em>Td</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Td</em>' containment reference.
-   * @see #getTd()
-   * @generated
-   */
-  void setTd(TypeDecl value);
-
-  /**
-   * Returns the value of the '<em><b>Vd</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Vd</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Vd</em>' containment reference.
-   * @see #setVd(VarDecl)
-   * @see org.xtext.example.mydsl.gACL.GACLPackage#getStatement_Vd()
-   * @model containment="true"
-   * @generated
-   */
-  VarDecl getVd();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.gACL.Statement#getVd <em>Vd</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Vd</em>' containment reference.
-   * @see #getVd()
-   * @generated
-   */
-  void setVd(VarDecl value);
-
   /**
    * Returns the value of the '<em><b>Vin</b></em>' containment reference.
    * <!-- begin-user-doc -->
@@ -105,5 +52,31 @@ public interface Statement extends EObject
    * @generated
    */
   void setVin(VarInst value);
+
+  /**
+   * Returns the value of the '<em><b>Ifst</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Ifst</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Ifst</em>' containment reference.
+   * @see #setIfst(ifte)
+   * @see org.xtext.example.mydsl.gACL.GACLPackage#getStatement_Ifst()
+   * @model containment="true"
+   * @generated
+   */
+  ifte getIfst();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.gACL.Statement#getIfst <em>Ifst</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Ifst</em>' containment reference.
+   * @see #getIfst()
+   * @generated
+   */
+  void setIfst(ifte value);
 
 } // Statement

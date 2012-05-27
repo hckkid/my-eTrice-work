@@ -76,10 +76,17 @@ public class GACLSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
-      case GACLPackage.DETAIL_CODE:
+      case GACLPackage.CODE:
       {
-        DetailCode detailCode = (DetailCode)theEObject;
-        T result = caseDetailCode(detailCode);
+        Code code = (Code)theEObject;
+        T result = caseCode(code);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GACLPackage.SINGLE_STATEMENT:
+      {
+        SingleStatement singleStatement = (SingleStatement)theEObject;
+        T result = caseSingleStatement(singleStatement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -148,6 +155,27 @@ public class GACLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case GACLPackage.EXPRESSION:
+      {
+        Expression expression = (Expression)theEObject;
+        T result = caseExpression(expression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GACLPackage.VAR_EXPS:
+      {
+        VarExps varExps = (VarExps)theEObject;
+        T result = caseVarExps(varExps);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GACLPackage.IFTE:
+      {
+        ifte ifte = (ifte)theEObject;
+        T result = caseifte(ifte);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case GACLPackage.CONCAT:
       {
         Concat concat = (Concat)theEObject;
@@ -201,17 +229,33 @@ public class GACLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Detail Code</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Code</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Detail Code</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Code</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDetailCode(DetailCode object)
+  public T caseCode(Code object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Single Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Single Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSingleStatement(SingleStatement object)
   {
     return null;
   }
@@ -356,6 +400,54 @@ public class GACLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseIntLiteral(IntLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExpression(Expression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Var Exps</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Var Exps</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVarExps(VarExps object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>ifte</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>ifte</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseifte(ifte object)
   {
     return null;
   }

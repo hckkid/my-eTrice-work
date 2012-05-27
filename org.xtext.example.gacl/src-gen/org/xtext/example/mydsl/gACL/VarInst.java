@@ -17,8 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.gACL.VarInst#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.gACL.VarInst#getStrexp <em>Strexp</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.gACL.VarInst#getInexp <em>Inexp</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.gACL.VarInst#getExp <em>Exp</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,55 +54,29 @@ public interface VarInst extends EObject
   void setName(VarDecl value);
 
   /**
-   * Returns the value of the '<em><b>Strexp</b></em>' containment reference.
+   * Returns the value of the '<em><b>Exp</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Strexp</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Exp</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Strexp</em>' containment reference.
-   * @see #setStrexp(StringExpression)
-   * @see org.xtext.example.mydsl.gACL.GACLPackage#getVarInst_Strexp()
+   * @return the value of the '<em>Exp</em>' containment reference.
+   * @see #setExp(Expression)
+   * @see org.xtext.example.mydsl.gACL.GACLPackage#getVarInst_Exp()
    * @model containment="true"
    * @generated
    */
-  StringExpression getStrexp();
+  Expression getExp();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.gACL.VarInst#getStrexp <em>Strexp</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.mydsl.gACL.VarInst#getExp <em>Exp</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Strexp</em>' containment reference.
-   * @see #getStrexp()
+   * @param value the new value of the '<em>Exp</em>' containment reference.
+   * @see #getExp()
    * @generated
    */
-  void setStrexp(StringExpression value);
-
-  /**
-   * Returns the value of the '<em><b>Inexp</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Inexp</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Inexp</em>' containment reference.
-   * @see #setInexp(IntExpression)
-   * @see org.xtext.example.mydsl.gACL.GACLPackage#getVarInst_Inexp()
-   * @model containment="true"
-   * @generated
-   */
-  IntExpression getInexp();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.gACL.VarInst#getInexp <em>Inexp</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Inexp</em>' containment reference.
-   * @see #getInexp()
-   * @generated
-   */
-  void setInexp(IntExpression value);
+  void setExp(Expression value);
 
 } // VarInst

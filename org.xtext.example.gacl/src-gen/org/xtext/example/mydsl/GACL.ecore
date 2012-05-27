@@ -3,22 +3,32 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="gACL"
     nsURI="http://www.xtext.org/example/mydsl/GACL" nsPrefix="gACL">
-  <eClassifiers xsi:type="ecore:EClass" name="DetailCode">
+  <eClassifiers xsi:type="ecore:EClass" name="Code">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="decls" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stmts" upperBound="-1"
         eType="#//Statement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Statement">
+  <eClassifiers xsi:type="ecore:EClass" name="SingleStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="td" eType="#//TypeDecl"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="vd" eType="#//VarDecl"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="vin" eType="#//VarInst"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ifst" eType="#//ifte" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vin" eType="#//VarInst"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ifst" eType="#//ifte" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VarDecl">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pt" eType="#//PType" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="td" eType="#//TypeDecl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//VarDecl"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -29,9 +39,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VarInst">
     <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//VarDecl"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="strexp" eType="#//StringExpression"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="inexp" eType="#//IntExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exp" eType="#//Expression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StringExpression"/>
@@ -42,8 +50,27 @@
   <eClassifiers xsi:type="ecore:EClass" name="IntLiteral" eSuperTypes="#//IntExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="strexp" eType="#//StringExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inexp" eType="#//IntExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vex" eType="#//VarExps"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VarExps">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varex" eType="#//VarDecl"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ifte">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cond" eType="#//IntExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stmts" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="estmts" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Concat" eSuperTypes="#//StringExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//StringLiteral"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//StringExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//StringLiteral"
         containment="true"/>

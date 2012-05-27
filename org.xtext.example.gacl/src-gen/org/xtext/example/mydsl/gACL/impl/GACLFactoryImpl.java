@@ -68,7 +68,8 @@ public class GACLFactoryImpl extends EFactoryImpl implements GACLFactory
   {
     switch (eClass.getClassifierID())
     {
-      case GACLPackage.DETAIL_CODE: return createDetailCode();
+      case GACLPackage.CODE: return createCode();
+      case GACLPackage.SINGLE_STATEMENT: return createSingleStatement();
       case GACLPackage.STATEMENT: return createStatement();
       case GACLPackage.VAR_DECL: return createVarDecl();
       case GACLPackage.PTYPE: return createPType();
@@ -78,6 +79,9 @@ public class GACLFactoryImpl extends EFactoryImpl implements GACLFactory
       case GACLPackage.STRING_LITERAL: return createStringLiteral();
       case GACLPackage.INT_EXPRESSION: return createIntExpression();
       case GACLPackage.INT_LITERAL: return createIntLiteral();
+      case GACLPackage.EXPRESSION: return createExpression();
+      case GACLPackage.VAR_EXPS: return createVarExps();
+      case GACLPackage.IFTE: return createifte();
       case GACLPackage.CONCAT: return createConcat();
       case GACLPackage.SUBTRACTION: return createSubtraction();
       case GACLPackage.ADDITION: return createAddition();
@@ -94,10 +98,21 @@ public class GACLFactoryImpl extends EFactoryImpl implements GACLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public DetailCode createDetailCode()
+  public Code createCode()
   {
-    DetailCodeImpl detailCode = new DetailCodeImpl();
-    return detailCode;
+    CodeImpl code = new CodeImpl();
+    return code;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SingleStatement createSingleStatement()
+  {
+    SingleStatementImpl singleStatement = new SingleStatementImpl();
+    return singleStatement;
   }
 
   /**
@@ -197,6 +212,39 @@ public class GACLFactoryImpl extends EFactoryImpl implements GACLFactory
   {
     IntLiteralImpl intLiteral = new IntLiteralImpl();
     return intLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expression createExpression()
+  {
+    ExpressionImpl expression = new ExpressionImpl();
+    return expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VarExps createVarExps()
+  {
+    VarExpsImpl varExps = new VarExpsImpl();
+    return varExps;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ifte createifte()
+  {
+    ifteImpl ifte = new ifteImpl();
+    return ifte;
   }
 
   /**

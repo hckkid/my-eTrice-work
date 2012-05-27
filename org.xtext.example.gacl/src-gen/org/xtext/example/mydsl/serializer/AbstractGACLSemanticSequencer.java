@@ -14,20 +14,24 @@ import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.example.mydsl.gACL.Addition;
+import org.xtext.example.mydsl.gACL.Code;
 import org.xtext.example.mydsl.gACL.Concat;
-import org.xtext.example.mydsl.gACL.DetailCode;
 import org.xtext.example.mydsl.gACL.Division;
+import org.xtext.example.mydsl.gACL.Expression;
 import org.xtext.example.mydsl.gACL.GACLPackage;
 import org.xtext.example.mydsl.gACL.IntLiteral;
 import org.xtext.example.mydsl.gACL.Multiplication;
 import org.xtext.example.mydsl.gACL.PType;
 import org.xtext.example.mydsl.gACL.PowerOf;
+import org.xtext.example.mydsl.gACL.SingleStatement;
 import org.xtext.example.mydsl.gACL.Statement;
 import org.xtext.example.mydsl.gACL.StringLiteral;
 import org.xtext.example.mydsl.gACL.Subtraction;
 import org.xtext.example.mydsl.gACL.TypeDecl;
 import org.xtext.example.mydsl.gACL.VarDecl;
+import org.xtext.example.mydsl.gACL.VarExps;
 import org.xtext.example.mydsl.gACL.VarInst;
+import org.xtext.example.mydsl.gACL.ifte;
 import org.xtext.example.mydsl.services.GACLGrammarAccess;
 
 @SuppressWarnings("restriction")
@@ -74,16 +78,16 @@ public class AbstractGACLSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
+			case GACLPackage.CODE:
+				if(context == grammarAccess.getCodeRule()) {
+					sequence_Code(context, (Code) semanticObject); 
+					return; 
+				}
+				else break;
 			case GACLPackage.CONCAT:
 				if(context == grammarAccess.getConcatRule() ||
 				   context == grammarAccess.getConcatAccess().getConcatLeftAction_1_0()) {
 					sequence_Concat(context, (Concat) semanticObject); 
-					return; 
-				}
-				else break;
-			case GACLPackage.DETAIL_CODE:
-				if(context == grammarAccess.getDetailCodeRule()) {
-					sequence_DetailCode(context, (DetailCode) semanticObject); 
 					return; 
 				}
 				else break;
@@ -100,6 +104,12 @@ public class AbstractGACLSemanticSequencer extends AbstractSemanticSequencer {
 				   context == grammarAccess.getSubtractionRule() ||
 				   context == grammarAccess.getSubtractionAccess().getSubtractionLeftAction_1_0()) {
 					sequence_Division(context, (Division) semanticObject); 
+					return; 
+				}
+				else break;
+			case GACLPackage.EXPRESSION:
+				if(context == grammarAccess.getExpressionRule()) {
+					sequence_Expression(context, (Expression) semanticObject); 
 					return; 
 				}
 				else break;
@@ -158,6 +168,12 @@ public class AbstractGACLSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
+			case GACLPackage.SINGLE_STATEMENT:
+				if(context == grammarAccess.getSingleStatementRule()) {
+					sequence_SingleStatement(context, (SingleStatement) semanticObject); 
+					return; 
+				}
+				else break;
 			case GACLPackage.STATEMENT:
 				if(context == grammarAccess.getStatementRule()) {
 					sequence_Statement(context, (Statement) semanticObject); 
@@ -165,7 +181,8 @@ public class AbstractGACLSemanticSequencer extends AbstractSemanticSequencer {
 				}
 				else break;
 			case GACLPackage.STRING_LITERAL:
-				if(context == grammarAccess.getConcatRule() ||
+				if(context == grammarAccess.getBasicStringExpRule() ||
+				   context == grammarAccess.getConcatRule() ||
 				   context == grammarAccess.getConcatAccess().getConcatLeftAction_1_0() ||
 				   context == grammarAccess.getStringLiteralRule()) {
 					sequence_StringLiteral(context, (StringLiteral) semanticObject); 
@@ -199,10 +216,26 @@ public class AbstractGACLSemanticSequencer extends AbstractSemanticSequencer {
 					sequence_VarDecl(context, (VarDecl) semanticObject); 
 					return; 
 				}
+				else if(context == grammarAccess.getVarDeclAccess().getVarDeclTypeAction_4()) {
+					sequence_VarDecl_VarDecl_4(context, (VarDecl) semanticObject); 
+					return; 
+				}
+				else break;
+			case GACLPackage.VAR_EXPS:
+				if(context == grammarAccess.getVarExpsRule()) {
+					sequence_VarExps(context, (VarExps) semanticObject); 
+					return; 
+				}
 				else break;
 			case GACLPackage.VAR_INST:
 				if(context == grammarAccess.getVarInstRule()) {
 					sequence_VarInst(context, (VarInst) semanticObject); 
+					return; 
+				}
+				else break;
+			case GACLPackage.IFTE:
+				if(context == grammarAccess.getIfteRule()) {
+					sequence_ifte(context, (ifte) semanticObject); 
 					return; 
 				}
 				else break;
@@ -231,6 +264,15 @@ public class AbstractGACLSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     ((decls+=TypeDecl | decls+=VarDecl)* stmts+=Statement*)
+	 */
+	protected void sequence_Code(EObject context, Code semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (left=Concat_Concat_1_0 right=StringLiteral)
 	 */
 	protected void sequence_Concat(EObject context, Concat semanticObject) {
@@ -250,15 +292,6 @@ public class AbstractGACLSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     stmts+=Statement*
-	 */
-	protected void sequence_DetailCode(EObject context, DetailCode semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (left=Division_Division_1_0 right=PowerOf)
 	 */
 	protected void sequence_Division(EObject context, Division semanticObject) {
@@ -273,6 +306,15 @@ public class AbstractGACLSemanticSequencer extends AbstractSemanticSequencer {
 		feeder.accept(grammarAccess.getDivisionAccess().getDivisionLeftAction_1_0(), semanticObject.getLeft());
 		feeder.accept(grammarAccess.getDivisionAccess().getRightPowerOfParserRuleCall_1_2_0(), semanticObject.getRight());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (strexp=Concat | inexp=Subtraction | vex=VarExps)
+	 */
+	protected void sequence_Expression(EObject context, Expression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -341,7 +383,16 @@ public class AbstractGACLSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (td=TypeDecl | vd=VarDecl | vin=VarInst)
+	 *     (td=TypeDecl | vd=VarDecl | vin=VarInst | ifst=ifte)
+	 */
+	protected void sequence_SingleStatement(EObject context, SingleStatement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (vin=VarInst | ifst=ifte)
 	 */
 	protected void sequence_Statement(EObject context, Statement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -404,7 +455,7 @@ public class AbstractGACLSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (pt=PType | td=[TypeDecl|ID]))
+	 *     type=VarDecl_VarDecl_4
 	 */
 	protected void sequence_VarDecl(EObject context, VarDecl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -413,9 +464,53 @@ public class AbstractGACLSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=[VarDecl|ID] (strexp=Concat | inexp=Subtraction))
+	 *     (name=ID (pt=PType | td=[TypeDecl|ID]))
+	 */
+	protected void sequence_VarDecl_VarDecl_4(EObject context, VarDecl semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     varex=[VarDecl|ID]
+	 */
+	protected void sequence_VarExps(EObject context, VarExps semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, GACLPackage.Literals.VAR_EXPS__VAREX) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GACLPackage.Literals.VAR_EXPS__VAREX));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getVarExpsAccess().getVarexVarDeclIDTerminalRuleCall_0_1(), semanticObject.getVarex());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=[VarDecl|ID] exp=Expression)
 	 */
 	protected void sequence_VarInst(EObject context, VarInst semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, GACLPackage.Literals.VAR_INST__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GACLPackage.Literals.VAR_INST__NAME));
+			if(transientValues.isValueTransient(semanticObject, GACLPackage.Literals.VAR_INST__EXP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GACLPackage.Literals.VAR_INST__EXP));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getVarInstAccess().getNameVarDeclIDTerminalRuleCall_0_0_1(), semanticObject.getName());
+		feeder.accept(grammarAccess.getVarInstAccess().getExpExpressionParserRuleCall_2_0(), semanticObject.getExp());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (cond=Subtraction (stmts+=SingleStatement | stmts+=Code) (estmts+=SingleStatement | estmts+=Code)?)
+	 */
+	protected void sequence_ifte(EObject context, ifte semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 }

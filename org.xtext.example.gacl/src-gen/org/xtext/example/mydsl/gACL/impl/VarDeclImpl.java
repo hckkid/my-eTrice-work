@@ -30,6 +30,7 @@ import org.xtext.example.mydsl.gACL.VarDecl;
  *   <li>{@link org.xtext.example.mydsl.gACL.impl.VarDeclImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.gACL.impl.VarDeclImpl#getPt <em>Pt</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.gACL.impl.VarDeclImpl#getTd <em>Td</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.gACL.impl.VarDeclImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -76,6 +77,16 @@ public class VarDeclImpl extends MinimalEObjectImpl.Container implements VarDecl
    * @ordered
    */
   protected TypeDecl td;
+
+  /**
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected VarDecl type;
 
   /**
    * <!-- begin-user-doc -->
@@ -217,6 +228,54 @@ public class VarDeclImpl extends MinimalEObjectImpl.Container implements VarDecl
    * <!-- end-user-doc -->
    * @generated
    */
+  public VarDecl getType()
+  {
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetType(VarDecl newType, NotificationChain msgs)
+  {
+    VarDecl oldType = type;
+    type = newType;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GACLPackage.VAR_DECL__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setType(VarDecl newType)
+  {
+    if (newType != type)
+    {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GACLPackage.VAR_DECL__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GACLPackage.VAR_DECL__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GACLPackage.VAR_DECL__TYPE, newType, newType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -224,6 +283,8 @@ public class VarDeclImpl extends MinimalEObjectImpl.Container implements VarDecl
     {
       case GACLPackage.VAR_DECL__PT:
         return basicSetPt(null, msgs);
+      case GACLPackage.VAR_DECL__TYPE:
+        return basicSetType(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -245,6 +306,8 @@ public class VarDeclImpl extends MinimalEObjectImpl.Container implements VarDecl
       case GACLPackage.VAR_DECL__TD:
         if (resolve) return getTd();
         return basicGetTd();
+      case GACLPackage.VAR_DECL__TYPE:
+        return getType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -267,6 +330,9 @@ public class VarDeclImpl extends MinimalEObjectImpl.Container implements VarDecl
         return;
       case GACLPackage.VAR_DECL__TD:
         setTd((TypeDecl)newValue);
+        return;
+      case GACLPackage.VAR_DECL__TYPE:
+        setType((VarDecl)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -291,6 +357,9 @@ public class VarDeclImpl extends MinimalEObjectImpl.Container implements VarDecl
       case GACLPackage.VAR_DECL__TD:
         setTd((TypeDecl)null);
         return;
+      case GACLPackage.VAR_DECL__TYPE:
+        setType((VarDecl)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -311,6 +380,8 @@ public class VarDeclImpl extends MinimalEObjectImpl.Container implements VarDecl
         return pt != null;
       case GACLPackage.VAR_DECL__TD:
         return td != null;
+      case GACLPackage.VAR_DECL__TYPE:
+        return type != null;
     }
     return super.eIsSet(featureID);
   }

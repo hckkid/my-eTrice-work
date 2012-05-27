@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.example.mydsl.gACL.VarDecl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.gACL.VarDecl#getPt <em>Pt</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.gACL.VarDecl#getTd <em>Td</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.gACL.VarDecl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -105,5 +106,31 @@ public interface VarDecl extends EObject
    * @generated
    */
   void setTd(TypeDecl value);
+
+  /**
+   * Returns the value of the '<em><b>Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Type</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Type</em>' containment reference.
+   * @see #setType(VarDecl)
+   * @see org.xtext.example.mydsl.gACL.GACLPackage#getVarDecl_Type()
+   * @model containment="true"
+   * @generated
+   */
+  VarDecl getType();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.gACL.VarDecl#getType <em>Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Type</em>' containment reference.
+   * @see #getType()
+   * @generated
+   */
+  void setType(VarDecl value);
 
 } // VarDecl

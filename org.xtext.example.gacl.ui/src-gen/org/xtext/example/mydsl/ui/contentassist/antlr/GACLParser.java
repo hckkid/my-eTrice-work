@@ -37,11 +37,16 @@ public class GACLParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getCodeAccess().getDeclsAlternatives_0_0(), "rule__Code__DeclsAlternatives_0_0");
+					put(grammarAccess.getSingleStatementAccess().getAlternatives(), "rule__SingleStatement__Alternatives");
 					put(grammarAccess.getStatementAccess().getAlternatives(), "rule__Statement__Alternatives");
 					put(grammarAccess.getVarDeclAccess().getAlternatives_3(), "rule__VarDecl__Alternatives_3");
 					put(grammarAccess.getPTypeAccess().getAlternatives(), "rule__PType__Alternatives");
-					put(grammarAccess.getVarInstAccess().getAlternatives_2(), "rule__VarInst__Alternatives_2");
 					put(grammarAccess.getBasicIntExpAccess().getAlternatives(), "rule__BasicIntExp__Alternatives");
+					put(grammarAccess.getExpressionAccess().getAlternatives(), "rule__Expression__Alternatives");
+					put(grammarAccess.getIfteAccess().getAlternatives_2(), "rule__Ifte__Alternatives_2");
+					put(grammarAccess.getIfteAccess().getAlternatives_3_1(), "rule__Ifte__Alternatives_3_1");
+					put(grammarAccess.getCodeAccess().getGroup(), "rule__Code__Group__0");
 					put(grammarAccess.getVarDeclAccess().getGroup(), "rule__VarDecl__Group__0");
 					put(grammarAccess.getTypeDeclAccess().getGroup(), "rule__TypeDecl__Group__0");
 					put(grammarAccess.getVarInstAccess().getGroup(), "rule__VarInst__Group__0");
@@ -58,10 +63,18 @@ public class GACLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPowerOfAccess().getGroup(), "rule__PowerOf__Group__0");
 					put(grammarAccess.getPowerOfAccess().getGroup_1(), "rule__PowerOf__Group_1__0");
 					put(grammarAccess.getBasicIntExpAccess().getGroup_1(), "rule__BasicIntExp__Group_1__0");
-					put(grammarAccess.getDetailCodeAccess().getStmtsAssignment(), "rule__DetailCode__StmtsAssignment");
-					put(grammarAccess.getStatementAccess().getTdAssignment_0(), "rule__Statement__TdAssignment_0");
-					put(grammarAccess.getStatementAccess().getVdAssignment_1(), "rule__Statement__VdAssignment_1");
-					put(grammarAccess.getStatementAccess().getVinAssignment_2(), "rule__Statement__VinAssignment_2");
+					put(grammarAccess.getIfteAccess().getGroup(), "rule__Ifte__Group__0");
+					put(grammarAccess.getIfteAccess().getGroup_2_1(), "rule__Ifte__Group_2_1__0");
+					put(grammarAccess.getIfteAccess().getGroup_3(), "rule__Ifte__Group_3__0");
+					put(grammarAccess.getIfteAccess().getGroup_3_1_1(), "rule__Ifte__Group_3_1_1__0");
+					put(grammarAccess.getCodeAccess().getDeclsAssignment_0(), "rule__Code__DeclsAssignment_0");
+					put(grammarAccess.getCodeAccess().getStmtsAssignment_1(), "rule__Code__StmtsAssignment_1");
+					put(grammarAccess.getSingleStatementAccess().getTdAssignment_0(), "rule__SingleStatement__TdAssignment_0");
+					put(grammarAccess.getSingleStatementAccess().getVdAssignment_1(), "rule__SingleStatement__VdAssignment_1");
+					put(grammarAccess.getSingleStatementAccess().getVinAssignment_2(), "rule__SingleStatement__VinAssignment_2");
+					put(grammarAccess.getSingleStatementAccess().getIfstAssignment_3(), "rule__SingleStatement__IfstAssignment_3");
+					put(grammarAccess.getStatementAccess().getVinAssignment_0(), "rule__Statement__VinAssignment_0");
+					put(grammarAccess.getStatementAccess().getIfstAssignment_1(), "rule__Statement__IfstAssignment_1");
 					put(grammarAccess.getVarDeclAccess().getNameAssignment_1(), "rule__VarDecl__NameAssignment_1");
 					put(grammarAccess.getVarDeclAccess().getPtAssignment_3_0(), "rule__VarDecl__PtAssignment_3_0");
 					put(grammarAccess.getVarDeclAccess().getTdAssignment_3_1(), "rule__VarDecl__TdAssignment_3_1");
@@ -70,8 +83,7 @@ public class GACLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTypeDeclAccess().getNameAssignment_1(), "rule__TypeDecl__NameAssignment_1");
 					put(grammarAccess.getTypeDeclAccess().getTpAssignment_3(), "rule__TypeDecl__TpAssignment_3");
 					put(grammarAccess.getVarInstAccess().getNameAssignment_0(), "rule__VarInst__NameAssignment_0");
-					put(grammarAccess.getVarInstAccess().getStrexpAssignment_2_0(), "rule__VarInst__StrexpAssignment_2_0");
-					put(grammarAccess.getVarInstAccess().getInexpAssignment_2_1(), "rule__VarInst__InexpAssignment_2_1");
+					put(grammarAccess.getVarInstAccess().getExpAssignment_2(), "rule__VarInst__ExpAssignment_2");
 					put(grammarAccess.getConcatAccess().getRightAssignment_1_2(), "rule__Concat__RightAssignment_1_2");
 					put(grammarAccess.getStringLiteralAccess().getValueAssignment(), "rule__StringLiteral__ValueAssignment");
 					put(grammarAccess.getSubtractionAccess().getRightAssignment_1_2(), "rule__Subtraction__RightAssignment_1_2");
@@ -80,6 +92,15 @@ public class GACLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDivisionAccess().getRightAssignment_1_2(), "rule__Division__RightAssignment_1_2");
 					put(grammarAccess.getPowerOfAccess().getRightAssignment_1_2(), "rule__PowerOf__RightAssignment_1_2");
 					put(grammarAccess.getIntLiteralAccess().getValueAssignment(), "rule__IntLiteral__ValueAssignment");
+					put(grammarAccess.getExpressionAccess().getStrexpAssignment_0(), "rule__Expression__StrexpAssignment_0");
+					put(grammarAccess.getExpressionAccess().getInexpAssignment_1(), "rule__Expression__InexpAssignment_1");
+					put(grammarAccess.getExpressionAccess().getVexAssignment_2(), "rule__Expression__VexAssignment_2");
+					put(grammarAccess.getVarExpsAccess().getVarexAssignment(), "rule__VarExps__VarexAssignment");
+					put(grammarAccess.getIfteAccess().getCondAssignment_1(), "rule__Ifte__CondAssignment_1");
+					put(grammarAccess.getIfteAccess().getStmtsAssignment_2_0(), "rule__Ifte__StmtsAssignment_2_0");
+					put(grammarAccess.getIfteAccess().getStmtsAssignment_2_1_1(), "rule__Ifte__StmtsAssignment_2_1_1");
+					put(grammarAccess.getIfteAccess().getEstmtsAssignment_3_1_0(), "rule__Ifte__EstmtsAssignment_3_1_0");
+					put(grammarAccess.getIfteAccess().getEstmtsAssignment_3_1_1_1(), "rule__Ifte__EstmtsAssignment_3_1_1_1");
 				}
 			};
 		}
@@ -90,7 +111,7 @@ public class GACLParser extends AbstractContentAssistParser {
 	protected Collection<FollowElement> getFollowElements(AbstractInternalContentAssistParser parser) {
 		try {
 			org.xtext.example.mydsl.ui.contentassist.antlr.internal.InternalGACLParser typedParser = (org.xtext.example.mydsl.ui.contentassist.antlr.internal.InternalGACLParser) parser;
-			typedParser.entryRuleDetailCode();
+			typedParser.entryRuleCode();
 			return typedParser.getFollowElements();
 		} catch(RecognitionException ex) {
 			throw new RuntimeException(ex);
