@@ -37,6 +37,9 @@
         <elements xsi:type="xtext:Assignment" feature="ifst" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.21"/>
         </elements>
+        <elements xsi:type="xtext:Assignment" feature="fl" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.20"/>
+        </elements>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="Statement">
@@ -50,6 +53,9 @@
         <elements xsi:type="xtext:Assignment" feature="ifst" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.21"/>
         </elements>
+        <elements xsi:type="xtext:Assignment" feature="fl" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.20"/>
+        </elements>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="VarDecl">
@@ -61,18 +67,20 @@
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
-        <elements xsi:type="xtext:Keyword" value=":"/>
-        <elements xsi:type="xtext:Alternatives">
-          <elements xsi:type="xtext:Assignment" feature="pt" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.4"/>
-          </elements>
-          <elements xsi:type="xtext:Assignment" feature="td" operator="=">
-            <terminal xsi:type="xtext:CrossReference">
-              <type metamodel="/0/@metamodelDeclarations.0">
-                <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/example/mydsl/GACL#//TypeDecl"/>
-              </type>
-              <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
-            </terminal>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value=":"/>
+          <elements xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Assignment" feature="pt" operator="=">
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.4"/>
+            </elements>
+            <elements xsi:type="xtext:Assignment" feature="td" operator="=">
+              <terminal xsi:type="xtext:CrossReference">
+                <type metamodel="/0/@metamodelDeclarations.0">
+                  <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/example/mydsl/GACL#//TypeDecl"/>
+                </type>
+                <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+              </terminal>
+            </elements>
           </elements>
         </elements>
         <elements xsi:type="xtext:Action" feature="type" operator="=">
@@ -139,17 +147,23 @@
         </elements>
         <elements xsi:type="xtext:Keyword" value="="/>
         <elements xsi:type="xtext:Assignment" feature="exp" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.19"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.9"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value=";"/>
       </alternatives>
     </rules>
+    <rules xsi:type="xtext:ParserRule" name="Expression">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/example/mydsl/GACL#//Expression"/>
+      </type>
+      <alternatives xsi:type="xtext:RuleCall" rule="/0/@rules.10"/>
+    </rules>
     <rules xsi:type="xtext:ParserRule" name="Concat">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/example/mydsl/GACL#//StringExpression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/example/mydsl/GACL#//Expression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.10"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Action" feature="left" operator="=">
             <type metamodel="/0/@metamodelDeclarations.0">
@@ -158,31 +172,17 @@
           </elements>
           <elements xsi:type="xtext:Keyword" value="^"/>
           <elements xsi:type="xtext:Assignment" feature="right" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.18"/>
           </elements>
         </elements>
       </alternatives>
     </rules>
-    <rules xsi:type="xtext:ParserRule" name="BasicStringExp">
-      <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/example/mydsl/GACL#//StringExpression"/>
-      </type>
-      <alternatives xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
-    </rules>
-    <rules xsi:type="xtext:ParserRule" name="StringLiteral">
-      <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/example/mydsl/GACL#//StringLiteral"/>
-      </type>
-      <alternatives xsi:type="xtext:Assignment" feature="value" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
-      </alternatives>
-    </rules>
     <rules xsi:type="xtext:ParserRule" name="Subtraction">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/example/mydsl/GACL#//IntExpression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/example/mydsl/GACL#//Expression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.13"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.12"/>
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Action" feature="left" operator="=">
             <type metamodel="/0/@metamodelDeclarations.0">
@@ -191,17 +191,17 @@
           </elements>
           <elements xsi:type="xtext:Keyword" value="-"/>
           <elements xsi:type="xtext:Assignment" feature="right" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.13"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.12"/>
           </elements>
         </elements>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="Addition">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/example/mydsl/GACL#//IntExpression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/example/mydsl/GACL#//Expression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.14"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.13"/>
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Action" feature="left" operator="=">
             <type metamodel="/0/@metamodelDeclarations.0">
@@ -210,17 +210,17 @@
           </elements>
           <elements xsi:type="xtext:Keyword" value="+"/>
           <elements xsi:type="xtext:Assignment" feature="right" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.14"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.13"/>
           </elements>
         </elements>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="Multiplication">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/example/mydsl/GACL#//IntExpression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/example/mydsl/GACL#//Expression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.14"/>
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Action" feature="left" operator="=">
             <type metamodel="/0/@metamodelDeclarations.0">
@@ -229,17 +229,17 @@
           </elements>
           <elements xsi:type="xtext:Keyword" value="*"/>
           <elements xsi:type="xtext:Assignment" feature="right" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.14"/>
           </elements>
         </elements>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="Division">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/example/mydsl/GACL#//IntExpression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/example/mydsl/GACL#//Expression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.16"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Action" feature="left" operator="=">
             <type metamodel="/0/@metamodelDeclarations.0">
@@ -248,17 +248,17 @@
           </elements>
           <elements xsi:type="xtext:Keyword" value="/"/>
           <elements xsi:type="xtext:Assignment" feature="right" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.16"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
           </elements>
         </elements>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="PowerOf">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/example/mydsl/GACL#//IntExpression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/example/mydsl/GACL#//Expression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.17"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.16"/>
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Action" feature="left" operator="=">
             <type metamodel="/0/@metamodelDeclarations.0">
@@ -267,20 +267,22 @@
           </elements>
           <elements xsi:type="xtext:Keyword" value="**"/>
           <elements xsi:type="xtext:Assignment" feature="right" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.17"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.16"/>
           </elements>
         </elements>
       </alternatives>
     </rules>
-    <rules xsi:type="xtext:ParserRule" name="BasicIntExp">
+    <rules xsi:type="xtext:ParserRule" name="BasicExp">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/example/mydsl/GACL#//IntExpression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/example/mydsl/GACL#//Expression"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.18"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.17"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.19"/>
         <elements xsi:type="xtext:Group">
           <elements xsi:type="xtext:Keyword" value="("/>
-          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.12"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.10"/>
           <elements xsi:type="xtext:Keyword" value=")"/>
         </elements>
       </alternatives>
@@ -293,33 +295,48 @@
         <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
       </alternatives>
     </rules>
-    <rules xsi:type="xtext:ParserRule" name="Expression">
+    <rules xsi:type="xtext:ParserRule" name="StringLiteral">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/example/mydsl/GACL#//Expression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/example/mydsl/GACL#//StringLiteral"/>
       </type>
-      <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:Assignment" feature="strexp" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.9"/>
-        </elements>
-        <elements xsi:type="xtext:Assignment" feature="inexp" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.12"/>
-        </elements>
-        <elements xsi:type="xtext:Assignment" feature="vex" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.20"/>
-        </elements>
+      <alternatives xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="VarExps">
       <type metamodel="/0/@metamodelDeclarations.0">
         <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/example/mydsl/GACL#//VarExps"/>
       </type>
-      <alternatives xsi:type="xtext:Assignment" feature="varex" operator="=">
+      <alternatives xsi:type="xtext:Assignment" feature="vrnm" operator="=">
         <terminal xsi:type="xtext:CrossReference">
           <type metamodel="/0/@metamodelDeclarations.0">
             <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/example/mydsl/GACL#//VarDecl"/>
           </type>
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </terminal>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="forlp">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.xtext.org/example/mydsl/GACL#//forlp"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="for"/>
+        <elements xsi:type="xtext:Assignment" feature="cond" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.9"/>
+        </elements>
+        <elements xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:Assignment" feature="stmts" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.1"/>
+          </elements>
+          <elements xsi:type="xtext:Group">
+            <elements xsi:type="xtext:Keyword" value="{"/>
+            <elements xsi:type="xtext:Assignment" feature="stmts" operator="+=">
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.0"/>
+            </elements>
+            <elements xsi:type="xtext:Keyword" value="}"/>
+          </elements>
+        </elements>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ifte">
@@ -329,7 +346,7 @@
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="if"/>
         <elements xsi:type="xtext:Assignment" feature="cond" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.12"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.9"/>
         </elements>
         <elements xsi:type="xtext:Alternatives">
           <elements xsi:type="xtext:Assignment" feature="stmts" operator="+=">

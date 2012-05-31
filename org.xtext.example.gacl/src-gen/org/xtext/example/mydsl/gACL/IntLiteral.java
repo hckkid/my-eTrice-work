@@ -23,7 +23,7 @@ package org.xtext.example.mydsl.gACL;
  * @model
  * @generated
  */
-public interface IntLiteral extends IntExpression
+public interface IntLiteral extends Expression
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.

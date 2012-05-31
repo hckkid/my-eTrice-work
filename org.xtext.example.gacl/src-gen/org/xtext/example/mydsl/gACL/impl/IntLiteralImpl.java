@@ -28,7 +28,7 @@ import org.xtext.example.mydsl.gACL.IntLiteral;
  *
  * @generated
  */
-public class IntLiteralImpl extends IntExpressionImpl implements IntLiteral
+public class IntLiteralImpl extends ExpressionImpl implements IntLiteral
 {
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.

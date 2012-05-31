@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.example.mydsl.gACL.SingleStatement#getVd <em>Vd</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.gACL.SingleStatement#getVin <em>Vin</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.gACL.SingleStatement#getIfst <em>Ifst</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.gACL.SingleStatement#getFl <em>Fl</em>}</li>
  * </ul>
  * </p>
  *
@@ -132,5 +133,31 @@ public interface SingleStatement extends EObject
    * @generated
    */
   void setIfst(ifte value);
+
+  /**
+   * Returns the value of the '<em><b>Fl</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Fl</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Fl</em>' containment reference.
+   * @see #setFl(forlp)
+   * @see org.xtext.example.mydsl.gACL.GACLPackage#getSingleStatement_Fl()
+   * @model containment="true"
+   * @generated
+   */
+  forlp getFl();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.gACL.SingleStatement#getFl <em>Fl</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Fl</em>' containment reference.
+   * @see #getFl()
+   * @generated
+   */
+  void setFl(forlp value);
 
 } // SingleStatement

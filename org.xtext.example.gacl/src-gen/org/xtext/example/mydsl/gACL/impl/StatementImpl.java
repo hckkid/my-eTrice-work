@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.xtext.example.mydsl.gACL.GACLPackage;
 import org.xtext.example.mydsl.gACL.Statement;
 import org.xtext.example.mydsl.gACL.VarInst;
+import org.xtext.example.mydsl.gACL.forlp;
 import org.xtext.example.mydsl.gACL.ifte;
 
 /**
@@ -29,6 +30,7 @@ import org.xtext.example.mydsl.gACL.ifte;
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.gACL.impl.StatementImpl#getVin <em>Vin</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.gACL.impl.StatementImpl#getIfst <em>Ifst</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.gACL.impl.StatementImpl#getFl <em>Fl</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,6 +57,16 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
    * @ordered
    */
   protected ifte ifst;
+
+  /**
+   * The cached value of the '{@link #getFl() <em>Fl</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFl()
+   * @generated
+   * @ordered
+   */
+  protected forlp fl;
 
   /**
    * <!-- begin-user-doc -->
@@ -178,6 +190,54 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
    * <!-- end-user-doc -->
    * @generated
    */
+  public forlp getFl()
+  {
+    return fl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetFl(forlp newFl, NotificationChain msgs)
+  {
+    forlp oldFl = fl;
+    fl = newFl;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GACLPackage.STATEMENT__FL, oldFl, newFl);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setFl(forlp newFl)
+  {
+    if (newFl != fl)
+    {
+      NotificationChain msgs = null;
+      if (fl != null)
+        msgs = ((InternalEObject)fl).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GACLPackage.STATEMENT__FL, null, msgs);
+      if (newFl != null)
+        msgs = ((InternalEObject)newFl).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GACLPackage.STATEMENT__FL, null, msgs);
+      msgs = basicSetFl(newFl, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GACLPackage.STATEMENT__FL, newFl, newFl));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -187,6 +247,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
         return basicSetVin(null, msgs);
       case GACLPackage.STATEMENT__IFST:
         return basicSetIfst(null, msgs);
+      case GACLPackage.STATEMENT__FL:
+        return basicSetFl(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -205,6 +267,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
         return getVin();
       case GACLPackage.STATEMENT__IFST:
         return getIfst();
+      case GACLPackage.STATEMENT__FL:
+        return getFl();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -224,6 +288,9 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
         return;
       case GACLPackage.STATEMENT__IFST:
         setIfst((ifte)newValue);
+        return;
+      case GACLPackage.STATEMENT__FL:
+        setFl((forlp)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -245,6 +312,9 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
       case GACLPackage.STATEMENT__IFST:
         setIfst((ifte)null);
         return;
+      case GACLPackage.STATEMENT__FL:
+        setFl((forlp)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -263,6 +333,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
         return vin != null;
       case GACLPackage.STATEMENT__IFST:
         return ifst != null;
+      case GACLPackage.STATEMENT__FL:
+        return fl != null;
     }
     return super.eIsSet(featureID);
   }

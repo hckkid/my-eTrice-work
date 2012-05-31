@@ -125,36 +125,6 @@ public class GACLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case GACLPackage.STRING_EXPRESSION:
-      {
-        StringExpression stringExpression = (StringExpression)theEObject;
-        T result = caseStringExpression(stringExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case GACLPackage.STRING_LITERAL:
-      {
-        StringLiteral stringLiteral = (StringLiteral)theEObject;
-        T result = caseStringLiteral(stringLiteral);
-        if (result == null) result = caseStringExpression(stringLiteral);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case GACLPackage.INT_EXPRESSION:
-      {
-        IntExpression intExpression = (IntExpression)theEObject;
-        T result = caseIntExpression(intExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case GACLPackage.INT_LITERAL:
-      {
-        IntLiteral intLiteral = (IntLiteral)theEObject;
-        T result = caseIntLiteral(intLiteral);
-        if (result == null) result = caseIntExpression(intLiteral);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case GACLPackage.EXPRESSION:
       {
         Expression expression = (Expression)theEObject;
@@ -162,10 +132,34 @@ public class GACLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case GACLPackage.INT_LITERAL:
+      {
+        IntLiteral intLiteral = (IntLiteral)theEObject;
+        T result = caseIntLiteral(intLiteral);
+        if (result == null) result = caseExpression(intLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GACLPackage.STRING_LITERAL:
+      {
+        StringLiteral stringLiteral = (StringLiteral)theEObject;
+        T result = caseStringLiteral(stringLiteral);
+        if (result == null) result = caseExpression(stringLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case GACLPackage.VAR_EXPS:
       {
         VarExps varExps = (VarExps)theEObject;
         T result = caseVarExps(varExps);
+        if (result == null) result = caseExpression(varExps);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GACLPackage.FORLP:
+      {
+        forlp forlp = (forlp)theEObject;
+        T result = caseforlp(forlp);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -180,7 +174,7 @@ public class GACLSwitch<T> extends Switch<T>
       {
         Concat concat = (Concat)theEObject;
         T result = caseConcat(concat);
-        if (result == null) result = caseStringExpression(concat);
+        if (result == null) result = caseExpression(concat);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -188,7 +182,7 @@ public class GACLSwitch<T> extends Switch<T>
       {
         Subtraction subtraction = (Subtraction)theEObject;
         T result = caseSubtraction(subtraction);
-        if (result == null) result = caseIntExpression(subtraction);
+        if (result == null) result = caseExpression(subtraction);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -196,7 +190,7 @@ public class GACLSwitch<T> extends Switch<T>
       {
         Addition addition = (Addition)theEObject;
         T result = caseAddition(addition);
-        if (result == null) result = caseIntExpression(addition);
+        if (result == null) result = caseExpression(addition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -204,7 +198,7 @@ public class GACLSwitch<T> extends Switch<T>
       {
         Multiplication multiplication = (Multiplication)theEObject;
         T result = caseMultiplication(multiplication);
-        if (result == null) result = caseIntExpression(multiplication);
+        if (result == null) result = caseExpression(multiplication);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -212,7 +206,7 @@ public class GACLSwitch<T> extends Switch<T>
       {
         Division division = (Division)theEObject;
         T result = caseDivision(division);
-        if (result == null) result = caseIntExpression(division);
+        if (result == null) result = caseExpression(division);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -220,7 +214,7 @@ public class GACLSwitch<T> extends Switch<T>
       {
         PowerOf powerOf = (PowerOf)theEObject;
         T result = casePowerOf(powerOf);
-        if (result == null) result = caseIntExpression(powerOf);
+        if (result == null) result = caseExpression(powerOf);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -341,49 +335,17 @@ public class GACLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>String Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>String Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseStringExpression(StringExpression object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>String Literal</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>String Literal</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseStringLiteral(StringLiteral object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Int Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Int Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseIntExpression(IntExpression object)
+  public T caseExpression(Expression object)
   {
     return null;
   }
@@ -405,17 +367,17 @@ public class GACLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>String Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
+   * @return the result of interpreting the object as an instance of '<em>String Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseExpression(Expression object)
+  public T caseStringLiteral(StringLiteral object)
   {
     return null;
   }
@@ -432,6 +394,22 @@ public class GACLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseVarExps(VarExps object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>forlp</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>forlp</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseforlp(forlp object)
   {
     return null;
   }

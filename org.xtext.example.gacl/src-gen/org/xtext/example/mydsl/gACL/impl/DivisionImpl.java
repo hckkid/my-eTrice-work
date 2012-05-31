@@ -15,8 +15,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.example.mydsl.gACL.Division;
+import org.xtext.example.mydsl.gACL.Expression;
 import org.xtext.example.mydsl.gACL.GACLPackage;
-import org.xtext.example.mydsl.gACL.IntExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +32,7 @@ import org.xtext.example.mydsl.gACL.IntExpression;
  *
  * @generated
  */
-public class DivisionImpl extends IntExpressionImpl implements Division
+public class DivisionImpl extends ExpressionImpl implements Division
 {
   /**
    * The cached value of the '{@link #getLeft() <em>Left</em>}' containment reference.
@@ -42,7 +42,7 @@ public class DivisionImpl extends IntExpressionImpl implements Division
    * @generated
    * @ordered
    */
-  protected IntExpression left;
+  protected Expression left;
 
   /**
    * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
@@ -52,7 +52,7 @@ public class DivisionImpl extends IntExpressionImpl implements Division
    * @generated
    * @ordered
    */
-  protected IntExpression right;
+  protected Expression right;
 
   /**
    * <!-- begin-user-doc -->
@@ -80,7 +80,7 @@ public class DivisionImpl extends IntExpressionImpl implements Division
    * <!-- end-user-doc -->
    * @generated
    */
-  public IntExpression getLeft()
+  public Expression getLeft()
   {
     return left;
   }
@@ -90,9 +90,9 @@ public class DivisionImpl extends IntExpressionImpl implements Division
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetLeft(IntExpression newLeft, NotificationChain msgs)
+  public NotificationChain basicSetLeft(Expression newLeft, NotificationChain msgs)
   {
-    IntExpression oldLeft = left;
+    Expression oldLeft = left;
     left = newLeft;
     if (eNotificationRequired())
     {
@@ -107,7 +107,7 @@ public class DivisionImpl extends IntExpressionImpl implements Division
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLeft(IntExpression newLeft)
+  public void setLeft(Expression newLeft)
   {
     if (newLeft != left)
     {
@@ -128,7 +128,7 @@ public class DivisionImpl extends IntExpressionImpl implements Division
    * <!-- end-user-doc -->
    * @generated
    */
-  public IntExpression getRight()
+  public Expression getRight()
   {
     return right;
   }
@@ -138,9 +138,9 @@ public class DivisionImpl extends IntExpressionImpl implements Division
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetRight(IntExpression newRight, NotificationChain msgs)
+  public NotificationChain basicSetRight(Expression newRight, NotificationChain msgs)
   {
-    IntExpression oldRight = right;
+    Expression oldRight = right;
     right = newRight;
     if (eNotificationRequired())
     {
@@ -155,7 +155,7 @@ public class DivisionImpl extends IntExpressionImpl implements Division
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setRight(IntExpression newRight)
+  public void setRight(Expression newRight)
   {
     if (newRight != right)
     {
@@ -218,10 +218,10 @@ public class DivisionImpl extends IntExpressionImpl implements Division
     switch (featureID)
     {
       case GACLPackage.DIVISION__LEFT:
-        setLeft((IntExpression)newValue);
+        setLeft((Expression)newValue);
         return;
       case GACLPackage.DIVISION__RIGHT:
-        setRight((IntExpression)newValue);
+        setRight((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -238,10 +238,10 @@ public class DivisionImpl extends IntExpressionImpl implements Division
     switch (featureID)
     {
       case GACLPackage.DIVISION__LEFT:
-        setLeft((IntExpression)null);
+        setLeft((Expression)null);
         return;
       case GACLPackage.DIVISION__RIGHT:
-        setRight((IntExpression)null);
+        setRight((Expression)null);
         return;
     }
     super.eUnset(featureID);

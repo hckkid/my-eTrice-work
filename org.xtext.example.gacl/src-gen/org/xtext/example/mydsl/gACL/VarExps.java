@@ -6,7 +6,6 @@
  */
 package org.xtext.example.mydsl.gACL;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.gACL.VarExps#getVarex <em>Varex</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.gACL.VarExps#getVrnm <em>Vrnm</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,32 +23,32 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface VarExps extends EObject
+public interface VarExps extends Expression
 {
   /**
-   * Returns the value of the '<em><b>Varex</b></em>' reference.
+   * Returns the value of the '<em><b>Vrnm</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Varex</em>' reference isn't clear,
+   * If the meaning of the '<em>Vrnm</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Varex</em>' reference.
-   * @see #setVarex(VarDecl)
-   * @see org.xtext.example.mydsl.gACL.GACLPackage#getVarExps_Varex()
+   * @return the value of the '<em>Vrnm</em>' reference.
+   * @see #setVrnm(VarDecl)
+   * @see org.xtext.example.mydsl.gACL.GACLPackage#getVarExps_Vrnm()
    * @model
    * @generated
    */
-  VarDecl getVarex();
+  VarDecl getVrnm();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.gACL.VarExps#getVarex <em>Varex</em>}' reference.
+   * Sets the value of the '{@link org.xtext.example.mydsl.gACL.VarExps#getVrnm <em>Vrnm</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Varex</em>' reference.
-   * @see #getVarex()
+   * @param value the new value of the '<em>Vrnm</em>' reference.
+   * @see #getVrnm()
    * @generated
    */
-  void setVarex(VarDecl value);
+  void setVrnm(VarDecl value);
 
 } // VarExps

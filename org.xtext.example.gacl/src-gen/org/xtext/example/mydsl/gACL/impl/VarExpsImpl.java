@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.mydsl.gACL.GACLPackage;
 import org.xtext.example.mydsl.gACL.VarDecl;
@@ -25,23 +24,23 @@ import org.xtext.example.mydsl.gACL.VarExps;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.gACL.impl.VarExpsImpl#getVarex <em>Varex</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.gACL.impl.VarExpsImpl#getVrnm <em>Vrnm</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class VarExpsImpl extends MinimalEObjectImpl.Container implements VarExps
+public class VarExpsImpl extends ExpressionImpl implements VarExps
 {
   /**
-   * The cached value of the '{@link #getVarex() <em>Varex</em>}' reference.
+   * The cached value of the '{@link #getVrnm() <em>Vrnm</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVarex()
+   * @see #getVrnm()
    * @generated
    * @ordered
    */
-  protected VarDecl varex;
+  protected VarDecl vrnm;
 
   /**
    * <!-- begin-user-doc -->
@@ -69,19 +68,19 @@ public class VarExpsImpl extends MinimalEObjectImpl.Container implements VarExps
    * <!-- end-user-doc -->
    * @generated
    */
-  public VarDecl getVarex()
+  public VarDecl getVrnm()
   {
-    if (varex != null && varex.eIsProxy())
+    if (vrnm != null && vrnm.eIsProxy())
     {
-      InternalEObject oldVarex = (InternalEObject)varex;
-      varex = (VarDecl)eResolveProxy(oldVarex);
-      if (varex != oldVarex)
+      InternalEObject oldVrnm = (InternalEObject)vrnm;
+      vrnm = (VarDecl)eResolveProxy(oldVrnm);
+      if (vrnm != oldVrnm)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, GACLPackage.VAR_EXPS__VAREX, oldVarex, varex));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, GACLPackage.VAR_EXPS__VRNM, oldVrnm, vrnm));
       }
     }
-    return varex;
+    return vrnm;
   }
 
   /**
@@ -89,9 +88,9 @@ public class VarExpsImpl extends MinimalEObjectImpl.Container implements VarExps
    * <!-- end-user-doc -->
    * @generated
    */
-  public VarDecl basicGetVarex()
+  public VarDecl basicGetVrnm()
   {
-    return varex;
+    return vrnm;
   }
 
   /**
@@ -99,12 +98,12 @@ public class VarExpsImpl extends MinimalEObjectImpl.Container implements VarExps
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVarex(VarDecl newVarex)
+  public void setVrnm(VarDecl newVrnm)
   {
-    VarDecl oldVarex = varex;
-    varex = newVarex;
+    VarDecl oldVrnm = vrnm;
+    vrnm = newVrnm;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GACLPackage.VAR_EXPS__VAREX, oldVarex, varex));
+      eNotify(new ENotificationImpl(this, Notification.SET, GACLPackage.VAR_EXPS__VRNM, oldVrnm, vrnm));
   }
 
   /**
@@ -117,9 +116,9 @@ public class VarExpsImpl extends MinimalEObjectImpl.Container implements VarExps
   {
     switch (featureID)
     {
-      case GACLPackage.VAR_EXPS__VAREX:
-        if (resolve) return getVarex();
-        return basicGetVarex();
+      case GACLPackage.VAR_EXPS__VRNM:
+        if (resolve) return getVrnm();
+        return basicGetVrnm();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -134,8 +133,8 @@ public class VarExpsImpl extends MinimalEObjectImpl.Container implements VarExps
   {
     switch (featureID)
     {
-      case GACLPackage.VAR_EXPS__VAREX:
-        setVarex((VarDecl)newValue);
+      case GACLPackage.VAR_EXPS__VRNM:
+        setVrnm((VarDecl)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -151,8 +150,8 @@ public class VarExpsImpl extends MinimalEObjectImpl.Container implements VarExps
   {
     switch (featureID)
     {
-      case GACLPackage.VAR_EXPS__VAREX:
-        setVarex((VarDecl)null);
+      case GACLPackage.VAR_EXPS__VRNM:
+        setVrnm((VarDecl)null);
         return;
     }
     super.eUnset(featureID);
@@ -168,8 +167,8 @@ public class VarExpsImpl extends MinimalEObjectImpl.Container implements VarExps
   {
     switch (featureID)
     {
-      case GACLPackage.VAR_EXPS__VAREX:
-        return varex != null;
+      case GACLPackage.VAR_EXPS__VRNM:
+        return vrnm != null;
     }
     return super.eIsSet(featureID);
   }

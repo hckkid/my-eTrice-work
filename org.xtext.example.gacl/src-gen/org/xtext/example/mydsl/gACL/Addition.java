@@ -24,7 +24,7 @@ package org.xtext.example.mydsl.gACL;
  * @model
  * @generated
  */
-public interface Addition extends IntExpression
+public interface Addition extends Expression
 {
   /**
    * Returns the value of the '<em><b>Left</b></em>' containment reference.
@@ -35,12 +35,12 @@ public interface Addition extends IntExpression
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Left</em>' containment reference.
-   * @see #setLeft(IntExpression)
+   * @see #setLeft(Expression)
    * @see org.xtext.example.mydsl.gACL.GACLPackage#getAddition_Left()
    * @model containment="true"
    * @generated
    */
-  IntExpression getLeft();
+  Expression getLeft();
 
   /**
    * Sets the value of the '{@link org.xtext.example.mydsl.gACL.Addition#getLeft <em>Left</em>}' containment reference.
@@ -50,7 +50,7 @@ public interface Addition extends IntExpression
    * @see #getLeft()
    * @generated
    */
-  void setLeft(IntExpression value);
+  void setLeft(Expression value);
 
   /**
    * Returns the value of the '<em><b>Right</b></em>' containment reference.
@@ -61,12 +61,12 @@ public interface Addition extends IntExpression
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Right</em>' containment reference.
-   * @see #setRight(IntExpression)
+   * @see #setRight(Expression)
    * @see org.xtext.example.mydsl.gACL.GACLPackage#getAddition_Right()
    * @model containment="true"
    * @generated
    */
-  IntExpression getRight();
+  Expression getRight();
 
   /**
    * Sets the value of the '{@link org.xtext.example.mydsl.gACL.Addition#getRight <em>Right</em>}' containment reference.
@@ -76,6 +76,6 @@ public interface Addition extends IntExpression
    * @see #getRight()
    * @generated
    */
-  void setRight(IntExpression value);
+  void setRight(Expression value);
 
 } // Addition

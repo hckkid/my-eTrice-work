@@ -15,8 +15,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.example.mydsl.gACL.Concat;
+import org.xtext.example.mydsl.gACL.Expression;
 import org.xtext.example.mydsl.gACL.GACLPackage;
-import org.xtext.example.mydsl.gACL.StringExpression;
 import org.xtext.example.mydsl.gACL.StringLiteral;
 
 /**
@@ -33,7 +33,7 @@ import org.xtext.example.mydsl.gACL.StringLiteral;
  *
  * @generated
  */
-public class ConcatImpl extends StringExpressionImpl implements Concat
+public class ConcatImpl extends ExpressionImpl implements Concat
 {
   /**
    * The cached value of the '{@link #getLeft() <em>Left</em>}' containment reference.
@@ -43,7 +43,7 @@ public class ConcatImpl extends StringExpressionImpl implements Concat
    * @generated
    * @ordered
    */
-  protected StringExpression left;
+  protected Expression left;
 
   /**
    * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
@@ -81,7 +81,7 @@ public class ConcatImpl extends StringExpressionImpl implements Concat
    * <!-- end-user-doc -->
    * @generated
    */
-  public StringExpression getLeft()
+  public Expression getLeft()
   {
     return left;
   }
@@ -91,9 +91,9 @@ public class ConcatImpl extends StringExpressionImpl implements Concat
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetLeft(StringExpression newLeft, NotificationChain msgs)
+  public NotificationChain basicSetLeft(Expression newLeft, NotificationChain msgs)
   {
-    StringExpression oldLeft = left;
+    Expression oldLeft = left;
     left = newLeft;
     if (eNotificationRequired())
     {
@@ -108,7 +108,7 @@ public class ConcatImpl extends StringExpressionImpl implements Concat
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLeft(StringExpression newLeft)
+  public void setLeft(Expression newLeft)
   {
     if (newLeft != left)
     {
@@ -219,7 +219,7 @@ public class ConcatImpl extends StringExpressionImpl implements Concat
     switch (featureID)
     {
       case GACLPackage.CONCAT__LEFT:
-        setLeft((StringExpression)newValue);
+        setLeft((Expression)newValue);
         return;
       case GACLPackage.CONCAT__RIGHT:
         setRight((StringLiteral)newValue);
@@ -239,7 +239,7 @@ public class ConcatImpl extends StringExpressionImpl implements Concat
     switch (featureID)
     {
       case GACLPackage.CONCAT__LEFT:
-        setLeft((StringExpression)null);
+        setLeft((Expression)null);
         return;
       case GACLPackage.CONCAT__RIGHT:
         setRight((StringLiteral)null);

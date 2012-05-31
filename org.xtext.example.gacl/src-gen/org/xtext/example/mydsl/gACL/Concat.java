@@ -24,7 +24,7 @@ package org.xtext.example.mydsl.gACL;
  * @model
  * @generated
  */
-public interface Concat extends StringExpression
+public interface Concat extends Expression
 {
   /**
    * Returns the value of the '<em><b>Left</b></em>' containment reference.
@@ -35,12 +35,12 @@ public interface Concat extends StringExpression
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Left</em>' containment reference.
-   * @see #setLeft(StringExpression)
+   * @see #setLeft(Expression)
    * @see org.xtext.example.mydsl.gACL.GACLPackage#getConcat_Left()
    * @model containment="true"
    * @generated
    */
-  StringExpression getLeft();
+  Expression getLeft();
 
   /**
    * Sets the value of the '{@link org.xtext.example.mydsl.gACL.Concat#getLeft <em>Left</em>}' containment reference.
@@ -50,7 +50,7 @@ public interface Concat extends StringExpression
    * @see #getLeft()
    * @generated
    */
-  void setLeft(StringExpression value);
+  void setLeft(Expression value);
 
   /**
    * Returns the value of the '<em><b>Right</b></em>' containment reference.

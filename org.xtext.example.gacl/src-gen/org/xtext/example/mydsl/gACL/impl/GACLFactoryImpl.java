@@ -75,12 +75,11 @@ public class GACLFactoryImpl extends EFactoryImpl implements GACLFactory
       case GACLPackage.PTYPE: return createPType();
       case GACLPackage.TYPE_DECL: return createTypeDecl();
       case GACLPackage.VAR_INST: return createVarInst();
-      case GACLPackage.STRING_EXPRESSION: return createStringExpression();
-      case GACLPackage.STRING_LITERAL: return createStringLiteral();
-      case GACLPackage.INT_EXPRESSION: return createIntExpression();
-      case GACLPackage.INT_LITERAL: return createIntLiteral();
       case GACLPackage.EXPRESSION: return createExpression();
+      case GACLPackage.INT_LITERAL: return createIntLiteral();
+      case GACLPackage.STRING_LITERAL: return createStringLiteral();
       case GACLPackage.VAR_EXPS: return createVarExps();
+      case GACLPackage.FORLP: return createforlp();
       case GACLPackage.IFTE: return createifte();
       case GACLPackage.CONCAT: return createConcat();
       case GACLPackage.SUBTRACTION: return createSubtraction();
@@ -175,32 +174,10 @@ public class GACLFactoryImpl extends EFactoryImpl implements GACLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public StringExpression createStringExpression()
+  public Expression createExpression()
   {
-    StringExpressionImpl stringExpression = new StringExpressionImpl();
-    return stringExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public StringLiteral createStringLiteral()
-  {
-    StringLiteralImpl stringLiteral = new StringLiteralImpl();
-    return stringLiteral;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public IntExpression createIntExpression()
-  {
-    IntExpressionImpl intExpression = new IntExpressionImpl();
-    return intExpression;
+    ExpressionImpl expression = new ExpressionImpl();
+    return expression;
   }
 
   /**
@@ -219,10 +196,10 @@ public class GACLFactoryImpl extends EFactoryImpl implements GACLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression createExpression()
+  public StringLiteral createStringLiteral()
   {
-    ExpressionImpl expression = new ExpressionImpl();
-    return expression;
+    StringLiteralImpl stringLiteral = new StringLiteralImpl();
+    return stringLiteral;
   }
 
   /**
@@ -234,6 +211,17 @@ public class GACLFactoryImpl extends EFactoryImpl implements GACLFactory
   {
     VarExpsImpl varExps = new VarExpsImpl();
     return varExps;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public forlp createforlp()
+  {
+    forlpImpl forlp = new forlpImpl();
+    return forlp;
   }
 
   /**

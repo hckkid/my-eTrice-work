@@ -25,24 +25,23 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.example.mydsl.gACL.Expression;
 import org.xtext.example.mydsl.gACL.GACLPackage;
-import org.xtext.example.mydsl.gACL.ifte;
+import org.xtext.example.mydsl.gACL.forlp;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>ifte</b></em>'.
+ * An implementation of the model object '<em><b>forlp</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.gACL.impl.ifteImpl#getCond <em>Cond</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.gACL.impl.ifteImpl#getStmts <em>Stmts</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.gACL.impl.ifteImpl#getEstmts <em>Estmts</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.gACL.impl.forlpImpl#getCond <em>Cond</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.gACL.impl.forlpImpl#getStmts <em>Stmts</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ifteImpl extends MinimalEObjectImpl.Container implements ifte
+public class forlpImpl extends MinimalEObjectImpl.Container implements forlp
 {
   /**
    * The cached value of the '{@link #getCond() <em>Cond</em>}' containment reference.
@@ -65,21 +64,11 @@ public class ifteImpl extends MinimalEObjectImpl.Container implements ifte
   protected EList<EObject> stmts;
 
   /**
-   * The cached value of the '{@link #getEstmts() <em>Estmts</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEstmts()
-   * @generated
-   * @ordered
-   */
-  protected EList<EObject> estmts;
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ifteImpl()
+  protected forlpImpl()
   {
     super();
   }
@@ -92,7 +81,7 @@ public class ifteImpl extends MinimalEObjectImpl.Container implements ifte
   @Override
   protected EClass eStaticClass()
   {
-    return GACLPackage.Literals.IFTE;
+    return GACLPackage.Literals.FORLP;
   }
 
   /**
@@ -116,7 +105,7 @@ public class ifteImpl extends MinimalEObjectImpl.Container implements ifte
     cond = newCond;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GACLPackage.IFTE__COND, oldCond, newCond);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GACLPackage.FORLP__COND, oldCond, newCond);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -133,14 +122,14 @@ public class ifteImpl extends MinimalEObjectImpl.Container implements ifte
     {
       NotificationChain msgs = null;
       if (cond != null)
-        msgs = ((InternalEObject)cond).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GACLPackage.IFTE__COND, null, msgs);
+        msgs = ((InternalEObject)cond).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GACLPackage.FORLP__COND, null, msgs);
       if (newCond != null)
-        msgs = ((InternalEObject)newCond).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GACLPackage.IFTE__COND, null, msgs);
+        msgs = ((InternalEObject)newCond).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GACLPackage.FORLP__COND, null, msgs);
       msgs = basicSetCond(newCond, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GACLPackage.IFTE__COND, newCond, newCond));
+      eNotify(new ENotificationImpl(this, Notification.SET, GACLPackage.FORLP__COND, newCond, newCond));
   }
 
   /**
@@ -152,23 +141,9 @@ public class ifteImpl extends MinimalEObjectImpl.Container implements ifte
   {
     if (stmts == null)
     {
-      stmts = new EObjectContainmentEList<EObject>(EObject.class, this, GACLPackage.IFTE__STMTS);
+      stmts = new EObjectContainmentEList<EObject>(EObject.class, this, GACLPackage.FORLP__STMTS);
     }
     return stmts;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<EObject> getEstmts()
-  {
-    if (estmts == null)
-    {
-      estmts = new EObjectContainmentEList<EObject>(EObject.class, this, GACLPackage.IFTE__ESTMTS);
-    }
-    return estmts;
   }
 
   /**
@@ -181,12 +156,10 @@ public class ifteImpl extends MinimalEObjectImpl.Container implements ifte
   {
     switch (featureID)
     {
-      case GACLPackage.IFTE__COND:
+      case GACLPackage.FORLP__COND:
         return basicSetCond(null, msgs);
-      case GACLPackage.IFTE__STMTS:
+      case GACLPackage.FORLP__STMTS:
         return ((InternalEList<?>)getStmts()).basicRemove(otherEnd, msgs);
-      case GACLPackage.IFTE__ESTMTS:
-        return ((InternalEList<?>)getEstmts()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -201,12 +174,10 @@ public class ifteImpl extends MinimalEObjectImpl.Container implements ifte
   {
     switch (featureID)
     {
-      case GACLPackage.IFTE__COND:
+      case GACLPackage.FORLP__COND:
         return getCond();
-      case GACLPackage.IFTE__STMTS:
+      case GACLPackage.FORLP__STMTS:
         return getStmts();
-      case GACLPackage.IFTE__ESTMTS:
-        return getEstmts();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -222,16 +193,12 @@ public class ifteImpl extends MinimalEObjectImpl.Container implements ifte
   {
     switch (featureID)
     {
-      case GACLPackage.IFTE__COND:
+      case GACLPackage.FORLP__COND:
         setCond((Expression)newValue);
         return;
-      case GACLPackage.IFTE__STMTS:
+      case GACLPackage.FORLP__STMTS:
         getStmts().clear();
         getStmts().addAll((Collection<? extends EObject>)newValue);
-        return;
-      case GACLPackage.IFTE__ESTMTS:
-        getEstmts().clear();
-        getEstmts().addAll((Collection<? extends EObject>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -247,14 +214,11 @@ public class ifteImpl extends MinimalEObjectImpl.Container implements ifte
   {
     switch (featureID)
     {
-      case GACLPackage.IFTE__COND:
+      case GACLPackage.FORLP__COND:
         setCond((Expression)null);
         return;
-      case GACLPackage.IFTE__STMTS:
+      case GACLPackage.FORLP__STMTS:
         getStmts().clear();
-        return;
-      case GACLPackage.IFTE__ESTMTS:
-        getEstmts().clear();
         return;
     }
     super.eUnset(featureID);
@@ -270,14 +234,12 @@ public class ifteImpl extends MinimalEObjectImpl.Container implements ifte
   {
     switch (featureID)
     {
-      case GACLPackage.IFTE__COND:
+      case GACLPackage.FORLP__COND:
         return cond != null;
-      case GACLPackage.IFTE__STMTS:
+      case GACLPackage.FORLP__STMTS:
         return stmts != null && !stmts.isEmpty();
-      case GACLPackage.IFTE__ESTMTS:
-        return estmts != null && !estmts.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //ifteImpl
+} //forlpImpl

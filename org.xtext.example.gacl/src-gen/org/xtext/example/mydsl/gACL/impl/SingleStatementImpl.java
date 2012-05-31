@@ -20,6 +20,7 @@ import org.xtext.example.mydsl.gACL.SingleStatement;
 import org.xtext.example.mydsl.gACL.TypeDecl;
 import org.xtext.example.mydsl.gACL.VarDecl;
 import org.xtext.example.mydsl.gACL.VarInst;
+import org.xtext.example.mydsl.gACL.forlp;
 import org.xtext.example.mydsl.gACL.ifte;
 
 /**
@@ -33,6 +34,7 @@ import org.xtext.example.mydsl.gACL.ifte;
  *   <li>{@link org.xtext.example.mydsl.gACL.impl.SingleStatementImpl#getVd <em>Vd</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.gACL.impl.SingleStatementImpl#getVin <em>Vin</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.gACL.impl.SingleStatementImpl#getIfst <em>Ifst</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.gACL.impl.SingleStatementImpl#getFl <em>Fl</em>}</li>
  * </ul>
  * </p>
  *
@@ -79,6 +81,16 @@ public class SingleStatementImpl extends MinimalEObjectImpl.Container implements
    * @ordered
    */
   protected ifte ifst;
+
+  /**
+   * The cached value of the '{@link #getFl() <em>Fl</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFl()
+   * @generated
+   * @ordered
+   */
+  protected forlp fl;
 
   /**
    * <!-- begin-user-doc -->
@@ -298,6 +310,54 @@ public class SingleStatementImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
+  public forlp getFl()
+  {
+    return fl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetFl(forlp newFl, NotificationChain msgs)
+  {
+    forlp oldFl = fl;
+    fl = newFl;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GACLPackage.SINGLE_STATEMENT__FL, oldFl, newFl);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setFl(forlp newFl)
+  {
+    if (newFl != fl)
+    {
+      NotificationChain msgs = null;
+      if (fl != null)
+        msgs = ((InternalEObject)fl).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GACLPackage.SINGLE_STATEMENT__FL, null, msgs);
+      if (newFl != null)
+        msgs = ((InternalEObject)newFl).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GACLPackage.SINGLE_STATEMENT__FL, null, msgs);
+      msgs = basicSetFl(newFl, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GACLPackage.SINGLE_STATEMENT__FL, newFl, newFl));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -311,6 +371,8 @@ public class SingleStatementImpl extends MinimalEObjectImpl.Container implements
         return basicSetVin(null, msgs);
       case GACLPackage.SINGLE_STATEMENT__IFST:
         return basicSetIfst(null, msgs);
+      case GACLPackage.SINGLE_STATEMENT__FL:
+        return basicSetFl(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -333,6 +395,8 @@ public class SingleStatementImpl extends MinimalEObjectImpl.Container implements
         return getVin();
       case GACLPackage.SINGLE_STATEMENT__IFST:
         return getIfst();
+      case GACLPackage.SINGLE_STATEMENT__FL:
+        return getFl();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -358,6 +422,9 @@ public class SingleStatementImpl extends MinimalEObjectImpl.Container implements
         return;
       case GACLPackage.SINGLE_STATEMENT__IFST:
         setIfst((ifte)newValue);
+        return;
+      case GACLPackage.SINGLE_STATEMENT__FL:
+        setFl((forlp)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -385,6 +452,9 @@ public class SingleStatementImpl extends MinimalEObjectImpl.Container implements
       case GACLPackage.SINGLE_STATEMENT__IFST:
         setIfst((ifte)null);
         return;
+      case GACLPackage.SINGLE_STATEMENT__FL:
+        setFl((forlp)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -407,6 +477,8 @@ public class SingleStatementImpl extends MinimalEObjectImpl.Container implements
         return vin != null;
       case GACLPackage.SINGLE_STATEMENT__IFST:
         return ifst != null;
+      case GACLPackage.SINGLE_STATEMENT__FL:
+        return fl != null;
     }
     return super.eIsSet(featureID);
   }

@@ -8,15 +8,15 @@ Code:
 ;
 
 SingleStatement:
-	(td=TypeDecl | vd=VarDecl | vin = VarInst | ifst = ifte )
+	(td=TypeDecl | vd=VarDecl | vin = VarInst | ifst = ifte | fl = forlp)
 ;
 
 Statement:
-	( vin = VarInst | ifst = ifte )
+	( vin = VarInst | ifst = ifte | fl=forlp )
 ;
 
 VarDecl:
-	'var' name=ID ':' (pt=PType | td=[TypeDecl]) {VarDecl.type=current}';'
+	'var' name=ID (':' (pt=PType | td=[TypeDecl]))? {VarDecl.type=current} ';'
 ;
 
 PType:
@@ -39,60 +39,56 @@ VarInst:
 	name=[VarDecl] '=' ( exp = Expression ) ';'
 ;
 
-Concat returns StringExpression:
-	BasicStringExp ({Concat.left=current} '^' right=StringLiteral)*
+Expression returns Expression:
+	Concat
 ;
 
-BasicStringExp returns StringExpression:
-	StringLiteral
+Concat returns Expression:
+	Subtraction ({Concat.left=current} '^' right=StringLiteral)*
 ;
 
-StringLiteral:
-	value=STRING
-;
-
-Subtraction returns IntExpression:
+Subtraction returns Expression:
 	Addition ({Subtraction.left=current} '-' right=Addition)*
 ;
 
 
 
-Addition returns IntExpression:
+Addition returns Expression:
 	Multiplication ({Addition.left=current} '+' right=Multiplication)*
 ;
 
-Multiplication returns IntExpression:
+Multiplication returns Expression:
 	Division ({Multiplication.left=current} '*' right=Division)*
 ;
 
-Division returns IntExpression:
+Division returns Expression:
 	PowerOf ({Division.left=current} '/' right=PowerOf)*
 ;
 
-PowerOf returns IntExpression:
-	BasicIntExp ({PowerOf.left=current} '**' right=BasicIntExp)*
+PowerOf returns Expression:
+	BasicExp ({PowerOf.left=current} '**' right=BasicExp)*
 ;
 
-BasicIntExp returns IntExpression:
-	IntLiteral |
-	'(' Subtraction ')'
+BasicExp returns Expression:
+	StringLiteral | IntLiteral | VarExps | '(' Concat ')'
 ;
 
 IntLiteral:
 	value=INT
+;
+
+StringLiteral:
+	value=STRING
 ; 
 
-Expression:
-	( strexp=Concat | inexp=Subtraction | vex=VarExps)
-;
-
 VarExps:
-	varex=[VarDecl]
+	vrnm=[VarDecl]
 ;
 
-
-
+forlp:
+	('for' cond=Expression ( stmts += SingleStatement | ('{' stmts += Code '}')))
+;
 
 ifte:
-	('if' cond=Subtraction ( stmts += SingleStatement | ('{' stmts += Code '}')) (=>'else' ( estmts += SingleStatement | ('{' estmts += Code '}')))? )
+	('if' cond=Expression ( stmts += SingleStatement | ('{' stmts += Code '}')) (=>'else' ( estmts += SingleStatement | ('{' estmts += Code '}')))? )
 ;

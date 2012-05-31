@@ -90,31 +90,13 @@ public interface GACLFactory extends EFactory
   VarInst createVarInst();
 
   /**
-   * Returns a new object of class '<em>String Expression</em>'.
+   * Returns a new object of class '<em>Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>String Expression</em>'.
+   * @return a new object of class '<em>Expression</em>'.
    * @generated
    */
-  StringExpression createStringExpression();
-
-  /**
-   * Returns a new object of class '<em>String Literal</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>String Literal</em>'.
-   * @generated
-   */
-  StringLiteral createStringLiteral();
-
-  /**
-   * Returns a new object of class '<em>Int Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Int Expression</em>'.
-   * @generated
-   */
-  IntExpression createIntExpression();
+  Expression createExpression();
 
   /**
    * Returns a new object of class '<em>Int Literal</em>'.
@@ -126,13 +108,13 @@ public interface GACLFactory extends EFactory
   IntLiteral createIntLiteral();
 
   /**
-   * Returns a new object of class '<em>Expression</em>'.
+   * Returns a new object of class '<em>String Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Expression</em>'.
+   * @return a new object of class '<em>String Literal</em>'.
    * @generated
    */
-  Expression createExpression();
+  StringLiteral createStringLiteral();
 
   /**
    * Returns a new object of class '<em>Var Exps</em>'.
@@ -142,6 +124,15 @@ public interface GACLFactory extends EFactory
    * @generated
    */
   VarExps createVarExps();
+
+  /**
+   * Returns a new object of class '<em>forlp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>forlp</em>'.
+   * @generated
+   */
+  forlp createforlp();
 
   /**
    * Returns a new object of class '<em>ifte</em>'.

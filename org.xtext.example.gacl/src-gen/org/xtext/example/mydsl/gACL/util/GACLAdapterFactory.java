@@ -114,19 +114,9 @@ public class GACLAdapterFactory extends AdapterFactoryImpl
         return createVarInstAdapter();
       }
       @Override
-      public Adapter caseStringExpression(StringExpression object)
+      public Adapter caseExpression(Expression object)
       {
-        return createStringExpressionAdapter();
-      }
-      @Override
-      public Adapter caseStringLiteral(StringLiteral object)
-      {
-        return createStringLiteralAdapter();
-      }
-      @Override
-      public Adapter caseIntExpression(IntExpression object)
-      {
-        return createIntExpressionAdapter();
+        return createExpressionAdapter();
       }
       @Override
       public Adapter caseIntLiteral(IntLiteral object)
@@ -134,14 +124,19 @@ public class GACLAdapterFactory extends AdapterFactoryImpl
         return createIntLiteralAdapter();
       }
       @Override
-      public Adapter caseExpression(Expression object)
+      public Adapter caseStringLiteral(StringLiteral object)
       {
-        return createExpressionAdapter();
+        return createStringLiteralAdapter();
       }
       @Override
       public Adapter caseVarExps(VarExps object)
       {
         return createVarExpsAdapter();
+      }
+      @Override
+      public Adapter caseforlp(forlp object)
+      {
+        return createforlpAdapter();
       }
       @Override
       public Adapter caseifte(ifte object)
@@ -306,46 +301,16 @@ public class GACLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.StringExpression <em>String Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.Expression <em>Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.mydsl.gACL.StringExpression
+   * @see org.xtext.example.mydsl.gACL.Expression
    * @generated
    */
-  public Adapter createStringExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.StringLiteral <em>String Literal</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl.gACL.StringLiteral
-   * @generated
-   */
-  public Adapter createStringLiteralAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.IntExpression <em>Int Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl.gACL.IntExpression
-   * @generated
-   */
-  public Adapter createIntExpressionAdapter()
+  public Adapter createExpressionAdapter()
   {
     return null;
   }
@@ -366,16 +331,16 @@ public class GACLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.Expression <em>Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.StringLiteral <em>String Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.mydsl.gACL.Expression
+   * @see org.xtext.example.mydsl.gACL.StringLiteral
    * @generated
    */
-  public Adapter createExpressionAdapter()
+  public Adapter createStringLiteralAdapter()
   {
     return null;
   }
@@ -391,6 +356,21 @@ public class GACLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createVarExpsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.gACL.forlp <em>forlp</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.gACL.forlp
+   * @generated
+   */
+  public Adapter createforlpAdapter()
   {
     return null;
   }

@@ -17,14 +17,14 @@ import org.xtext.example.mydsl.services.GACLGrammarAccess;
 public class AbstractGACLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected GACLGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_BasicIntExp_LeftParenthesisKeyword_1_0_a;
-	protected AbstractElementAlias match_BasicIntExp_LeftParenthesisKeyword_1_0_p;
+	protected AbstractElementAlias match_BasicExp_LeftParenthesisKeyword_3_0_a;
+	protected AbstractElementAlias match_BasicExp_LeftParenthesisKeyword_3_0_p;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (GACLGrammarAccess) access;
-		match_BasicIntExp_LeftParenthesisKeyword_1_0_a = new TokenAlias(true, true, grammarAccess.getBasicIntExpAccess().getLeftParenthesisKeyword_1_0());
-		match_BasicIntExp_LeftParenthesisKeyword_1_0_p = new TokenAlias(true, false, grammarAccess.getBasicIntExpAccess().getLeftParenthesisKeyword_1_0());
+		match_BasicExp_LeftParenthesisKeyword_3_0_a = new TokenAlias(true, true, grammarAccess.getBasicExpAccess().getLeftParenthesisKeyword_3_0());
+		match_BasicExp_LeftParenthesisKeyword_3_0_p = new TokenAlias(true, false, grammarAccess.getBasicExpAccess().getLeftParenthesisKeyword_3_0());
 	}
 	
 	@Override
@@ -39,10 +39,10 @@ public class AbstractGACLSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_BasicIntExp_LeftParenthesisKeyword_1_0_a.equals(syntax))
-				emit_BasicIntExp_LeftParenthesisKeyword_1_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_BasicIntExp_LeftParenthesisKeyword_1_0_p.equals(syntax))
-				emit_BasicIntExp_LeftParenthesisKeyword_1_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			if(match_BasicExp_LeftParenthesisKeyword_3_0_a.equals(syntax))
+				emit_BasicExp_LeftParenthesisKeyword_3_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_BasicExp_LeftParenthesisKeyword_3_0_p.equals(syntax))
+				emit_BasicExp_LeftParenthesisKeyword_3_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -51,7 +51,7 @@ public class AbstractGACLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * Syntax:
 	 *     '('*
 	 */
-	protected void emit_BasicIntExp_LeftParenthesisKeyword_1_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_BasicExp_LeftParenthesisKeyword_3_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -59,7 +59,7 @@ public class AbstractGACLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * Syntax:
 	 *     '('+
 	 */
-	protected void emit_BasicIntExp_LeftParenthesisKeyword_1_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_BasicExp_LeftParenthesisKeyword_3_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
