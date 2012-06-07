@@ -2,93 +2,92 @@ grammar org.xtext.example.mydsl.GACL with org.eclipse.xtext.common.Terminals
 
 generate gACL "http://www.xtext.org/example/mydsl/GACL"
 
-Code:
-	decls += ( TypeDecl | VarDecl )*
-	stmts += (Statement)*
+GCode:
+	( '{' gcode=GStatementList '}' )
 ;
 
-SingleStatement:
-	(td=TypeDecl | vd=VarDecl | vin = VarInst | ifst = ifte | fl = forlp)
+GStatementList:
+stmts += (GStatement)*
 ;
 
-Statement:
-	( vin = VarInst | ifst = ifte | fl=forlp )
+GStatement:
+(td=GTypeDecl | vd=GVarDecl | vin = GVarInst | ifst = GIfThenElse | fl = GForLoop)
 ;
 
-VarDecl:
-	'var' name=ID (':' (pt=PType | td=[TypeDecl]))? {VarDecl.type=current} ';'
+GVarDecl:
+'var' name=ID (':' (pt=gPType | td=[GTypeDecl]))? {GVarDecl.type=current} ';'
 ;
 
-PType:
-	type=intType | type=strType
+gPType:
+type=GIntType | type=GStrType
 ;
 
-terminal intType:
-	'int'
+terminal GIntType:
+'gInt'
 ;
 
-terminal strType:
-	'string'
+terminal GStrType:
+'gString'
 ;
 
-TypeDecl:
-	'type' name=ID '=' tp=PType ';'
+GTypeDecl:
+'type' name=ID '=' tp=gPType ';'
 ;
 
-VarInst:
-	name=[VarDecl] '=' ( exp = Expression ) ';'
+GVarInst:
+varName=[GVarDecl] '=' ( exp = GExpression ) ';'
 ;
 
-Expression returns Expression:
-	Concat
+GExpression returns GExpression:
+GConcat
 ;
 
-Concat returns Expression:
-	Subtraction ({Concat.left=current} '^' right=StringLiteral)*
+GConcat returns GExpression:
+GSubtraction ({GConcat.left=current} '^' right=GStringLiteral)*
 ;
 
-Subtraction returns Expression:
-	Addition ({Subtraction.left=current} '-' right=Addition)*
+GSubtraction returns GExpression:
+GAddition ({GSubtraction.left=current} '-' right=GAddition)*
 ;
 
-
-
-Addition returns Expression:
-	Multiplication ({Addition.left=current} '+' right=Multiplication)*
+GAddition returns GExpression:
+GMultiplication ({GAddition.left=current} '+' right=GMultiplication)*
 ;
 
-Multiplication returns Expression:
-	Division ({Multiplication.left=current} '*' right=Division)*
+GMultiplication returns GExpression:
+GDivision ({GMultiplication.left=current} '*' right=GDivision)*
 ;
 
-Division returns Expression:
-	PowerOf ({Division.left=current} '/' right=PowerOf)*
+GDivision returns GExpression:
+GPowerOf ({GDivision.left=current} '/' right=GPowerOf)*
 ;
 
-PowerOf returns Expression:
-	BasicExp ({PowerOf.left=current} '**' right=BasicExp)*
+GPowerOf returns GExpression:
+GBasicExp ({GPowerOf.left=current} '**' right=GBasicExp)*
 ;
 
-BasicExp returns Expression:
-	StringLiteral | IntLiteral | VarExps | '(' Concat ')'
+GBasicExp returns GExpression:
+GStringLiteral | GIntLiteral | GVarExps | '(' GConcat ')'
 ;
 
-IntLiteral:
-	value=INT
+GIntLiteral:
+value=INT
 ;
 
-StringLiteral:
-	value=STRING
-; 
-
-VarExps:
-	vrnm=[VarDecl]
+GStringLiteral:
+value=STRING
 ;
 
-forlp:
-	('for' cond=Expression ( stmts += SingleStatement | ('{' stmts += Code '}')))
+GVarExps:
+vrnm=[GVarDecl]
 ;
 
-ifte:
-	('if' cond=Expression ( stmts += SingleStatement | ('{' stmts += Code '}')) (=>'else' ( estmts += SingleStatement | ('{' estmts += Code '}')))? )
+GForLoop:
+('for' cond=GExpression ( stmts += GStatement | ('{' stmts += GStatementList '}')))
 ;
+
+GIfThenElse:
+('if' cond=GExpression ( stmts += GStatement | ('{' stmts += GStatementList '}')) (=>'else' ( estmts += GStatement | ('{' estmts += GStatementList '}')))? )
+;
+
+// End of HCKKID's code
